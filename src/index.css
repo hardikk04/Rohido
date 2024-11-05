@@ -100,3 +100,38 @@ body::-webkit-scrollbar-thumb:active {
 }
 
 /* Scroll bar css end*/
+
+/* Home css start */
+
+h1 {
+  font-size: 5.5vw;
+}
+
+h2{
+  font-size: 4vw;
+}
+
+h3{
+  font-size: 2vw;
+  line-height: 1.2;
+}
+
+h6{
+  font-size: 1.2vw;
+}
+
+p {
+  font-size: 1vw;
+}
+
+span {
+  font-size: 1vw;
+  line-height: 1.2;
+  display: inline-block;
+}
+
+button{
+  font-size: 1vw;
+}
+
+/* Home css end */
