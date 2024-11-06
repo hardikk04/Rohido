@@ -107,16 +107,16 @@ h1 {
   font-size: 5.5vw;
 }
 
-h2{
-  font-size: 4vw;
+h2 {
+  font-size: 3.5vw;
 }
 
-h3{
+h3 {
   font-size: 2vw;
   line-height: 1.2;
 }
 
-h6{
+h6 {
   font-size: 1.2vw;
 }
 
@@ -130,7 +130,7 @@ span {
   display: inline-block;
 }
 
-button{
+button {
   font-size: 1vw;
 }
 
