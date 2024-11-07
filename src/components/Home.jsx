@@ -229,6 +229,72 @@ const Home = () => {
           <SectionBadge text="Design+Development = Growth 💸"></SectionBadge>
           <h2>What clients say about us</h2>
         </div>
+        <div className="w-full flex justify-center py-[6vw]">
+          <div className="w-full px-[5vw] border-t h-[60vh] border-b border-white/30 flex justify-between">
+            <div className="client-left w-[16%] h-full">
+              <div className="w-full h-[32.5%] border border-white/30 flex justify-center items-center">
+                <img className="object-cover" src="/images/figma.png" alt="" />
+              </div>
+              <div className="w-full h-[35%] border border-white/30 flex justify-center items-center">
+                <img
+                  className="object-cover grayscale"
+                  src="/images/figma.png"
+                  alt=""
+                />
+              </div>
+              <div className="w-full h-[32.5%] border border-white/30 flex justify-center items-center">
+                <img
+                  className="object-cover grayscale"
+                  src="/images/figma.png"
+                  alt=""
+                />
+              </div>
+            </div>
+            <div className="client-center w-[59%] h-full text-center py-[2vw] px-[6vw] flex flex-col items-center justify-center">
+              <p className="thin">
+                We have been exceptionally happy with our website! It looks
+                proficient and is exceptionally easy to explore. Our involvement
+                with the customer experience has been extraordinary after the
+                great work of Rohido Media. They handle things exceptionally
+                productively and are accessible for any questions we have. They
+                also keep us updated on month-to-month reports, so we know how
+                our website is doing. Thank you for serving.
+              </p>
+              <div className="w-[3vw] h-[3vw] rounded-full mt-[3vw]">
+                <img
+                  className="h-full w-full object-cover"
+                  src="/images/client.png"
+                  alt=""
+                />
+              </div>
+              <span className="mt-2">Vijaye Raji</span>
+              <p className="thin opacity-70 mt-1">CEO of Statsig</p>
+            </div>
+            <div className="client-right w-[16%] h-full">
+              <div className="w-full h-[32.5%] border border-white/30 flex justify-center items-center">
+                <img
+                  className="object-cover grayscale"
+                  src="/images/figma.png"
+                  alt=""
+                />
+              </div>
+              <div className="w-full h-[35%] border border-white/30 flex justify-center items-center">
+                <img
+                  className="object-cover grayscale"
+                  src="/images/figma.png"
+                  alt=""
+                />
+              </div>
+              <div className="w-full h-[32.5%] border border-white/30 flex justify-center items-center">
+                <img
+                  className="object-cover grayscale"
+                  src="/images/figma.png"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
     </div>
   );
