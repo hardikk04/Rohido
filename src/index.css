@@ -132,9 +132,64 @@ span {
 
 button {
   font-size: 1vw;
-  
 }
 
+.scroller h2 {
+  animation: scroller 22s linear infinite both;
+}
 
+.brands-ani {
+  animation: brandSwiper 16s linear infinite both;
+}
+
+@keyframes brandSwiper {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-100% - 2px));
+  }
+}
+
+@keyframes scroller {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-100% - 2px));
+  }
+}
+
+/* Removes number helper */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield; /* Firefox */
+}
+
+.team-card::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  background: #e10e0e;
+  transition: all ease 0.25s;
+}
+
+.team-card:hover::after {
+  top: 0;
+}
+
+.active {
+  border-color: white;
+  filter: grayscale(0);
+}
 
 /* Home css end */

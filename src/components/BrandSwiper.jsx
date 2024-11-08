@@ -1,10 +1,20 @@
 const BrandSwiper = () => {
   return (
-    <div className="brands-swiper flex justify-between border-[2px] border-white/40 w-[35%] px-[2vw] py-[1.5vw] rounded-[1.5vw]">
-      <img className="object-fit w-[5vw]" src="/images/Examples.png" alt="" />
-      <img className="object-fit w-[5vw]" src="/images/Examples.png" alt="" />
-      <img className="object-fit w-[5vw]" src="/images/Examples.png" alt="" />
-      <img className="object-fit w-[5vw]" src="/images/Examples.png" alt="" />
+    <div className="brands-swiper overflow-hidden flex border-[2px] border-white/40 w-[35%] px-[2vw]  rounded-[1.5vw]">
+      <div className="flex gap-[1vw] brands-ani shrink-0">
+
+      <img className="object-contain scale-[.6] shrink-0" src="/images/Examples.png" alt="" />
+      <img className="object-contain scale-[.6] shrink-0" src="/images/Examples-1.png" alt="" />
+      <img className="object-contain scale-[.6] shrink-0" src="/images/Examples-0.png" alt="" />
+      <img className="object-contain scale-[.6] shrink-0" src="/images/Examples-2.png" alt="" />
+      </div>
+      <div className="flex gap-[1vw] brands-ani shrink-0">
+
+      <img className="object-contain scale-[.6] shrink-0" src="/images/Examples.png" alt="" />
+      <img className="object-contain scale-[.6] shrink-0" src="/images/Examples-1.png" alt="" />
+      <img className="object-contain scale-[.6] shrink-0" src="/images/Examples-0.png" alt="" />
+      <img className="object-contain scale-[.6] shrink-0" src="/images/Examples-2.png" alt="" />
+      </div>
     </div>
   );
 };
