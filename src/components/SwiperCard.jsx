@@ -7,17 +7,25 @@ const SwiperCard = ({ data, index }) => {
     <div
       onMouseEnter={() => {
         gsap.to(`.swiper-card-${index}`, {
-          borderColor: "#E10E0E",
+          backgroundImage: "linear-gradient(42deg, #000, #fe4a2e45)",
+        });
+
+        gsap.to(`.swiper-card-${index} .swiper-number`, {
+          color: "#fe4a2e",
         });
       }}
       onMouseLeave={() => {
         gsap.to(`.swiper-card-${index}`, {
-          borderColor: "rgb(255 255 255 / 0.3)",
+          backgroundImage: "linear-gradient(42deg, #000, #000)",
+        });
+
+        gsap.to(`.swiper-card-${index} .swiper-number`, {
+          color: "white",
         });
       }}
-      className={`swiper-card-${index} bg-black w-[24%] shrink-0 text-white rounded-lg shadow-md p-[1vw] border-[2px] border-white/30`}
+      className={`swiper-card-${index} swiper-cards relative z-[1] bg-black w-[24%] shrink-0 text-white rounded-lg shadow-md p-[1vw] border-[2px] border-white/30`}
     >
-      <p>{number}</p>
+      <p className="swiper-number">{number}</p>
       <h3 className="bold mt-[1.5vw] mb-[2vw]">{title}</h3>
       <p className="opacity-70 light">{para}</p>
       <img className="h-[5vw] object-cover mt-[3vw]" src={img} alt="" />

@@ -16,11 +16,13 @@ const Nav = () => {
           if (flag) {
             gsap.to(".menu", {
               opacity: 1,
+              pointerEvents: "auto",
             });
             setFlag(false);
           } else {
             gsap.to(".menu", {
               opacity: 0,
+              pointerEvents: "none",
             });
             setFlag(true);
           }
@@ -29,7 +31,7 @@ const Nav = () => {
       >
         <BlackButton text="Menu"></BlackButton>
       </div>
-      <div className="menu opacity-0 absolute right-0 top-[105%] border-[2px] border-white/30 p-[1.5vw] flex flex-col gap-[1.5vw] rounded-xl">
+      <div className="menu pointer-events-none opacity-0 absolute right-0 top-[105%] border-[2px] border-white/30 p-[1.5vw] flex flex-col gap-[1.5vw] rounded-xl">
         <Link>
           <div
             onMouseEnter={() => {

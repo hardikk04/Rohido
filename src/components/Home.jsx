@@ -15,6 +15,7 @@ import { useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import ClientReviews from "./ClientReviews";
 gsap.registerPlugin(ScrollTrigger);
 
 const Home = () => {
@@ -45,10 +46,54 @@ const Home = () => {
     },
   ]);
 
-  const clientReviews = useRef(null);
+  const [clientReviews, setClientReviews] = useState([
+    {
+      img: "images/client.png",
+      para: "We have been exceptionally happy with our website! It looks proficient and is exceptionally easy to explore. Our involvement with the customer experience has been extraordinary after the great work of Rohido Media. They handle things exceptionally productively and are accessible for any questions we have. They also keep us updated on month-to-month reports, so we know how our website is doing. Thank you for serving.",
+      name: "Vijay Raji",
+      position: "CEO, Company X",
+      isActive: true,
+    },
+    {
+      img: "images/project1.png",
+      para: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae laborum consectetur non totam dolore facere voluptas!",
+      name: "Anuj",
+      position: "XYZ",
+      isActive: false,
+    },
+    {
+      img: "images/project2.png",
+      para: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae laborum consectetur non totam dolore facere voluptas!",
+      name: "Khushi",
+      position: "CEO, Company X",
+      isActive: false,
+    },
+    {
+      img: "images/client.png",
+      para: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae laborum consectetur non totam dolore facere voluptas!",
+      name: "Rajat",
+      position: "CEO, Company X",
+      isActive: false,
+    },
+    {
+      img: "images/client.png",
+      para: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae laborum consectetur non totam dolore facere voluptas!",
+      name: "Ayush",
+      position: "CEO, Company X",
+      isActive: false,
+    },
+    {
+      img: "images/client.png",
+      para: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae laborum consectetur non totam dolore facere voluptas!",
+      name: "Chirag",
+      position: "CEO, Company X",
+      isActive: false,
+    },
+  ]);
 
   useGSAP(() => {
     const tl = gsap.timeline();
+
     tl.from(".home-badge", {
       opacity: 0,
     })
@@ -77,7 +122,7 @@ const Home = () => {
     });
 
     gsap.from(".brands-swiper", {
-      width: "50%",
+      width: "35%",
       scrollTrigger: {
         scroller: "body",
         trigger: ".brands-swiper",
@@ -244,6 +289,33 @@ const Home = () => {
     });
   });
 
+  const clientReviewLoop = () => {
+    let activeIndex = 0;
+
+    const interval = setInterval(() => {
+      gsap.from(".client-center", {
+        opacity: 0,
+        duration: 1,
+        y: 30,
+      });
+
+      setClientReviews((prevReviews) => {
+        activeIndex = (activeIndex + 1) % clientReviews.length;
+        return prevReviews.map((review, index) => ({
+          ...review,
+          isActive: index === activeIndex,
+        }));
+      });
+    }, 3000);
+    return interval;
+  };
+
+  useEffect(() => {
+    const interval = clientReviewLoop();
+    return () => {
+      clearInterval(interval);
+    };
+  }, []);
 
   return (
     <>
@@ -470,76 +542,38 @@ const Home = () => {
             </div>
           </div>
           <div className="w-full flex justify-center py-[6vw]">
-            <div
-              ref={clientReviews}
-              className="client-container w-full px-[5vw] border-t h-[60vh] border-b border-white/30 flex justify-between"
-            >
+            <div className="client-container w-full px-[5vw] border-t h-[60vh] border-b border-white/30 flex justify-between">
               <div className="client-left w-[16%] h-full">
-                <div className="client-img w-full h-[32.5%] border border-white flex justify-center items-center">
-                  <img
-                    className="object-cover"
-                    src="/images/figma.png"
-                    alt=""
-                  />
-                </div>
-                <div className="client-img w-full h-[35%] border border-white/30 flex justify-center items-center">
-                  <img
-                    className="object-cover grayscale"
-                    src="/images/figma.png"
-                    alt=""
-                  />
-                </div>
-                <div className="client-img grayscale w-full h-[32.5%] border border-white/30 flex justify-center items-center">
-                  <img
-                    className="object-cover"
-                    src="/images/figma.png"
-                    alt=""
-                  />
-                </div>
+                <ClientReviews active={clientReviews[0].isActive} />
+                <ClientReviews active={clientReviews[1].isActive} />
+                <ClientReviews active={clientReviews[2].isActive} />
               </div>
-              <div className="client-center w-[59%] h-full text-center py-[2vw] px-[6vw] flex flex-col items-center justify-center">
-                <p className="thin">
-                  We have been exceptionally happy with our website! It looks
-                  proficient and is exceptionally easy to explore. Our
-                  involvement with the customer experience has been
-                  extraordinary after the great work of Rohido Media. They
-                  handle things exceptionally productively and are accessible
-                  for any questions we have. They also keep us updated on
-                  month-to-month reports, so we know how our website is doing.
-                  Thank you for serving.
-                </p>
-                <div className="w-[3vw] h-[3vw] rounded-full mt-[3vw]">
-                  <img
-                    className="h-full w-full object-cover"
-                    src="/images/client.png"
-                    alt=""
-                  />
-                </div>
-                <span className="mt-2">Vijaye Raji</span>
-                <p className="thin opacity-70 mt-1">CEO of Statsig</p>
+              <div className="client-center w-[59%] h-full">
+                {clientReviews.map(
+                  (item, index) =>
+                    item.isActive && (
+                      <div
+                        key={index}
+                        className="w-full h-full text-center py-[2vw] px-[6vw] flex flex-col items-center justify-center"
+                      >
+                        <p className="thin">{item.para}</p>
+                        <div className="w-[3vw] h-[3vw] rounded-full overflow-hidden mt-[3vw]">
+                          <img
+                            className="h-full w-full object-cover"
+                            src={item.img}
+                            alt=""
+                          />
+                        </div>
+                        <span className="mt-2">{item.name}</span>
+                        <p className="thin opacity-70 mt-1">{item.position}</p>
+                      </div>
+                    )
+                )}
               </div>
               <div className="client-right w-[16%] h-full">
-                <div className="client-img w-full h-[32.5%] border border-white/30 flex justify-center items-center">
-                  <img
-                    className="object-cover grayscale"
-                    src="/images/figma.png"
-                    alt=""
-                  />
-                </div>
-                <div className="client-img w-full h-[35%] border border-white/30 flex justify-center items-center">
-                  <img
-                    className="object-cover grayscale"
-                    src="/images/figma.png"
-                    alt=""
-                  />
-                </div>
-                <div className="client-img w-full h-[32.5%] border border-white/30 flex justify-center items-center">
-                  <img
-                    className="object-cover grayscale"
-                    src="/images/figma.png"
-                    alt=""
-                  />
-                </div>
+                <ClientReviews active={clientReviews[3].isActive} />
+                <ClientReviews active={clientReviews[4].isActive} />
+                <ClientReviews active={clientReviews[5].isActive} />
               </div>
             </div>
           </div>
