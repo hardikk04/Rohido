@@ -44,6 +44,18 @@ const Home = () => {
       para: "Secure, feature-rich e-commerce platforms are planned and designed to drive sales.",
       img: "/images/swiper1.png",
     },
+    {
+      number: "05",
+      title: "Saas Development",
+      para: "Professional website development services utilizing the most recent technologies, innovations, and frameworks.",
+      img: "/images/swiper1.png",
+    },
+    {
+      number: "06",
+      title: "AI Development",
+      para: "Secure, feature-rich e-commerce platforms are planned and designed to drive sales.",
+      img: "/images/swiper1.png",
+    },
   ]);
 
   const [clientReviews, setClientReviews] = useState([
@@ -287,6 +299,30 @@ const Home = () => {
         // markers: true,
       },
     });
+
+    gsap.from(".contact-headings h2", {
+      transform: "translateY(100%)",
+      scrollTrigger: {
+        scroller: "body",
+        trigger: ".contact-headings",
+        start: "top 80%",
+        end: "top 80%",
+        // markers: true,
+      },
+    });
+
+    gsap.to(".services-cards", {
+      left: "-50%",
+      scrollTrigger: {
+        scroller: "body",
+        trigger: ".home-services",
+        start: "top 0%",
+        end: "top -100%",
+        pin: true,
+        // markers: true,
+        scrub: 1,
+      },
+    });
   });
 
   const clientReviewLoop = () => {
@@ -475,7 +511,7 @@ const Home = () => {
             <WhiteButton text="I want see more"></WhiteButton>
           </div>
         </section>
-        <section className="bg-black home-services">
+        <section className="bg-black home-services h-[100vh] w-full flex flex-col justify-center">
           <div className="service-title text-center flex flex-col items-center">
             <SectionBadge
               c="services-badge"
@@ -485,10 +521,12 @@ const Home = () => {
               <h2>Services we proudly provide</h2>
             </div>
           </div>
-          <div className="services-cards flex gap-[1vw] py-[6vw] overflow-x-hidden relative">
-            {swiperCardData.map((item, index) => (
-              <SwiperCard index={index} key={index} data={item}></SwiperCard>
-            ))}
+          <div className="flex pt-[6vw] overflow-x-hidden relative">
+            <div className="services-cards flex gap-[1vw] relative">
+              {swiperCardData.map((item, index) => (
+                <SwiperCard index={index} key={index} data={item}></SwiperCard>
+              ))}
+            </div>
           </div>
         </section>
         <section className="bg-black home-team pt-[3vw] pb-[10vw] relative">
@@ -584,17 +622,20 @@ const Home = () => {
             <div className="w-[90%] flex justify-between">
               <div className="contact-left w-[40%] flex flex-col justify-center pb-[12vw]">
                 <div className="w-[70%]">
-                  <div>
+                  <div className="contact-headings overflow-hidden">
                     <h2 className="medium leading-[1.2]">Book A Call</h2>
                   </div>
-                  <div>
-                    <h2 className="medium leading-[1.2]">Right Away</h2>
+                  <div className="contact-headings overflow-hidden">
+                    <h2 className="medium leading-[1.4]">Right Away</h2>
                   </div>
                   <p className="thin opacity-70 my-[2vw]">
                     You Might have caught our idea on how we convert a plan into
                     a functinal business.
                   </p>
-                  <WhiteButton text="Free Consultation"></WhiteButton>
+                  <WhiteButton
+                    c="contact-btn"
+                    text="Free Consultation"
+                  ></WhiteButton>
                 </div>
               </div>
               <div className="contact-right relative w-[55%] rounded-xl border-[2px] b border-white/30 px-[4vw] py-[4vw] overflow-hidden">
