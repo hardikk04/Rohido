@@ -7,7 +7,7 @@ const SwiperCard = ({ data, index }) => {
     <div
       onMouseEnter={() => {
         gsap.to(`.swiper-card-${index}`, {
-          backgroundImage: "linear-gradient(42deg, #000, #fe4a2e45)",
+          backgroundImage: "linear-gradient(42deg, #000, #fe4a2e24)",
         });
 
         gsap.to(`.swiper-card-${index} .swiper-number`, {
@@ -16,7 +16,7 @@ const SwiperCard = ({ data, index }) => {
       }}
       onMouseLeave={() => {
         gsap.to(`.swiper-card-${index}`, {
-          backgroundImage: "linear-gradient(42deg, #000, #000)",
+          backgroundImage: "linear-gradient(143deg, #0c0c0d 23%, #222224)",
         });
 
         gsap.to(`.swiper-card-${index} .swiper-number`, {

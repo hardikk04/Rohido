@@ -1,0 +1,54 @@
+import { useEffect, useState } from "react";
+import gsap from "gsap";
+
+const ServiceElem = ({ title, index }) => {
+  const [isToggled, setisToggled] = useState(true);
+  return (
+    <div className="w-full px-[3vw] py-[2vw]">
+      <div className={`service-elem-${index} h-[3vw] overflow-hidden`}>
+        <div className="flex justify-between items-center">
+          <h3>{title}</h3>
+          <i
+            onClick={() => {
+              if (isToggled) {
+                gsap.to(`.serive-plus-${index}`, {
+                  rotate: "360deg",
+                  ease: "power1.inOut",
+                });
+
+                gsap.to(`.service-elem-${index}`, {
+                  height: "10vw",
+                });
+
+                setisToggled((prev) => !prev);
+              } else {
+                gsap.to(`.serive-plus-${index}`, {
+                  rotate: "45deg",
+                  ease: "power1.inOut",
+                });
+
+                gsap.to(`.service-elem-${index}`, {
+                  height: "3vw",
+                });
+                setisToggled((prev) => !prev);
+              }
+            }}
+            className={`serive-plus-${index} cursor-pointer ri-close-large-fill text-[2vw] rotate-[45deg]`}
+          ></i>
+        </div>
+        <div className="mt-[2vw]">
+          <p className="thin">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cum ea,
+            consectetur repellat cumque animi quisquam veniam! Corporis
+            quibusdam incidunt cumque delectus officiis assumenda tempore ut
+            corrupti et vitae at, doloribus dolore architecto sunt vero tenetur
+            non eius aliquam recusandae eveniet id itaque exercitationem sed!
+            Sed debitis magni repellendus est veniam?
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default ServiceElem;

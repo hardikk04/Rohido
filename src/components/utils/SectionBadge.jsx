@@ -1,9 +1,15 @@
 import React from "react";
 
-const TransformationBadge = ({ text, c = "" }) => {
-  return (
+const TransformationBadge = ({ text, c = "", mail = false }) => {
+  return mail ? (
     <div
       className={`${c} flex items-center w-fit space-x-2 px-4 py-2 bg-gradient-to-r from-red-500 to-black rounded-full text-white`}
+    >
+      <a href={`mailto:${text}`}>{text}</a>
+    </div>
+  ) : (
+    <div
+      className={`${c} whitespace-nowrap flex items-center w-fit space-x-2 px-4 py-2 bg-gradient-to-r from-red-500 to-black rounded-full text-white`}
     >
       <span>{text}</span>
     </div>

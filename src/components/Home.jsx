@@ -121,8 +121,8 @@ const Home = () => {
       });
 
     gsap.to(".half-circle", {
-      borderTopLeftRadius: "25vw",
-      borderTopRightRadius: "25vw",
+      borderTopLeftRadius: "0vw",
+      borderTopRightRadius: "0vw",
       scrollTrigger: {
         scroller: "body",
         trigger: ".half-circle",
@@ -356,14 +356,36 @@ const Home = () => {
   return (
     <>
       <div className="main text-white regular relative z-[1]">
-        <section className="bg-black home-start pt-[12vw]  w-full">
+        <section
+          onMouseMove={(dets) => {
+            gsap.to(".mouse-follower", {
+              left: dets.clientX,
+              top: dets.clientY,
+              delay: 0.1,
+            });
+          }}
+          className="bg-black home-start pt-[12vw] w-full relative overflow-hidden"
+        >
+          <div className="mouse-follower pointer-events-none fixed top-0 left-0 scale-0 h-[2vh] w-[2vh] bg-white rounded-full"></div>
           <Nav></Nav>
           <div className="home-hero h-full w-full flex flex-col items-center justify-center ">
             <SectionBadge
               c="home-badge"
               text="From design to development 🚀"
             ></SectionBadge>
-            <div className="home-heading text-white leading-[1.2] text-center mb-[2vw]">
+            <div
+              onMouseEnter={() => {
+                gsap.to(".mouse-follower", {
+                  scale: 10,
+                });
+              }}
+              onMouseLeave={() => {
+                gsap.to(".mouse-follower", {
+                  scale: 0,
+                });
+              }}
+              className="home-heading text-white mix-blend-difference leading-[1.2] text-center mb-[2vw]"
+            >
               <div className="home-heading1 overflow-hidden pb-[.5vw]">
                 <h1>Transforming ideas into</h1>
               </div>
@@ -371,12 +393,12 @@ const Home = () => {
                 <h1>Impactful websites</h1>
               </div>
             </div>
-            <p className="opacity-70 light">
+            <p className="opacity-70 light mix-blend-difference">
               Empowering your business through an expertly developed website.
             </p>
             <div className="mt-[3vw]">
               <WhiteButton
-                c="home-btn"
+                c="home-btn mix-blend-difference"
                 text="Book a call"
                 icon={<i className="ri-arrow-right-s-line font-[600]"></i>}
               ></WhiteButton>
@@ -386,7 +408,7 @@ const Home = () => {
         <section className="bg-black home-about relative w-full overflow-hidden flex flex-col gap-[8vw] items-center pt-[16vw] pb-[8vw]">
           <div
             style={{ boxShadow: "0px 0px 100px red" }}
-            className="half-circle pointer-events-none absolute w-full flex flex-col items-center h-full scale-x-[1.2] border-white/30 border-[3px] rounded-t-[60vw] top-[10%]"
+            className="half-circle pointer-events-none absolute w-full flex flex-col items-center h-full scale-x-[1.5] border-white/30 border-[3px] rounded-t-[60vw] top-[10%]"
           ></div>
           <BrandSwiper></BrandSwiper>
           <div className="home-about-content w-[90%] flex gap-[3vw]">

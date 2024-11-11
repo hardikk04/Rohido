@@ -11,6 +11,7 @@ import { Routes, Route } from "react-router-dom";
 // Components imports
 import Home from "./components/Home";
 import About from "./components/About";
+import Service from "./components/Service";
 
 const App = () => {
   const lenisJS = () => {
@@ -35,6 +36,7 @@ const App = () => {
     <Routes>
       <Route path="/" element={<Home />}></Route>
       <Route path="/about" element={<About />}></Route>
+      <Route path="/service" element={<Service />}></Route>
     </Routes>
   );
 };
