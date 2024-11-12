@@ -194,7 +194,7 @@ const Service = () => {
           </div>
         </div>
       </section>
-      <section className="bg-black home-clients w-full">
+      <section className="bg-black service-clients w-full">
         <div className="clientes-title text-center flex flex-col items-center">
           <SectionBadge
             c="clientes-badge"
@@ -241,7 +241,7 @@ const Service = () => {
           </div>
         </div>
       </section>
-      <section className="bg-black home-contact pb-[6vw]">
+      <section className="bg-black service-contact pb-[6vw]">
         <ScrollerX></ScrollerX>
         <div className="w-full flex justify-center">
           <div className="w-[90%] flex justify-between">
