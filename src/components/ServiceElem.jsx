@@ -11,6 +11,13 @@ const ServiceElem = ({ title, index }) => {
           <i
             onClick={() => {
               if (isToggled) {
+                for (let i = 0; i < 4; i++) {
+                  if (index !== i) {
+                    gsap.to(`.service-elem-${i}`, {
+                      height: "3vw",
+                    });
+                  }
+                }
                 gsap.to(`.serive-plus-${index}`, {
                   rotate: "360deg",
                   ease: "power1.inOut",
@@ -33,7 +40,7 @@ const ServiceElem = ({ title, index }) => {
                 setisToggled((prev) => !prev);
               }
             }}
-            className={`serive-plus-${index} cursor-pointer ri-close-large-fill text-[2vw] rotate-[45deg]`}
+            className={`serive-plus-${index} serive-pluses cursor-pointer ri-close-large-fill text-[2vw] rotate-[45deg]`}
           ></i>
         </div>
         <div className="mt-[2vw]">

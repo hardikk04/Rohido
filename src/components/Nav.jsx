@@ -7,10 +7,10 @@ const Nav = () => {
   const [flag, setFlag] = useState(true);
 
   return (
-    <div className="fixed z-50 nav left-[50%] top-[2%] -translate-x-[50%] w-[95%] bg-white/5 rounded-[1.5vw] flex justify-between items-center px-[1.5vw] py-[1vw] border border-[#ffffff20] border-solid">
+    <div className="fixed backdrop-blur z-50 nav left-[50%] top-[2%] -translate-x-[50%] w-[95%] bg-white/5 rounded-[1.5vw] flex justify-between items-center px-[1.5vw] py-[1vw] border border-[#ffffff20] border-solid">
       <div className="nav-left">
         <Link to="/">
-        <img src="/images/main-logo.png" alt="" />
+          <img src="/images/main-logo.png" alt="" />
         </Link>
       </div>
       <div
@@ -33,7 +33,7 @@ const Nav = () => {
       >
         <BlackButton text="Menu"></BlackButton>
       </div>
-      <div className="menu pointer-events-none opacity-0 absolute right-0 top-[105%] border-[2px] border-white/30 p-[1.5vw] flex flex-col gap-[1.5vw] rounded-xl">
+      <div className="menu text-white pointer-events-none opacity-0 absolute right-0 top-[105%] border-[2px] border-white/30 p-[1.5vw] flex flex-col gap-[1.5vw] rounded-xl">
         <Link to="/">
           <div
             onMouseEnter={() => {
@@ -94,7 +94,7 @@ const Nav = () => {
             <h3 className="opacity-70">Services</h3>
           </div>
         </Link>
-        <Link>
+        <Link to="/contact">
           <div
             onMouseEnter={() => {
               gsap.to(".contact-h3 h3", {

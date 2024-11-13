@@ -1,29 +1,31 @@
+// Libraries imports
 import gsap from "gsap";
-import Nav from "./Nav";
+
+// Components imports
 import BrandSwiper from "./BrandSwiper";
 import ExperienceBox from "./ExperienceBox";
-import AboutCard from "./AboutCard";
-import { useState } from "react";
+import ClientReviewSection from "./ClientReviewSection";
+import ContactSection from "./ContactSection";
+import Footer from "./Footer";
+
+import { useGSAP } from "@gsap/react";
 
 const About = () => {
-  const [aboutCard, setAboutCard] = useState([
-    {
-      title: "Consultation:",
-      para: "We begin by understanding your business objectives, target people, and special requirements through in-depth consultations.",
-    },
-    {
-      title: "Design and Development:",
-      para: "Our exceptional team of developers and designers works collaboratively to bring your vision to life, building dazzling websites that are both visually engaging and profoundly functional.",
-    },
-    {
-      title: "Feedback and Modifications:",
-      para: "We value your input and effectively look for feedback throughout the design plan and development process, making corrections as required to guarantee your complete satisfaction.",
-    },
-    {
-      title: "Launch and Optimization:",
-      para: "Once your business site is ready, we'll offer assistance as you launch it to the world and proceed to screen and optimize its performance for maximum results.",
-    },
-  ]);
+  useGSAP(() => {
+    gsap.to(".service-elem", {
+      width: "47%",
+      backgroundImage: "linear-gradient(42deg, #000, #fe4a2e24)",
+      stagger: 0.1,
+      scrollTrigger: {
+        scroller: "body",
+        trigger: ".service-elem",
+        start: "top 100%",
+        end: "top 30%",
+        // markers: true,
+        scrub: 1,
+      },
+    });
+  });
 
   return (
     <div className="main text-white regular relative z-[1]">
@@ -37,9 +39,19 @@ const About = () => {
         }}
         className="bg-black pt-[12vw] service-start w-full relative overflow-hidden"
       >
+        <img
+          className="absolute about-img h-[50vw] top-0 left-0 pointer-events-none rotate-180"
+          src="/images/Star2.png"
+          alt=""
+        />
+        <img
+          className="absolute about-img h-[50vw] top-[10%] right-0 pointer-events-none rotate-0"
+          src="/images/Star2.png"
+          alt=""
+        />
         <div className="mouse-follower z-[1] pointer-events-none fixed top-0 left-0 scale-0 h-[2vh] w-[2vh] bg-white rounded-full"></div>
-        <Nav></Nav>
-        <div className="service-hero h-full w-full flex flex-col items-center justify-center ">
+
+        <div className="service-hero relative h-full w-full flex flex-col items-center justify-center ">
           <div
             onMouseEnter={() => {
               gsap.to(".mouse-follower", {
@@ -60,13 +72,15 @@ const About = () => {
               <h1>Your Business To Grow</h1>
             </div>
             <div className="w-full flex justify-center py-[3vw] pt-[8vw]">
-              <BrandSwiper></BrandSwiper>
+              <div className="w-[70%]">
+                <BrandSwiper></BrandSwiper>
+              </div>
             </div>
           </div>
         </div>
       </section>
-      <section className="bg-black relative w-full overflow-hidden flex flex-col gap-[8vw] items-center py-[8vw]">
-        <div className="about-content w-[90%] flex gap-[3vw]">
+      <section className="bg-black relative w-full overflow-hidden flex flex-col items-center py-[8vw]">
+        <div className="about-content w-[95%] flex gap-[3vw]">
           <div className="w-full relative p-[1vw] pb-0 text-white flex overflow-hidden rounded-xl flex-col justify-between gap-[8vw]">
             <img
               className="object-cover absolute top-0 left-0 rotate-180 pointer-events-none"
@@ -109,31 +123,30 @@ const About = () => {
                     unparalleled support each step of the way.
                   </p>
                 </div>
-
-                <div className="w-full flex justify-between gap-[2vw] border-[2px] border-white/20 p-[2vw] rounded-xl">
-                  {[
-                    { title: "Exp.", number: "4yrs+" },
-                    { title: "Industry", number: "12+" },
-                    { title: "Projects", number: "150+" },
-                    { title: "Review", number: "53+" },
-                  ].map((item, index) => {
-                    return (
-                      <ExperienceBox
-                        key={index}
-                        title={item.title}
-                        number={item.number}
-                      ></ExperienceBox>
-                    );
-                  })}
-                </div>
               </div>
+            </div>
+            <div className="w-full flex justify-between gap-[2vw] border-[2px] border-white/20 p-[2vw] rounded-xl">
+              {[
+                { title: "Exp.", number: "4yrs+" },
+                { title: "Industry", number: "12+" },
+                { title: "Projects", number: "150+" },
+                { title: "Review", number: "53+" },
+              ].map((item, index) => {
+                return (
+                  <ExperienceBox
+                    key={index}
+                    title={item.title}
+                    number={item.number}
+                  ></ExperienceBox>
+                );
+              })}
             </div>
           </div>
         </div>
       </section>
-      <section className="bg-black relative w-full overflow-hidden flex flex-col gap-[8vw] items-center py-[2vw]">
-        <div className="about-content w-[90%] flex gap-[3vw]">
-          <div className="w-full relative p-[1vw] pb-0 text-white flex overflow-hidden rounded-xl flex-col justify-between gap-[8vw]">
+      <section className="bg-black relative w-full overflow-hidden flex flex-col gap-[8vw] items-center py-[2vw] pb-[14vw]">
+        <div className="about-content w-[95%] flex gap-[3vw]">
+          <div className="w-full service-elem relative shrink-0 p-[1vw] pb-0 text-white flex overflow-hidden rounded-xl flex-col justify-between gap-[8vw]">
             <div className="flex gap-[1vw] relative z-[1]">
               <img
                 className="object-cover h-[3vw]"
@@ -144,7 +157,7 @@ const About = () => {
                 <div className="mb-[2vw]">
                   <h6>Our Vision</h6>
                 </div>
-                <div className="flex flex-col gap-[2vw] mb-[10vw]">
+                <div className="flex flex-col gap-[2vw] w-[36vw]">
                   <p className="opacity-80 light">
                     Inspired by a flower from Rajasthan, India, Rohido Media,
                     our studio embodies quality and diligence. We are steadfast
@@ -162,11 +175,7 @@ const About = () => {
               </div>
             </div>
           </div>
-        </div>
-      </section>
-      <section className="bg-black relative w-full overflow-hidden flex flex-col gap-[8vw] items-center">
-        <div className="about-content w-[90%] flex gap-[3vw]">
-          <div className="w-full relative p-[1vw] pb-0 text-white flex overflow-hidden rounded-xl flex-col justify-between gap-[8vw]">
+          <div className="w-full service-elem relative shrink-0 p-[1vw] pb-0 text-white flex overflow-hidden rounded-xl flex-col justify-between gap-[8vw]">
             <div className="flex gap-[1vw] relative z-[1]">
               <img
                 className="object-cover h-[3vw]"
@@ -177,7 +186,7 @@ const About = () => {
                 <div className="mb-[2vw]">
                   <h6>Our Mission</h6>
                 </div>
-                <div className="flex flex-col gap-[2vw] mb-[10vw]">
+                <div className="flex flex-col gap-[2vw] w-[36vw]">
                   <p className="opacity-80 light">
                     Driven by an entrepreneurial spirit, our mission is to impel
                     your success with expertly made-websites that engage
@@ -191,18 +200,11 @@ const About = () => {
           </div>
         </div>
       </section>
-      <section className="w-full relative bg-black">
-        <div className="flex justify-center py-[2vw] border-t border-b border-white/30">
-          <h2>How We Do That?</h2>
-        </div>
-        <div className="w-full flex justify-center py-[12vw]">
-          <div className="w-[90%] flex justify-between">
-            {aboutCard.map((data, index) => (
-              <AboutCard data={data} key={index} index={index} />
-            ))}
-          </div>
-        </div>
-      </section>
+
+      <ClientReviewSection></ClientReviewSection>
+      <ContactSection></ContactSection>
+      <section className="tranparent-footer h-[100vh] w-full pointer-events-none bg-transparent"></section>
+      <Footer></Footer>
     </div>
   );
 };

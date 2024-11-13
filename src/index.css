@@ -87,7 +87,6 @@ body::-webkit-scrollbar-track {
 
 body::-webkit-scrollbar-thumb {
   background-color: rgba(0, 0, 0, 0.5);
-
   border-radius: 3px;
 }
 
@@ -171,6 +170,34 @@ input[type="number"] {
   -moz-appearance: textfield;
 }
 
+.white-btn::after {
+  content: "";
+  position: absolute;
+  top: 0%;
+  transform: translateY(100%);
+  left: 0;
+  height: 100%;
+  width: 100%;
+  scale: 1.5;
+  z-index: -1;
+  border-radius: 50%;
+  background: #fe492e;
+  transition: all ease 0.5s;
+}
+
+.white-btn:hover::after {
+  transform: translateY(0%);
+  color: white;
+}
+
+.white-btn {
+  transition: all ease 0.5s;
+}
+
+.white-btn:hover {
+  color: white;
+}
+
 .team-card::after {
   content: "";
   position: absolute;
@@ -192,7 +219,8 @@ input[type="number"] {
   filter: grayscale(0);
 }
 
-.swiper-cards, .about-cards {
+.swiper-cards,
+.about-cards {
   background-image: linear-gradient(143deg, #0c0c0dba 23%, #222224ac);
 }
 
@@ -232,6 +260,14 @@ input[type="number"] {
   background-position: 0% 0%, 0% 0%, 100% 100%, 100% 100%;
   background-repeat: no-repeat;
   opacity: 1;
+}
+
+.about-img {
+  transform-origin: center center;
+}
+
+.service-elem {
+  background-image: linear-gradient(42deg, #000, #fe4a2e);
 }
 
 /* Home css end */

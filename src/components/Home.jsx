@@ -1,5 +1,11 @@
+// Libraries imports
+import { useGSAP } from "@gsap/react";
+import { useState } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
+
 // Components imports
-import Nav from "./Nav";
 import SectionBadge from "./utils/SectionBadge";
 import WhiteButton from "./utils/WhiteButton";
 import BlackButton from "./utils/BlackButton";
@@ -8,15 +14,9 @@ import ExperienceBox from "./ExperienceBox";
 import ProjectCards from "./ProjectCards";
 import SwiperCard from "./SwiperCard";
 import TeamCards from "./TeamCards";
-import ScrollerX from "./ScrollerX";
+import ClientReviewSection from "./ClientReviewSection";
 import Footer from "./Footer";
-import { useRef, useState } from "react";
-import { useEffect } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useGSAP } from "@gsap/react";
-import ClientReviews from "./ClientReviews";
-gsap.registerPlugin(ScrollTrigger);
+import ContactSection from "./ContactSection";
 
 const Home = () => {
   const [swiperCardData, setSwiperCardData] = useState([
@@ -58,51 +58,6 @@ const Home = () => {
     },
   ]);
 
-  const [clientReviews, setClientReviews] = useState([
-    {
-      img: "images/client.png",
-      para: "We have been exceptionally happy with our website! It looks proficient and is exceptionally easy to explore. Our involvement with the customer experience has been extraordinary after the great work of Rohido Media. They handle things exceptionally productively and are accessible for any questions we have. They also keep us updated on month-to-month reports, so we know how our website is doing. Thank you for serving.",
-      name: "Vijay Raji",
-      position: "CEO, Company X",
-      isActive: true,
-    },
-    {
-      img: "images/project1.png",
-      para: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae laborum consectetur non totam dolore facere voluptas!",
-      name: "Anuj",
-      position: "XYZ",
-      isActive: false,
-    },
-    {
-      img: "images/project2.png",
-      para: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae laborum consectetur non totam dolore facere voluptas!",
-      name: "Khushi",
-      position: "CEO, Company X",
-      isActive: false,
-    },
-    {
-      img: "images/client.png",
-      para: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae laborum consectetur non totam dolore facere voluptas!",
-      name: "Rajat",
-      position: "CEO, Company X",
-      isActive: false,
-    },
-    {
-      img: "images/client.png",
-      para: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae laborum consectetur non totam dolore facere voluptas!",
-      name: "Ayush",
-      position: "CEO, Company X",
-      isActive: false,
-    },
-    {
-      img: "images/client.png",
-      para: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae laborum consectetur non totam dolore facere voluptas!",
-      name: "Chirag",
-      position: "CEO, Company X",
-      isActive: false,
-    },
-  ]);
-
   useGSAP(() => {
     const tl = gsap.timeline();
 
@@ -115,10 +70,10 @@ const Home = () => {
       })
       .from(".home-hero p", {
         opacity: 0,
-      })
-      .from(".home-btn", {
-        opacity: 0,
       });
+    // .from(".home-btn", {
+    //   opacity: 0,
+    // });
 
     gsap.to(".half-circle", {
       borderTopLeftRadius: "0vw",
@@ -133,8 +88,8 @@ const Home = () => {
       },
     });
 
-    gsap.from(".brands-swiper", {
-      width: "35%",
+    gsap.to(".brands-swiper", {
+      width: "100%",
       scrollTrigger: {
         scroller: "body",
         trigger: ".brands-swiper",
@@ -325,34 +280,6 @@ const Home = () => {
     });
   });
 
-  const clientReviewLoop = () => {
-    let activeIndex = 0;
-
-    const interval = setInterval(() => {
-      gsap.from(".client-center", {
-        opacity: 0,
-        duration: 1,
-        y: 30,
-      });
-
-      setClientReviews((prevReviews) => {
-        activeIndex = (activeIndex + 1) % clientReviews.length;
-        return prevReviews.map((review, index) => ({
-          ...review,
-          isActive: index === activeIndex,
-        }));
-      });
-    }, 3000);
-    return interval;
-  };
-
-  useEffect(() => {
-    const interval = clientReviewLoop();
-    return () => {
-      clearInterval(interval);
-    };
-  }, []);
-
   return (
     <>
       <div className="main text-white regular relative z-[1]">
@@ -367,7 +294,6 @@ const Home = () => {
           className="bg-black home-start pt-[12vw] w-full relative overflow-hidden"
         >
           <div className="mouse-follower pointer-events-none fixed top-0 left-0 scale-0 h-[2vh] w-[2vh] bg-white rounded-full"></div>
-          <Nav></Nav>
           <div className="home-hero h-full w-full flex flex-col items-center justify-center ">
             <SectionBadge
               c="home-badge"
@@ -398,7 +324,7 @@ const Home = () => {
             </p>
             <div className="mt-[3vw]">
               <WhiteButton
-                c="home-btn mix-blend-difference"
+                c="home-btn"
                 text="Book a call"
                 icon={<i className="ri-arrow-right-s-line font-[600]"></i>}
               ></WhiteButton>
@@ -408,13 +334,28 @@ const Home = () => {
         <section className="bg-black home-about relative w-full overflow-hidden flex flex-col gap-[8vw] items-center pt-[16vw] pb-[8vw]">
           <div
             style={{ boxShadow: "0px 0px 100px red" }}
-            className="half-circle pointer-events-none absolute w-full flex flex-col items-center h-full scale-x-[1.5] border-white/30 border-[3px] rounded-t-[60vw] top-[10%]"
+            className="half-circle pointer-events-none absolute w-full flex flex-col items-center h-full scale-x-[1.1] border-white/30 border-[3px] rounded-t-[60vw] top-[10%]"
           ></div>
-          <BrandSwiper></BrandSwiper>
-          <div className="home-about-content w-[90%] flex gap-[3vw]">
-            <div className="w-[70%] relative p-[1vw] pb-0 text-white flex overflow-hidden rounded-xl flex-col justify-between gap-[8vw]">
+          <div className="w-[95%] flex justify-center">
+            <BrandSwiper></BrandSwiper>
+          </div>
+          <div className="home-about-content w-[95%] flex gap-[3vw]">
+            <div
+              onMouseEnter={() => {
+                gsap.to(`.home-about-left`, {
+                  backgroundImage:
+                    "linear-gradient(to bottom right, #fe4a2e24, #000)",
+                });
+              }}
+              onMouseLeave={() => {
+                gsap.to(`.home-about-left`, {
+                  backgroundImage: "linear-gradient(0deg, #000 , #000)",
+                });
+              }}
+              className="w-[70%] home-about-left relative p-[1vw] pb-0 text-white flex overflow-hidden rounded-xl flex-col justify-between gap-[8vw]"
+            >
               <img
-                className="object-cover absolute top-0 left-0 rotate-180 pointer-events-none"
+                className="object-cover about-start absolute top-0 left-0 rotate-180 pointer-events-none"
                 src="/images/Star.png"
                 alt=""
               />
@@ -458,7 +399,7 @@ const Home = () => {
               />
               <div className="text-center px-[1vw] flex flex-col items-center relative z-[1]">
                 <h2 className="text-[#939397] bold">100+</h2>
-                <p className="opacity-70 thin w-[90%]">
+                <p className="opacity-70 thin w-[95%]">
                   Projects globally. We have helped brands from 0 to million
                   dollars within a year.
                 </p>
@@ -486,7 +427,7 @@ const Home = () => {
             </div>
           </div>
           <div className="project-card flex flex-col items-center pt-[8vw] overflow-hidden">
-            <div className="project1 w-[90%] h-[90vh] border-white/30 border-[3px] rounded-xl overflow-hidden">
+            <div className="project1 w-[95%] h-[90vh] border-white/30 border-[3px] rounded-xl overflow-hidden">
               <div className="project-card-data flex justify-between py-4 px-6">
                 <h6 className="opacity-70">Tradeuno</h6>
                 <h6 className="opacity-70">Design | Development</h6>
@@ -501,7 +442,7 @@ const Home = () => {
               </div>
             </div>
             <div className="w-full py-[4vw] flex justify-center">
-              <div className="w-[90%] gap-[3vw] flex flex-wrap justify-between">
+              <div className="w-[95%] gap-[3vw] flex flex-wrap justify-between">
                 <ProjectCards
                   c="project2"
                   title="Client XYZ"
@@ -530,7 +471,10 @@ const Home = () => {
             </div>
           </div>
           <div className="flex justify-center pb-[8vw]">
-            <WhiteButton text="I want see more"></WhiteButton>
+            <WhiteButton
+              text="Book a call"
+              icon={<i className="ri-arrow-right-s-line font-[600]"></i>}
+            ></WhiteButton>
           </div>
         </section>
         <section className="bg-black home-services h-[100vh] w-full flex flex-col justify-center">
@@ -562,7 +506,7 @@ const Home = () => {
             </div>
           </div>
           <div className="team-cards w-full pt-[4vw] flex justify-center relative z-10">
-            <div className="w-[90%]">
+            <div className="w-[95%]">
               <div className="line w-full h-[1px] bg-white/20"></div>
               <TeamCards
                 title="Clutch"
@@ -591,133 +535,8 @@ const Home = () => {
             />
           </div>
         </section>
-        <section className="bg-black home-clients w-full">
-          <div className="clientes-title text-center flex flex-col items-center">
-            <SectionBadge
-              c="clientes-badge"
-              text="Design+Development = Growth 💸"
-            ></SectionBadge>
-            <div className="clientes-heading overflow-hidden">
-              <h2>What clients say about us</h2>
-            </div>
-          </div>
-          <div className="w-full flex justify-center py-[6vw]">
-            <div className="client-container w-full px-[5vw] border-t h-[60vh] border-b border-white/30 flex justify-between">
-              <div className="client-left w-[16%] h-full">
-                <ClientReviews active={clientReviews[0].isActive} />
-                <ClientReviews active={clientReviews[1].isActive} />
-                <ClientReviews active={clientReviews[2].isActive} />
-              </div>
-              <div className="client-center w-[59%] h-full">
-                {clientReviews.map(
-                  (item, index) =>
-                    item.isActive && (
-                      <div
-                        key={index}
-                        className="w-full h-full text-center py-[2vw] px-[6vw] flex flex-col items-center justify-center"
-                      >
-                        <p className="thin">{item.para}</p>
-                        <div className="w-[3vw] h-[3vw] rounded-full overflow-hidden mt-[3vw]">
-                          <img
-                            className="h-full w-full object-cover"
-                            src={item.img}
-                            alt=""
-                          />
-                        </div>
-                        <span className="mt-2">{item.name}</span>
-                        <p className="thin opacity-70 mt-1">{item.position}</p>
-                      </div>
-                    )
-                )}
-              </div>
-              <div className="client-right w-[16%] h-full">
-                <ClientReviews active={clientReviews[3].isActive} />
-                <ClientReviews active={clientReviews[4].isActive} />
-                <ClientReviews active={clientReviews[5].isActive} />
-              </div>
-            </div>
-          </div>
-        </section>
-        <section className="bg-black home-contact pb-[6vw]">
-          <ScrollerX></ScrollerX>
-          <div className="w-full flex justify-center">
-            <div className="w-[90%] flex justify-between">
-              <div className="contact-left w-[40%] flex flex-col justify-center pb-[12vw]">
-                <div className="w-[70%]">
-                  <div className="contact-headings overflow-hidden">
-                    <h2 className="medium leading-[1.2]">Book A Call</h2>
-                  </div>
-                  <div className="contact-headings overflow-hidden">
-                    <h2 className="medium leading-[1.4]">Right Away</h2>
-                  </div>
-                  <p className="thin opacity-70 my-[2vw]">
-                    You Might have caught our idea on how we convert a plan into
-                    a functinal business.
-                  </p>
-                  <WhiteButton
-                    c="contact-btn"
-                    text="Free Consultation"
-                  ></WhiteButton>
-                </div>
-              </div>
-              <div className="contact-right relative w-[55%] rounded-xl border-[2px] b border-white/30 px-[4vw] py-[4vw] overflow-hidden">
-                <img
-                  className="absolute scale-150 object-cover"
-                  src="/images/Star2.png"
-                  alt=""
-                />
-                <div className="flex relative z-0 justify-center">
-                  <SectionBadge text="Idea + Enquiry = Execution"></SectionBadge>
-                </div>
-                <div>
-                  <h3 className="mt-[2vw]">Contact Info</h3>
-                </div>
-                <form className="relative z-10" action="">
-                  <div className="flex gap-[2vw] my-[2.5vw]">
-                    <input
-                      className="placeholder-text-black/30 text-white bg-white/10 px-[1.5vw] py-[.6vw] rounded-md outline-none"
-                      type="text"
-                      placeholder="YOUR NAME*"
-                    />
-                    <input
-                      className="placeholder-text-black/30 text-white bg-white/10 px-[1.5vw] py-[.6vw] rounded-md outline-none"
-                      type="email"
-                      placeholder="YOUR EMAIL ID*"
-                    />
-                  </div>
-                  <div>
-                    <div className="pb-[1vw]">
-                      <h3>Project You Are Interested In</h3>
-                    </div>
-                    <div className="flex mt-[1vw] flex-wrap gap-[1vw]">
-                      <BlackButton text="Web Design"></BlackButton>
-                      <BlackButton text="Web Development"></BlackButton>
-                      <BlackButton text="UI/UX"></BlackButton>
-                      <BlackButton text="App Development"></BlackButton>
-                      <BlackButton text="Landing Page"></BlackButton>
-                      <BlackButton text="E-Commerce Development"></BlackButton>
-                      <BlackButton text="CMS Development"></BlackButton>
-                    </div>
-                  </div>
-                  <div className="flex gap-[2vw] my-[2.5vw]">
-                    <input
-                      className="placeholder-text-black/30 text-white bg-white/10 px-[1.5vw] py-[.6vw] rounded-md outline-none"
-                      type="number"
-                      placeholder="YOUR NAME BUDGET*"
-                    />
-                    <input
-                      className="placeholder-text-black/30 text-white bg-white/10 px-[1.5vw] py-[.6vw] rounded-md outline-none"
-                      type="text"
-                      placeholder="MESSAGE*"
-                    />
-                  </div>
-
-                  <WhiteButton text="Let's Work"></WhiteButton>
-                </form>
-              </div>
-            </div>
-          </div>
-        </section>
+        <ClientReviewSection />
+        <ContactSection />
         <section className="tranparent-footer h-[100vh] w-full pointer-events-none bg-transparent"></section>
         <Footer></Footer>
       </div>
