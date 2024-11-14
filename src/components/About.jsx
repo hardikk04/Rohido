@@ -1,5 +1,6 @@
 // Libraries imports
 import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 // Components imports
 import BrandSwiper from "./BrandSwiper";
@@ -7,8 +8,6 @@ import ExperienceBox from "./ExperienceBox";
 import ClientReviewSection from "./ClientReviewSection";
 import ContactSection from "./ContactSection";
 import Footer from "./Footer";
-
-import { useGSAP } from "@gsap/react";
 
 const About = () => {
   useGSAP(() => {
@@ -25,6 +24,50 @@ const About = () => {
         scrub: 1,
       },
     });
+
+    gsap.from(".about-heading h1", {
+      transform: "translateY(100%)",
+      stagger: 0.1,
+    });
+
+    gsap.from(".brands-swiper", {
+      width: "20%",
+      duration: 0.5,
+      ease: "power1.inOut",
+    });
+
+    gsap.from(".clientes-badge", {
+      opacity: 0,
+      scrollTrigger: {
+        scroller: "body",
+        trigger: ".clientes-title",
+        start: "top 80%",
+        end: "top 80%",
+        // markers: true,
+      },
+    });
+
+    gsap.from(".clientes-heading h2", {
+      transform: "translateY(100%)",
+      scrollTrigger: {
+        scroller: "body",
+        trigger: ".clientes-title",
+        start: "top 70%",
+        end: "top 70%",
+        // markers: true,
+      },
+    });
+
+    gsap.from(".contact-headings h2", {
+      transform: "translateY(100%)",
+      scrollTrigger: {
+        scroller: "body",
+        trigger: ".contact-headings",
+        start: "top 80%",
+        end: "top 80%",
+        // markers: true,
+      },
+    });
   });
 
   return (
@@ -37,7 +80,7 @@ const About = () => {
             delay: 0.1,
           });
         }}
-        className="bg-black pt-[12vw] service-start w-full relative overflow-hidden"
+        className="bg-black pt-[12vw] about-start w-full relative overflow-hidden"
       >
         <img
           className="absolute about-img h-[50vw] top-0 left-0 pointer-events-none rotate-180"
@@ -51,7 +94,7 @@ const About = () => {
         />
         <div className="mouse-follower z-[1] pointer-events-none fixed top-0 left-0 scale-0 h-[2vh] w-[2vh] bg-white rounded-full"></div>
 
-        <div className="service-hero relative h-full w-full flex flex-col items-center justify-center ">
+        <div className="about-hero relative h-full w-full flex flex-col items-center justify-center ">
           <div
             onMouseEnter={() => {
               gsap.to(".mouse-follower", {
@@ -63,16 +106,16 @@ const About = () => {
                 scale: 0,
               });
             }}
-            className="service-heading relative z-[1] text-white mix-blend-difference leading-[1.2] text-center mb-[2vw]"
+            className="about-heading relative z-[1] text-white mix-blend-difference leading-[1.2] text-center mb-[2vw]"
           >
-            <div className="service-heading1 overflow-hidden">
+            <div className="about-heading1 overflow-hidden">
               <h1>Let Rohido Media help</h1>
             </div>
-            <div className="service-heading2 overflow-hidden pb-[.5vw]">
+            <div className="about-heading2 overflow-hidden pb-[.5vw]">
               <h1>Your Business To Grow</h1>
             </div>
             <div className="w-full flex justify-center py-[3vw] pt-[8vw]">
-              <div className="w-[70%]">
+              <div className="w-[70%] flex justify-center">
                 <BrandSwiper></BrandSwiper>
               </div>
             </div>
@@ -80,8 +123,21 @@ const About = () => {
         </div>
       </section>
       <section className="bg-black relative w-full overflow-hidden flex flex-col items-center py-[8vw]">
-        <div className="about-content w-[95%] flex gap-[3vw]">
-          <div className="w-full relative p-[1vw] pb-0 text-white flex overflow-hidden rounded-xl flex-col justify-between gap-[8vw]">
+        <div
+          onMouseEnter={() => {
+            gsap.to(`.about-content`, {
+              backgroundImage:
+                "linear-gradient(to bottom right, #fe4a2e24, #000)",
+            });
+          }}
+          onMouseLeave={() => {
+            gsap.to(`.about-content`, {
+              backgroundImage: "linear-gradient(0deg, #000 , #000)",
+            });
+          }}
+          className="about-content w-[95%] flex gap-[3vw]"
+        >
+          <div className="w-full relative p-[1vw] pb-0 text-white flex overflow-hidden rounded-xl flex-col justify-between">
             <img
               className="object-cover absolute top-0 left-0 rotate-180 pointer-events-none"
               src="/images/Star.png"
@@ -99,7 +155,7 @@ const About = () => {
                   <h6>THE INCEPTION</h6>
                   <span>(2020 - nowadays)</span>
                 </div>
-                <div className="flex flex-col gap-[2vw] mb-[10vw]">
+                <div className="flex flex-col gap-[2vw] mb-[6vw]">
                   <p className="opacity-80 light">
                     At Rohido Media, established in 2020, we're enthusiastic
                     about creating cutting-edge, advanced, dynamic websites with

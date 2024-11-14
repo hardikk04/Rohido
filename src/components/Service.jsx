@@ -1,6 +1,7 @@
 // Libraries imports
 import gsap from "gsap";
 import { useState } from "react";
+import { useGSAP } from "@gsap/react";
 
 // Components imports
 import SectionBadge from "./utils/SectionBadge";
@@ -29,6 +30,103 @@ const Service = () => {
       para: "Once your business site is ready, we'll offer assistance as you launch it to the world and proceed to screen and optimize its performance for maximum results.",
     },
   ]);
+
+  useGSAP(() => {
+    gsap.from(".service-heading h1", {
+      transform: "translateY(100%)",
+      stagger: 0.1,
+    });
+
+    gsap.from(".services-badge", {
+      opacity: 0,
+      scrollTrigger: {
+        scroller: "body",
+        trigger: ".services-title",
+        start: "top 80%",
+        end: "top 80%",
+        // markers: true,
+      },
+    });
+
+    gsap.from(".services-head h2", {
+      transform: "translateY(100%)",
+      scrollTrigger: {
+        scroller: "body",
+        trigger: ".services-title",
+        start: "top 70%",
+        end: "top 70%",
+        // markers: true,
+      },
+    });
+
+    gsap.from(".help-badge", {
+      opacity: 0,
+      scrollTrigger: {
+        scroller: "body",
+        trigger: ".help-left",
+        start: "top 80%",
+        end: "top 80%",
+        // markers: true,
+      },
+    });
+
+    gsap.from(".help-heading h2", {
+      transform: "translateY(100%)",
+      scrollTrigger: {
+        scroller: "body",
+        trigger: ".help-left",
+        start: "top 70%",
+        end: "top 70%",
+        // markers: true,
+      },
+    });
+
+    gsap.from(".service-cards", {
+      transform: "translateY(50%)",
+      opacity: 0,
+      stagger: 0.1,
+      scrollTrigger: {
+        scroller: "body",
+        trigger: ".service-cards-elem",
+        start: "top 70%",
+        end: "top 70%",
+        // markers: true,
+      },
+    });
+
+    gsap.from(".clientes-badge", {
+      opacity: 0,
+      scrollTrigger: {
+        scroller: "body",
+        trigger: ".clientes-title",
+        start: "top 80%",
+        end: "top 80%",
+        // markers: true,
+      },
+    });
+
+    gsap.from(".clientes-heading h2", {
+      transform: "translateY(100%)",
+      scrollTrigger: {
+        scroller: "body",
+        trigger: ".clientes-title",
+        start: "top 70%",
+        end: "top 70%",
+        // markers: true,
+      },
+    });
+
+    gsap.from(".contact-headings h2", {
+      transform: "translateY(100%)",
+      scrollTrigger: {
+        scroller: "body",
+        trigger: ".contact-headings",
+        start: "top 80%",
+        end: "top 80%",
+        // markers: true,
+      },
+    });
+  });
 
   return (
     <div className="main text-white regular relative z-[1]">
@@ -76,10 +174,10 @@ const Service = () => {
         <div className="w-full">
           <div className="services-title text-center flex flex-col items-center">
             <SectionBadge
-              c="project-badge"
+              c="services-badge"
               text="Problem Solving + Creativity = Innovation"
             ></SectionBadge>
-            <div className="project-head overflow-hidden">
+            <div className="services-head overflow-hidden">
               <h2>Services that we provide</h2>
             </div>
           </div>
@@ -101,8 +199,11 @@ const Service = () => {
       <section className="w-full flex justify-center bg-black pb-[6vw]">
         <div className="service-help w-[95%] flex justify-between">
           <div className="help-left w-[56%]">
-            <SectionBadge c="thin" text="What we offer : "></SectionBadge>
-            <div className="py-[2vw]">
+            <SectionBadge
+              c="thin help-badge"
+              text="What we offer : "
+            ></SectionBadge>
+            <div className="my-[1vw] help-heading overflow-hidden">
               <h2>How we help you</h2>
             </div>
             <p className="thin">
@@ -145,7 +246,7 @@ const Service = () => {
           <h2>How We Do That?</h2>
         </div>
         <div className="w-full flex justify-center py-[12vw]">
-          <div className="w-[95%] flex justify-between">
+          <div className="w-[95%] service-cards-elem flex justify-between">
             {aboutCard.map((data, index) => (
               <AboutCard data={data} key={index} index={index} />
             ))}
