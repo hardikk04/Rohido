@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useGSAP } from "@gsap/react";
 
 // Components imports
+import Nav from "./Nav";
 import SectionBadge from "./utils/SectionBadge";
 import ServiceElem from "./ServiceElem";
 import AboutCard from "./AboutCard";
@@ -140,6 +141,7 @@ const Service = () => {
         }}
         className="bg-black service-start pt-[12vw] w-full relative overflow-hidden"
       >
+        <Nav></Nav>
         <div className="mouse-follower z-[1] pointer-events-none fixed top-0 left-0 scale-0 h-[2vh] w-[2vh] bg-white rounded-full"></div>
 
         <div className="service-hero h-full w-full flex flex-col items-center justify-center ">

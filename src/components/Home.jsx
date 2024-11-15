@@ -1,11 +1,12 @@
 // Libraries imports
 import { useGSAP } from "@gsap/react";
-import { useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 // Components imports
+import Nav from "./Nav";
 import SectionBadge from "./utils/SectionBadge";
 import WhiteButton from "./utils/WhiteButton";
 import BlackButton from "./utils/BlackButton";
@@ -17,6 +18,8 @@ import TeamCards from "./TeamCards";
 import ClientReviewSection from "./ClientReviewSection";
 import Footer from "./Footer";
 import ContactSection from "./ContactSection";
+import EmergingImage from "./EmergingImage";
+import Scene from "../Scene";
 
 const Home = () => {
   const [swiperCardData, setSwiperCardData] = useState([
@@ -283,6 +286,7 @@ const Home = () => {
   return (
     <>
       <div className="main text-white regular relative z-[1]">
+        <Scene />
         <section
           onMouseMove={(dets) => {
             gsap.to(".mouse-follower", {
@@ -293,6 +297,8 @@ const Home = () => {
           }}
           className="bg-black home-start pt-[12vw] w-full relative overflow-hidden"
         >
+          <Nav />
+
           <div className="mouse-follower pointer-events-none fixed top-0 left-0 scale-0 h-[2vh] w-[2vh] bg-white rounded-full"></div>
           <div className="home-hero h-full w-full flex flex-col items-center justify-center ">
             <SectionBadge
@@ -428,16 +434,17 @@ const Home = () => {
           </div>
           <div className="project-card flex flex-col items-center pt-[8vw] overflow-hidden">
             <div className="project1 w-[95%] h-[90vh] border-white/30 border-[3px] rounded-xl overflow-hidden">
-              <div className="project-card-data flex justify-between py-4 px-6">
+              <div className="project-card-data h-[8%] flex justify-between py-4 px-6">
                 <h6 className="opacity-70">Tradeuno</h6>
                 <h6 className="opacity-70">Design | Development</h6>
               </div>
-              <div className="project-card-img relative w-full rounded-xl overflow-hidden">
-                <img
-                  className="w-full h-full object-cover"
-                  src="/images/project1.png"
-                  alt=""
+              <div className="project-card-img h-[92%] relative w-full rounded-xl overflow-hidden grid place-items-center aspect-[1.3]">
+                <EmergingImage
+                  type={2}
+                  url="./images/project1.png"
+                  className="w-full h-full bg-center bg-cover"
                 />
+
                 <div className="absolute top-0 left-0 h-full w-full z-10 bg-black/20"></div>
               </div>
             </div>

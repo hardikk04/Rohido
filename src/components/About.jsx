@@ -3,6 +3,7 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 
 // Components imports
+import Nav from "./Nav";
 import BrandSwiper from "./BrandSwiper";
 import ExperienceBox from "./ExperienceBox";
 import ClientReviewSection from "./ClientReviewSection";
@@ -82,6 +83,7 @@ const About = () => {
         }}
         className="bg-black pt-[12vw] about-start w-full relative overflow-hidden"
       >
+        <Nav></Nav>
         <img
           className="absolute about-img h-[50vw] top-0 left-0 pointer-events-none rotate-180"
           src="/images/Star2.png"

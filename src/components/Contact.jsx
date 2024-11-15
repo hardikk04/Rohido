@@ -1,4 +1,6 @@
 import gsap from "gsap";
+
+import Nav from "./Nav";
 import Footer from "./Footer";
 import ContactSection from "./ContactSection";
 
@@ -15,6 +17,7 @@ const Contact = () => {
         }}
         className="bg-black h-[100vh] service-start w-full relative overflow-hidden"
       >
+        <Nav></Nav>
         <img
           className="absolute about-img h-[50vw] top-0 left-0 pointer-events-none rotate-180"
           src="/images/Star2.png"
