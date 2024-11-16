@@ -236,7 +236,7 @@ const Service = () => {
           </div>
           <div className="help-right w-[38%] h-full">
             <img
-              className="h-full w-full object-cover"
+              className="h-full w-full object-cover "
               src="/images/services-network.png"
               alt=""
             />

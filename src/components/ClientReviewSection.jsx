@@ -1,6 +1,6 @@
 // Libraries imports
-import { useState, useEffect } from "react";
 import gsap from "gsap";
+import { useState, useEffect, useRef } from "react";
 
 // Components imports
 import SectionBadge from "./utils/SectionBadge";
@@ -52,31 +52,55 @@ const ClientReviewSection = () => {
     },
   ]);
 
-  const clientReviewLoop = () => {
-    let activeIndex = 0;
+  const activeIndexRef = useRef(0);
 
+  const clientReviewLoop = () => {
     const interval = setInterval(() => {
       gsap.from(".client-center", {
         opacity: 0,
-        duration: 1,
+        duration: 0.5,
         y: 30,
       });
 
       setClientReviews((prevReviews) => {
-        activeIndex = (activeIndex + 1) % clientReviews.length;
+        activeIndexRef.current =
+          (activeIndexRef.current + 1) % clientReviews.length;
         return prevReviews.map((review, index) => ({
           ...review,
-          isActive: index === activeIndex,
+          isActive: index === activeIndexRef.current,
         }));
       });
     }, 3000);
     return interval;
   };
 
+  const intervalRef = useRef(null);
+
+  const mouseEnterHandler = (e) => {
+    activeIndexRef.current = e;
+    setClientReviews((prev) => {
+      return prev.map((review, i) => {
+        if (e === i) {
+          if (intervalRef.current) {
+            clearInterval(intervalRef.current);
+          }
+          gsap.from(".client-center", {
+            opacity: 0,
+            duration: 0.5,
+            y: 30,
+          });
+          return { ...review, isActive: true };
+        }
+        return { ...review, isActive: false };
+      });
+    });
+  };
+
   useEffect(() => {
-    const interval = clientReviewLoop();
+    intervalRef.current = clientReviewLoop();
+
     return () => {
-      clearInterval(interval);
+      clearInterval(intervalRef.current);
     };
   }, []);
 
@@ -94,9 +118,27 @@ const ClientReviewSection = () => {
       <div className="w-full flex justify-center py-[6vw]">
         <div className="client-container w-full px-[5vw] border-t h-[60vh] border-b border-white/30 flex justify-between">
           <div className="client-left w-[16%] h-full">
-            <ClientReviews active={clientReviews[0].isActive} />
-            <ClientReviews active={clientReviews[1].isActive} />
-            <ClientReviews active={clientReviews[2].isActive} />
+            <ClientReviews
+              index="0"
+              fnEnter={() => mouseEnterHandler(0)}
+              fnLeave={() => clientReviewLoop()}
+              refLoop={intervalRef}
+              active={clientReviews[0].isActive}
+            />
+            <ClientReviews
+              index="1"
+              fnEnter={() => mouseEnterHandler(1)}
+              fnLeave={() => clientReviewLoop()}
+              refLoop={intervalRef}
+              active={clientReviews[1].isActive}
+            />
+            <ClientReviews
+              index="2"
+              fnEnter={() => mouseEnterHandler(2)}
+              fnLeave={() => clientReviewLoop()}
+              refLoop={intervalRef}
+              active={clientReviews[2].isActive}
+            />
           </div>
           <div className="client-center w-[59%] h-full">
             {clientReviews.map(
@@ -121,9 +163,27 @@ const ClientReviewSection = () => {
             )}
           </div>
           <div className="client-right w-[16%] h-full">
-            <ClientReviews active={clientReviews[3].isActive} />
-            <ClientReviews active={clientReviews[4].isActive} />
-            <ClientReviews active={clientReviews[5].isActive} />
+            <ClientReviews
+              index="3"
+              fnEnter={() => mouseEnterHandler(3)}
+              fnLeave={() => clientReviewLoop()}
+              refLoop={intervalRef}
+              active={clientReviews[3].isActive}
+            />
+            <ClientReviews
+              index="4"
+              fnEnter={() => mouseEnterHandler(4)}
+              fnLeave={() => clientReviewLoop()}
+              refLoop={intervalRef}
+              active={clientReviews[4].isActive}
+            />
+            <ClientReviews
+              index="5"
+              fnEnter={() => mouseEnterHandler(5)}
+              fnLeave={() => clientReviewLoop()}
+              refLoop={intervalRef}
+              active={clientReviews[5].isActive}
+            />
           </div>
         </div>
       </div>

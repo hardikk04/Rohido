@@ -1,5 +1,6 @@
 // Libraries imports
 import gsap from "gsap";
+import { useForm } from "react-hook-form";
 
 // Components imports
 import ScrollerX from "./ScrollerX";
@@ -8,6 +9,8 @@ import SectionBadge from "./utils/SectionBadge";
 import BlackButton from "./utils/BlackButton";
 
 const ContactSection = () => {
+  const { register, handleSubmit, reset } = useForm();
+
   return (
     <section className="bg-black contact-section pb-[6vw]">
       <ScrollerX></ScrollerX>
@@ -43,9 +46,17 @@ const ContactSection = () => {
             <div>
               <h3 className="mt-[2vw]">Contact Info</h3>
             </div>
-            <form className="relative z-10" action="">
+            <form
+              onSubmit={handleSubmit((data) => {
+                console.log(data);
+                reset();
+              })}
+              className="relative z-10"
+              action=""
+            >
               <div className="flex gap-[2vw] my-[2.5vw]">
                 <input
+                  {...register("name")}
                   onMouseEnter={() => {
                     gsap.to(`.contact-name`, {
                       backgroundImage:
@@ -64,6 +75,7 @@ const ContactSection = () => {
                 />
 
                 <input
+                  {...register("email")}
                   onMouseEnter={() => {
                     gsap.to(`.contact-email`, {
                       backgroundImage:
@@ -97,6 +109,7 @@ const ContactSection = () => {
               </div>
               <div className="flex gap-[2vw] my-[2.5vw]">
                 <input
+                  {...register("budget")}
                   onMouseEnter={() => {
                     gsap.to(`.contact-budget`, {
                       backgroundImage:
@@ -114,6 +127,7 @@ const ContactSection = () => {
                   placeholder="YOUR NAME BUDGET*"
                 />
                 <input
+                  {...register("message")}
                   onMouseEnter={() => {
                     gsap.to(`.contact-msg`, {
                       backgroundImage:
@@ -131,7 +145,7 @@ const ContactSection = () => {
                   placeholder="MESSAGE*"
                 />
               </div>
-
+                  
               <WhiteButton text="Let's Work"></WhiteButton>
             </form>
           </div>

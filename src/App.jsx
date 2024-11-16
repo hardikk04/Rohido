@@ -1,6 +1,5 @@
 // Library imports
 import React, { useEffect } from "react";
-import { addEffect } from "@react-three/fiber";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);

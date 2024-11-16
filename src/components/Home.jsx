@@ -1,6 +1,6 @@
 // Libraries imports
 import { useGSAP } from "@gsap/react";
-import { useContext, useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
@@ -12,14 +12,12 @@ import WhiteButton from "./utils/WhiteButton";
 import BlackButton from "./utils/BlackButton";
 import BrandSwiper from "./BrandSwiper";
 import ExperienceBox from "./ExperienceBox";
-import ProjectCards from "./ProjectCards";
 import SwiperCard from "./SwiperCard";
 import TeamCards from "./TeamCards";
+import ProjectCards from "./ProjectCards";
 import ClientReviewSection from "./ClientReviewSection";
 import Footer from "./Footer";
 import ContactSection from "./ContactSection";
-import EmergingImage from "./EmergingImage";
-import Scene from "../Scene";
 
 const Home = () => {
   const [swiperCardData, setSwiperCardData] = useState([
@@ -61,6 +59,29 @@ const Home = () => {
     },
   ]);
 
+  const [projectCard, setProjectCard] = useState([
+    {
+      number: "01",
+      title: "Brand Identity + Positioning",
+      para: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, debitis? Doloremque cupiditate dolorum soluta provident explicabo tempore cumque totam porro, impedit aliquam?",
+    },
+    {
+      number: "02",
+      title: "Website Design + Development",
+      para: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, debitis? Doloremque cupiditate dolorum soluta provident explicabo tempore cumque totam porro, impedit aliquam?",
+    },
+    {
+      number: "03",
+      title: "Digital Products + Services",
+      para: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, debitis? Doloremque cupiditate dolorum soluta provident explicabo tempore cumque totam porro, impedit aliquam?",
+    },
+    {
+      number: "04",
+      title: "Advertising + Branded Content",
+      para: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, debitis? Doloremque cupiditate dolorum soluta provident explicabo tempore cumque totam porro, impedit aliquam?",
+    },
+  ]);
+
   useGSAP(() => {
     const tl = gsap.timeline();
 
@@ -74,9 +95,6 @@ const Home = () => {
       .from(".home-hero p", {
         opacity: 0,
       });
-    // .from(".home-btn", {
-    //   opacity: 0,
-    // });
 
     gsap.to(".half-circle", {
       borderTopLeftRadius: "0vw",
@@ -125,70 +143,27 @@ const Home = () => {
       },
     });
 
-    gsap.from(".project1", {
+    gsap.from(".project-elems", {
+      y: 250,
+      stagger: 0.1,
       opacity: 0,
       scrollTrigger: {
         scroller: "body",
-        trigger: ".project1",
+        trigger: ".project-container",
         start: "top 80%",
-        end: "top 30%",
         // markers: true,
       },
     });
 
-    gsap.from(".project2", {
+    gsap.from(".project-imgs img", {
+      y: 250,
+      stagger: 0.1,
       opacity: 0,
-      rotate: -15,
-      transform: "translateX(-50%)",
       scrollTrigger: {
         scroller: "body",
-        trigger: ".project2",
+        trigger: ".project-container",
         start: "top 80%",
-        end: "top 30%",
         // markers: true,
-        // scrub: 1,
-      },
-    });
-
-    gsap.from(".project3", {
-      opacity: 0,
-      rotate: 15,
-      transform: "translateX(50%)",
-      scrollTrigger: {
-        scroller: "body",
-        trigger: ".project2",
-        start: "top 80%",
-        end: "top 30%",
-        // markers: true,
-        // scrub: 1,
-      },
-    });
-
-    gsap.from(".project4", {
-      opacity: 0,
-      rotate: -15,
-      transform: "translateX(-50%)",
-      scrollTrigger: {
-        scroller: "body",
-        trigger: ".project4",
-        start: "top 80%",
-        end: "top 30%",
-        // markers: true,
-        // scrub: 1,
-      },
-    });
-
-    gsap.from(".project5", {
-      opacity: 0,
-      rotate: 15,
-      transform: "translateX(50%)",
-      scrollTrigger: {
-        scroller: "body",
-        trigger: ".project4",
-        start: "top 80%",
-        end: "top 30%",
-        // markers: true,
-        // scrub: 1,
       },
     });
 
@@ -286,7 +261,6 @@ const Home = () => {
   return (
     <>
       <div className="main text-white regular relative z-[1]">
-        <Scene />
         <section
           onMouseMove={(dets) => {
             gsap.to(".mouse-follower", {
@@ -350,12 +324,12 @@ const Home = () => {
               onMouseEnter={() => {
                 gsap.to(`.home-about-left`, {
                   backgroundImage:
-                    "linear-gradient(to bottom right, #fe4a2e24, #000)",
+                    "linear-gradient(to bottom right, #33100b, #000)",
                 });
               }}
               onMouseLeave={() => {
                 gsap.to(`.home-about-left`, {
-                  backgroundImage: "linear-gradient(0deg, #000 , #000)",
+                  backgroundImage: "linear-gradient(to bottom right, #000 , #000)",
                 });
               }}
               className="w-[70%] home-about-left relative p-[1vw] pb-0 text-white flex overflow-hidden rounded-xl flex-col justify-between gap-[8vw]"
@@ -365,7 +339,6 @@ const Home = () => {
                 src="/images/Star.png"
                 alt=""
               />
-
               <div className="flex gap-[1vw] relative z-[1]">
                 <img
                   className="object-cover h-[3vw]"
@@ -432,50 +405,36 @@ const Home = () => {
               <h2>Some of Our Latest  Projects</h2>
             </div>
           </div>
-          <div className="project-card flex flex-col items-center pt-[8vw] overflow-hidden">
-            <div className="project1 w-[95%] h-[90vh] border-white/30 border-[3px] rounded-xl overflow-hidden">
-              <div className="project-card-data h-[8%] flex justify-between py-4 px-6">
-                <h6 className="opacity-70">Tradeuno</h6>
-                <h6 className="opacity-70">Design | Development</h6>
-              </div>
-              <div className="project-card-img h-[92%] relative w-full rounded-xl overflow-hidden grid place-items-center aspect-[1.3]">
-                <EmergingImage
-                  type={2}
-                  url="./images/project1.png"
-                  className="w-full h-full bg-center bg-cover"
-                />
-
-                <div className="absolute top-0 left-0 h-full w-full z-10 bg-black/20"></div>
-              </div>
+          <div className="project-container w-full h-[80vh] my-[6vw] relative flex">
+            <div className="project-imgs absolute top-0 left-0 w-full h-full flex overflow-hidden">
+              <img
+                className="w-1/4 object-cover project-img-0"
+                src="/images/project1.png"
+                alt=""
+              />
+              <img
+                className="w-1/4 object-cover project-img-1"
+                src="/images/project2.png"
+                alt=""
+              />
+              <img
+                className="w-1/4 object-cover project-img-2"
+                src="/images/project3.png"
+                alt=""
+              />
+              <img
+                className="w-1/4 object-cover project-img-3"
+                src="/images/project4.png"
+                alt=""
+              />
             </div>
-            <div className="w-full py-[4vw] flex justify-center">
-              <div className="w-[95%] gap-[3vw] flex flex-wrap justify-between">
-                <ProjectCards
-                  c="project2"
-                  title="Client XYZ"
-                  para="Design | Development"
-                  img="/images/project2.png"
-                ></ProjectCards>
-                <ProjectCards
-                  c="project3"
-                  title="Client XYZ"
-                  para="Design | Development"
-                  img="/images/project3.png"
-                ></ProjectCards>
-                <ProjectCards
-                  c="project4"
-                  title="Client XYZ"
-                  para="Design | Development"
-                  img="/images/project4.png"
-                ></ProjectCards>
-                <ProjectCards
-                  c="project5"
-                  title="Client XYZ"
-                  para="Design | Development"
-                  img="/images/project5.png"
-                ></ProjectCards>
-              </div>
-            </div>
+            {projectCard.map((data, index) => (
+              <ProjectCards
+                data={data}
+                key={index}
+                index={index}
+              ></ProjectCards>
+            ))}
           </div>
           <div className="flex justify-center pb-[8vw]">
             <WhiteButton

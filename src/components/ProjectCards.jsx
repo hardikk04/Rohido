@@ -1,22 +1,49 @@
-import EmergingImage from "./EmergingImage";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 
-const ProjectCards = ({ title, para, img, c }) => {
+const ProjectCards = ({ data, index }) => {
+  const { number, para, title } = data;
+
   return (
     <div
-      className={`${c} w-[48%] h-[65vh] border-white/30 border-[3px] rounded-xl overflow-hidden`}
+      onMouseEnter={() => {
+        gsap.to(`.project-elem-${index} p`, {
+          opacity: 1,
+        });
+
+        for (let i = 0; i < 4; i++) {
+          if (index !== i) {
+            gsap.to(`.project-img-${i}`, {
+              width: "0",
+              duration:.6,
+              ease:"power1.inOut"
+            });
+          } else {
+            gsap.to(`.project-img-${i}`, {
+              width: "100%",
+              duration:.6,
+              ease:"power1.inOut"
+            });
+          }
+        }
+      }}
+      onMouseLeave={() => {
+        gsap.to(".project-imgs img", {
+          width: "25%",
+        });
+
+        gsap.to(`.project-elem-${index} p`, {
+          opacity: 0,
+        });
+      }}
+      className={`project-elems project-elem-${index} w-1/4 h-full p-[2vw]  border-r border-white/30 relative z-[1]`}
     >
-      <div className="project-card-data h-[10%] flex justify-between py-4 px-6">
-        <h6 className="opacity-70">{title}</h6>
-        <h6 className="opacity-70">{para}</h6>
+      <div className="relative z-[1]">
+        <span>{number}</span>
+        <h3 className="mt-[1vw]">{title}</h3>
+        <p className="thin mt-[2vw] opacity-0">{para}</p>
       </div>
-      <div className="project-card-img h-[90%] relative w-full rounded-xl overflow-hidden">
-        <EmergingImage
-          type={1}
-          url={img}
-          className="w-full h-full bg-center bg-cover"
-        />
-        <div className="absolute top-0 left-0 h-full w-full z-10 bg-black/20"></div>
-      </div>
+      <div className="project-overlay absolute top-0 left-0 h-full w-full bg-black/60 pointer-events-none"></div>
     </div>
   );
 };
