@@ -11,6 +11,14 @@ const ScrollerX = () => {
         Contact Us - Contact Us - Contact Us - Contact Us - Contact Us - Contact
         Us
       </h2>
+      <h2>
+        Contact Us - Contact Us - Contact Us - Contact Us - Contact Us - Contact
+        Us -
+      </h2>
+      <h2>
+        Contact Us - Contact Us - Contact Us - Contact Us - Contact Us - Contact
+        Us
+      </h2>
     </div>
   );
 };

@@ -19,12 +19,10 @@ const SmoothScroll = ({ children }) => {
     return () => {
       if (scroll) scroll.destroy();
     };
-  });
+  }, []);
 
   useEffect(() => {
     if (scroll) {
-      console.log("destroyed");
-
       scroll.scrollTo(0, {
         duration: 0,
         disableLerp: true,
@@ -33,7 +31,16 @@ const SmoothScroll = ({ children }) => {
     }
   }, [pathname]);
 
-  return <div>{children}</div>;
+  return (
+    <div>
+      <div className="banner-1 min-h-screen bg-neutral-800 z-[200] fixed top-0 left-0 w-1/4"></div>
+      <div className="banner-2 min-h-screen bg-neutral-800 z-[200] fixed top-0 left-1/4 w-1/4"></div>
+      <div className="banner-3 min-h-screen bg-neutral-800 z-[200] fixed top-0 left-2/4 w-1/4"></div>
+      <div className="banner-4 min-h-screen bg-neutral-800 z-[200] fixed top-0 left-3/4 w-1/4"></div>
+
+      {children}
+    </div>
+  );
 };
 
 export default SmoothScroll;

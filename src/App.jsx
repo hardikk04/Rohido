@@ -11,11 +11,15 @@ import Home from "./components/Home";
 import About from "./components/About";
 import Service from "./components/Service";
 import Contact from "./components/Contact";
+import Work from "./components/Work";
+import { animationPageIn } from "./components/utils/Animations";
 
 const App = () => {
   const location = useLocation();
 
   useEffect(() => {
+    animationPageIn();
+
     window.scrollTo(0, 0);
   }, [location]);
 
@@ -25,6 +29,7 @@ const App = () => {
       <Route path="/about" element={<About />}></Route>
       <Route path="/service" element={<Service />}></Route>
       <Route path="/contact" element={<Contact />}></Route>
+      <Route path="/work" element={<Work />}></Route>
     </Routes>
   );
 };

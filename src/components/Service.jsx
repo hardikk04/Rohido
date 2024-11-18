@@ -38,6 +38,19 @@ const Service = () => {
       stagger: 0.1,
     });
 
+    gsap.to(".half-circle", {
+      borderTopLeftRadius: "0vw",
+      borderTopRightRadius: "0vw",
+      scrollTrigger: {
+        scroller: "body",
+        trigger: ".half-circle",
+        start: "top 80%",
+        end: "top -20%",
+        scrub: 1,
+        // markers: true,
+      },
+    });
+
     gsap.from(".services-badge", {
       opacity: 0,
       scrollTrigger: {

@@ -2,6 +2,7 @@ import BlackButton from "./utils/BlackButton";
 import gsap from "gsap";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import TransitionLink from "./TransitionLink";
 
 const Nav = () => {
   const [flag, setFlag] = useState(true);
@@ -9,9 +10,9 @@ const Nav = () => {
   return (
     <div className="fixed backdrop-blur z-50 nav left-[50%] top-[2%] -translate-x-[50%] w-[95%] bg-white/5 rounded-[1.5vw] flex justify-between items-center px-[1.5vw] py-[1vw] border border-[#ffffff20] border-solid">
       <div className="nav-left">
-        <Link to="/">
+        <TransitionLink href="/">
           <img src="/images/main-logo.png" alt="" />
-        </Link>
+        </TransitionLink>
       </div>
       <div
         onClick={() => {
@@ -34,7 +35,7 @@ const Nav = () => {
         <BlackButton text="Menu"></BlackButton>
       </div>
       <div className="menu text-white pointer-events-none opacity-0 absolute right-0 top-[105%] border-[2px] border-white/30 p-[1.5vw] flex flex-col gap-[1.5vw] rounded-xl">
-        <Link to="/">
+        <TransitionLink href="/">
           <div
             onMouseEnter={() => {
               gsap.to(".home-h3 h3", {
@@ -53,8 +54,8 @@ const Nav = () => {
             <h3 className="opacity-70">Home</h3>
             <h3 className="opacity-70">Home</h3>
           </div>
-        </Link>
-        <Link to="/about">
+        </TransitionLink>
+        <TransitionLink href="/about">
           <div
             onMouseEnter={() => {
               gsap.to(".about-h3 h3", {
@@ -73,8 +74,8 @@ const Nav = () => {
             <h3 className="opacity-70">About Us</h3>
             <h3 className="opacity-70">About Us</h3>
           </div>
-        </Link>
-        <Link to="/service">
+        </TransitionLink>
+        <TransitionLink href="/service">
           <div
             onMouseEnter={() => {
               gsap.to(".services-h3 h3", {
@@ -93,8 +94,8 @@ const Nav = () => {
             <h3 className="opacity-70">Services</h3>
             <h3 className="opacity-70">Services</h3>
           </div>
-        </Link>
-        <Link to="/contact">
+        </TransitionLink>
+        <TransitionLink href="/contact">
           <div
             onMouseEnter={() => {
               gsap.to(".contact-h3 h3", {
@@ -113,7 +114,7 @@ const Nav = () => {
             <h3 className="opacity-70">Contact Us</h3>
             <h3 className="opacity-70">Contact Us</h3>
           </div>
-        </Link>
+        </TransitionLink>
       </div>
     </div>
   );

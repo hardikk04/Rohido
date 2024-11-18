@@ -48,7 +48,14 @@ const ContactSection = () => {
             </div>
             <form
               onSubmit={handleSubmit((data) => {
-                console.log(data);
+                const { name, email, budget, message } = data;
+
+                if (!(name || email || budget || message)) {
+                  console.log("please enter a details");
+                  return;
+                }
+                console.log("entered");
+
                 reset();
               })}
               className="relative z-10"
@@ -145,7 +152,7 @@ const ContactSection = () => {
                   placeholder="MESSAGE*"
                 />
               </div>
-                  
+
               <WhiteButton text="Let's Work"></WhiteButton>
             </form>
           </div>
