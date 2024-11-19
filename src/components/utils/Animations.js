@@ -1,5 +1,4 @@
 import gsap from "gsap";
-import { Route } from "react-router-dom";
 
 export const animationPageIn = () => {
   const bannerOne = document.querySelector(".banner-1");
