@@ -14,9 +14,9 @@ const ClientReviews = ({ active, index, fnEnter, fnLeave, refLoop }) => {
       }}
       className={`client-img ${
         active ? "" : "grayscale border-white/30"
-      } w-full h-[33.3%] border flex justify-center items-center`}
+      } w-full h-[33.3%] sm:h-[8vh] md:h-[10vh] border flex justify-center items-center md:w-[33.3%]`}
     >
-      <img className="object-cover" src="/images/figma.png" alt="" />
+      <img className="object-cover sm:scale-[.4] md:scale-[.5] lg:scale-[.6]" src="/images/figma.png" alt="" />
     </div>
   );
 };

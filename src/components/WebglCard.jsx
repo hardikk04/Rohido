@@ -15,7 +15,7 @@ const ProjectCards = ({ title, para, img, c }) => {
           url={img}
           className="w-full h-full bg-center bg-cover"
         />
-        <div className="absolute top-0 left-0 h-full w-full z-10 bg-black/20"></div>
+        <div className="absolute top-0 left-0 h-full w-full z-10 bg-black/40"></div>
       </div>
     </div>
   );

@@ -36,7 +36,7 @@ const ProjectCards = ({ data, index }) => {
           opacity: 0,
         });
       }}
-      className={`project-elems project-elem-${index} w-1/4 h-full p-[2vw]  border-r border-white/30 relative z-[1]`}
+      className={`project-elems project-elem-${index} sm:w-[45%] sm:border-none md:w-[45%] md:border-none w-1/4 sm:h-1/2 md:h-1/2 h-full shrink-0 p-[2vw]  border-r border-white/30 relative z-[1]`}
     >
       <div className="relative z-[1]">
         <span>{number}</span>

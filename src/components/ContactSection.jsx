@@ -15,9 +15,9 @@ const ContactSection = () => {
     <section className="bg-black contact-section pb-[6vw]">
       <ScrollerX></ScrollerX>
       <div className="w-full flex justify-center">
-        <div className="w-[95%] flex justify-between">
-          <div className="contact-left w-[40%] flex flex-col justify-center pb-[12vw]">
-            <div className="w-[70%]">
+        <div className="w-[95%] flex justify-between sm:flex-col md:flex-col">
+          <div className="contact-left w-[40%] sm:w-full md:w-full flex flex-col justify-center pb-[12vw] sm:pb-[6vw] sm:items-center md:pb-[6vw] md:items-center">
+            <div className="w-[70%] md:w-fit md:flex md:flex-col md:justify-center md:items-center sm:w-fit sm:flex sm:flex-col sm:justify-center sm:items-center">
               <div className="contact-headings overflow-hidden">
                 <h2 className="medium leading-[1.2]">Book A Call</h2>
               </div>
@@ -34,7 +34,7 @@ const ContactSection = () => {
               ></WhiteButton>
             </div>
           </div>
-          <div className="contact-right relative w-[55%] rounded-xl border-[2px] b border-white/30 px-[4vw] py-[4vw] overflow-hidden">
+          <div className="contact-right relative w-[55%] sm:w-full md:w-full rounded-xl border-[2px] b border-white/30 px-[4vw] py-[4vw] overflow-hidden">
             <img
               className="absolute scale-150 object-cover"
               src="/images/Star2.png"
@@ -61,7 +61,7 @@ const ContactSection = () => {
               className="relative z-10"
               action=""
             >
-              <div className="flex gap-[2vw] my-[2.5vw]">
+              <div className="flex sm:flex-col gap-[2vw] my-[2.5vw]">
                 <input
                   {...register("name")}
                   onMouseEnter={() => {
@@ -76,7 +76,7 @@ const ContactSection = () => {
                         "linear-gradient(143deg, #0c0c0d 23%, #222224)",
                     });
                   }}
-                  className="contact-name placeholder-text-black/30 text-white bg-white/10 px-[1.5vw] py-[.6vw] rounded-md outline-none"
+                  className="contact-name sm:placeholder:text-[2.5vw] placeholder-text-black/30 text-white bg-white/10 px-[1.5vw] py-[.6vw] rounded-md outline-none"
                   type="text"
                   placeholder="YOUR NAME*"
                 />
@@ -95,7 +95,7 @@ const ContactSection = () => {
                         "linear-gradient(143deg, #0c0c0d 23%, #222224)",
                     });
                   }}
-                  className="contact-email placeholder-text-black/30 text-white bg-white/10 px-[1.5vw] py-[.6vw] rounded-md outline-none"
+                  className="contact-email sm:placeholder:text-[2.5vw] placeholder-text-black/30 text-white bg-white/10 px-[1.5vw] py-[.6vw] rounded-md outline-none"
                   type="email"
                   placeholder="YOUR EMAIL ID*"
                 />
@@ -114,7 +114,7 @@ const ContactSection = () => {
                   <BlackButton text="CMS Development"></BlackButton>
                 </div>
               </div>
-              <div className="flex gap-[2vw] my-[2.5vw]">
+              <div className="flex sm:flex-col gap-[2vw] my-[2.5vw]">
                 <input
                   {...register("budget")}
                   onMouseEnter={() => {
@@ -129,7 +129,7 @@ const ContactSection = () => {
                         "linear-gradient(143deg, #0c0c0d 23%, #222224)",
                     });
                   }}
-                  className="contact-budget placeholder-text-black/30 text-white bg-white/10 px-[1.5vw] py-[.6vw] rounded-md outline-none"
+                  className="contact-budget sm:placeholder:text-[2.5vw] placeholder-text-black/30 text-white bg-white/10 px-[1.5vw] py-[.6vw] rounded-md outline-none"
                   type="number"
                   placeholder="YOUR NAME BUDGET*"
                 />
@@ -147,7 +147,7 @@ const ContactSection = () => {
                         "linear-gradient(143deg, #0c0c0d 23%, #222224)",
                     });
                   }}
-                  className="contact-msg placeholder-text-black/30 text-white bg-white/10 px-[1.5vw] py-[.6vw] rounded-md outline-none"
+                  className="contact-msg sm:placeholder:text-[2.5vw] placeholder-text-black/30 text-white bg-white/10 px-[1.5vw] py-[.6vw] rounded-md outline-none"
                   type="text"
                   placeholder="MESSAGE*"
                 />

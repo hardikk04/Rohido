@@ -109,8 +109,8 @@ const Home = () => {
       },
     });
 
-    gsap.to(".brands-swiper", {
-      width: "100%",
+    gsap.from(".brands-swiper", {
+      width: "40%",
       scrollTrigger: {
         scroller: "body",
         trigger: ".brands-swiper",
@@ -269,7 +269,7 @@ const Home = () => {
               delay: 0.1,
             });
           }}
-          className="bg-black home-start pt-[12vw] w-full relative overflow-hidden"
+          className="bg-black home-start sm:pt-[22vw] pt-[12vw] w-full relative overflow-hidden"
         >
           <Nav />
 
@@ -311,15 +311,15 @@ const Home = () => {
             </div>
           </div>
         </section>
-        <section className="bg-black home-about relative w-full overflow-hidden flex flex-col gap-[8vw] items-center pt-[16vw] pb-[8vw]">
+        <section className="bg-black home-about relative w-full overflow-hidden flex flex-col gap-[8vw] items-center md:pt-[22vw] pt-[16vw] pb-[8vw] sm:pt-[28vw]">
           <div
             style={{ boxShadow: "0px 0px 100px red" }}
-            className="half-circle pointer-events-none absolute w-full flex flex-col items-center h-full scale-x-[1.1] border-white/30 border-[3px] rounded-t-[60vw] top-[10%]"
+            className="half-circle pointer-events-none absolute w-full flex flex-col items-center h-full scale-x-[1.1] border-white/30 border-[3px] rounded-t-[60vw] top-[10%] md:top-[10%] sm:top-[8%]"
           ></div>
           <div className="w-[95%] flex justify-center">
             <BrandSwiper></BrandSwiper>
           </div>
-          <div className="home-about-content w-[95%] flex gap-[3vw]">
+          <div className="home-about-content sm:flex-col md:flex-col w-[95%] flex gap-[3vw] md:gap-[1vw]">
             <div
               onMouseEnter={() => {
                 gsap.to(`.home-about-left`, {
@@ -329,10 +329,11 @@ const Home = () => {
               }}
               onMouseLeave={() => {
                 gsap.to(`.home-about-left`, {
-                  backgroundImage: "linear-gradient(to bottom right, #000 , #000)",
+                  backgroundImage:
+                    "linear-gradient(to bottom right, #000 , #000)",
                 });
               }}
-              className="w-[70%] home-about-left relative p-[1vw] pb-0 text-white flex overflow-hidden rounded-xl flex-col justify-between gap-[8vw]"
+              className="w-[70%] sm:w-full md:w-full home-about-left relative p-[1vw] pb-0 text-white flex overflow-hidden rounded-xl flex-col justify-between gap-[8vw]"
             >
               <img
                 className="object-cover about-start absolute top-0 left-0 rotate-180 pointer-events-none"
@@ -370,9 +371,9 @@ const Home = () => {
                 })}
               </div>
             </div>
-            <div className="w-[30%] overflow-hidden relative h-full border-white/10 border-[2px] rounded-xl">
+            <div className="w-[30%] sm:w-full md:w-full overflow-hidden relative h-full border-white/10 border-[2px] rounded-xl">
               <img
-                className="object-cover w-full "
+                className="object-cover w-full sm:h-[35vh] md:h-[40vh]"
                 src="/images/about-earth.png"
                 alt=""
               />
@@ -405,8 +406,8 @@ const Home = () => {
               <h2>Some of Our Latest  Projects</h2>
             </div>
           </div>
-          <div className="project-container w-full h-[80vh] my-[6vw] relative flex">
-            <div className="project-imgs absolute top-0 left-0 w-full h-full flex overflow-hidden">
+          <div className="project-container w-full h-[80vh] my-[6vw] relative flex sm:flex-wrap sm:gap-[2vw] md:flex-wrap md:gap-[2vw] justify-center">
+            <div className="project-imgs absolute top-0 left-0 w-full h-full flex md:flex-wrap overflow-hidden md:opacity-0 sm:opacity-0">
               <img
                 className="w-1/4 object-cover project-img-0"
                 src="/images/project1.png"
@@ -436,7 +437,7 @@ const Home = () => {
               ></ProjectCards>
             ))}
           </div>
-          <div className="flex justify-center pb-[8vw]">
+          <div className="flex justify-center lg:pb-[0] pb-[8vw]">
             <WhiteButton
               text="Book a call"
               icon={<i className="ri-arrow-right-s-line font-[600]"></i>}
@@ -503,7 +504,7 @@ const Home = () => {
         </section>
         <ClientReviewSection />
         <ContactSection />
-        <section className="tranparent-footer h-[100vh] w-full pointer-events-none bg-transparent"></section>
+        <section className="tranparent-footer sm:h-[40vh] md:h-[45vh] lg:h-[50vh] xl:h-[70vh]  h-[100vh] w-full pointer-events-none bg-transparent"></section>
         <Footer></Footer>
       </div>
     </>
