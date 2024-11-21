@@ -49,7 +49,7 @@ const Nav = () => {
                 ease: "power1.inOut",
               });
             }}
-            className="home-h3 sm:h-[3.5vw] md:h-[3vw] h-[2.5vw] overflow-hidden"
+            className="home-h3 sm:h-[3.5vw] md:h-[3vw] lg:h-[3.5vw] h-[2.5vw] overflow-hidden"
           >
             <h3 className="opacity-70">Home</h3>
             <h3 className="opacity-70">Home</h3>
@@ -69,7 +69,7 @@ const Nav = () => {
                 ease: "power1.inOut",
               });
             }}
-            className="about-h3 sm:h-[3.5vw] md:h-[3vw] h-[2.5vw] overflow-hidden"
+            className="about-h3 sm:h-[3.5vw] md:h-[3vw] lg:h-[3.5vw] h-[2.5vw] overflow-hidden"
           >
             <h3 className="opacity-70">About Us</h3>
             <h3 className="opacity-70">About Us</h3>
@@ -89,7 +89,7 @@ const Nav = () => {
                 ease: "power1.inOut",
               });
             }}
-            className="services-h3 sm:h-[3.5vw] md:h-[3vw] h-[2.5vw] overflow-hidden"
+            className="services-h3 sm:h-[3.5vw] md:h-[3vw] lg:h-[3.5vw] h-[2.5vw] overflow-hidden"
           >
             <h3 className="opacity-70">Services</h3>
             <h3 className="opacity-70">Services</h3>
@@ -109,7 +109,7 @@ const Nav = () => {
                 ease: "power1.inOut",
               });
             }}
-            className="work-h3 sm:h-[3.5vw] md:h-[3vw] h-[2.5vw] overflow-hidden"
+            className="work-h3 sm:h-[3.5vw] md:h-[3vw] lg:h-[3.5vw] h-[2.5vw] overflow-hidden"
           >
             <h3 className="opacity-70">Work</h3>
             <h3 className="opacity-70">Work</h3>
@@ -129,7 +129,7 @@ const Nav = () => {
                 ease: "power1.inOut",
               });
             }}
-            className="contact-h3 sm:h-[3.5vw] md:h-[3vw] h-[2.5vw] overflow-hidden"
+            className="contact-h3 sm:h-[3.5vw] md:h-[3vw] lg:h-[3.5vw] h-[2.5vw] overflow-hidden"
           >
             <h3 className="opacity-70">Contact Us</h3>
             <h3 className="opacity-70">Contact Us</h3>

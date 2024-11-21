@@ -11,9 +11,9 @@ const Footer = () => {
       </div>
       <footer className="flex justify-between items-center w-full pt-[8vw]">
         <div className="footer-left flex gap-4">
-          <i className="sm:text-[3vw] md:text-[4vw] text-[1.5vw] text-[#696767] ri-instagram-fill"></i>
-          <i className="sm:text-[3vw] md:text-[4vw] text-[1.5vw] text-[#696767] ri-twitter-x-fill"></i>
-          <i className="sm:text-[3vw] md:text-[4vw] text-[1.5vw] text-[#696767] ri-linkedin-box-fill"></i>
+          <i className="sm:text-[3vw] md:text-[4vw] lg:text-[4vw] text-[1.5vw] text-[#696767] ri-instagram-fill"></i>
+          <i className="sm:text-[3vw] md:text-[4vw] lg:text-[4vw] text-[1.5vw] text-[#696767] ri-twitter-x-fill"></i>
+          <i className="sm:text-[3vw] md:text-[4vw] lg:text-[4vw] text-[1.5vw] text-[#696767] ri-linkedin-box-fill"></i>
         </div>
         <div className="footer-right text-right flex gap-[2vw]">
           <Link to="/">
@@ -30,7 +30,7 @@ const Footer = () => {
                   ease: "power1.inOut",
                 });
               }}
-              className="terms-service sm:h-[3vw] md:h-[3.5vw] h-[1.5vw] overflow-hidden"
+              className="terms-service sm:h-[3vw] md:h-[3.5vw] lg:h-[3.5vw] h-[1.5vw] overflow-hidden"
             >
               <p className="opacity-70 thin">Terms of Service</p>
               <p className="opacity-70 thin">Terms of Service</p>
@@ -50,7 +50,7 @@ const Footer = () => {
                   ease: "power1.inOut",
                 });
               }}
-              className="privacy-policy sm:h-[3vw] md:h-[3.5vw] h-[1.5vw] overflow-hidden"
+              className="privacy-policy sm:h-[3vw] md:h-[3.5vw] lg:h-[3.5vw] h-[1.5vw] overflow-hidden"
             >
               <p className="opacity-70 thin">Privacy Policy</p>
               <p className="opacity-70 thin">Privacy Policy</p>

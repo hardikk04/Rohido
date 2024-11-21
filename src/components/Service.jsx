@@ -11,6 +11,7 @@ import AboutCard from "./AboutCard";
 import ClientReviewSection from "./ClientReviewSection";
 import ContactSection from "./ContactSection";
 import Footer from "./Footer";
+import TransparentFooter from "./TransparentFooter";
 
 const Service = () => {
   const [aboutCard, setAboutCard] = useState([
@@ -157,7 +158,7 @@ const Service = () => {
         <Nav></Nav>
         <div className="mouse-follower z-[1] pointer-events-none fixed top-0 left-0 scale-0 h-[2vh] w-[2vh] bg-white rounded-full"></div>
 
-        <div className="service-hero h-full w-full flex flex-col items-center justify-center ">
+        <div className="service-hero h-full w-full flex flex-col items-center justify-center lg:pt-[6vw] md:pt-[12vw] sm:pt-[12vw]">
           <div
             onMouseEnter={() => {
               gsap.to(".mouse-follower", {
@@ -180,10 +181,10 @@ const Service = () => {
           </div>
         </div>
       </section>
-      <section className="bg-black relative w-full overflow-hidden flex flex-col gap-[8vw] items-center pt-[26vw] pb-[4vw]">
+      <section className="bg-black relative w-full overflow-hidden flex flex-col gap-[8vw] items-center md:pt-[32vw] pt-[26vw] pb-[4vw]">
         <div
-          style={{ boxShadow: "0px 0px 250px red" }}
-          className="half-circle pointer-events-none absolute w-full flex flex-col items-center h-full scale-x-[1.5] border-white/30 border-[3px] rounded-t-[60vw] top-[15%]"
+          style={{ boxShadow: "0px 0px 100px red" }}
+          className="half-circle pointer-events-none absolute w-full flex flex-col items-center h-full scale-x-[1.5] border-white/30 border-[3px] rounded-t-[60vw] top-[15%] sm:top-[20%] md:top-[25%] lg:top-[20%] xl:top-[20%]"
         ></div>
 
         <div className="w-full">
@@ -212,8 +213,8 @@ const Service = () => {
         </div>
       </section>
       <section className="w-full flex justify-center bg-black pb-[6vw]">
-        <div className="service-help w-[95%] flex justify-between">
-          <div className="help-left w-[56%]">
+        <div className="service-help w-[95%] flex justify-between md:flex-col sm:flex-col">
+          <div className="help-left w-[56%] md:w-full sm:w-full">
             <SectionBadge
               c="thin help-badge"
               text="What we offer : "
@@ -247,7 +248,7 @@ const Service = () => {
               </div>
             </div>
           </div>
-          <div className="help-right w-[38%] h-full">
+          <div className="help-right w-[38%] h-full md:w-full sm:w-full">
             <img
               className="h-full w-full object-cover "
               src="/images/services-network.png"
@@ -261,7 +262,7 @@ const Service = () => {
           <h2>How We Do That?</h2>
         </div>
         <div className="w-full flex justify-center py-[12vw]">
-          <div className="w-[95%] service-cards-elem flex justify-between">
+          <div className="w-[95%] service-cards-elem flex justify-between md:flex-wrap sm:flex-wrap">
             {aboutCard.map((data, index) => (
               <AboutCard data={data} key={index} index={index} />
             ))}
@@ -270,7 +271,7 @@ const Service = () => {
       </section>
       <ClientReviewSection />
       <ContactSection />
-      <section className="tranparent-footer h-[100vh] w-full pointer-events-none bg-transparent"></section>
+      <TransparentFooter/>
       <Footer></Footer>
     </div>
   );

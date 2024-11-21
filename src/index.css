@@ -281,7 +281,7 @@ input[type="number"] {
 }
 
 .overlay__path {
-  fill: #fe492e;
+  fill: #fe4a2e;
 }
 
 @media (max-width: 1023px) {
@@ -379,6 +379,11 @@ input[type="number"] {
 
   .project-elem-3 {
     background-image: url("/images/project4.png");
+  }
+
+
+  .service-elem {
+    background-image: linear-gradient(42deg, #000, #923426b1);
   }
 }
 

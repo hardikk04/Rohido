@@ -61,7 +61,7 @@ const ContactSection = () => {
               className="relative z-10"
               action=""
             >
-              <div className="flex sm:flex-col gap-[2vw] my-[2.5vw]">
+              <div className="flex lg:flex-col sm:flex-col gap-[2vw] my-[2.5vw]">
                 <input
                   {...register("name")}
                   onMouseEnter={() => {
@@ -114,7 +114,7 @@ const ContactSection = () => {
                   <BlackButton text="CMS Development"></BlackButton>
                 </div>
               </div>
-              <div className="flex sm:flex-col gap-[2vw] my-[2.5vw]">
+              <div className="flex lg:flex-col sm:flex-col gap-[2vw] my-[2.5vw]">
                 <input
                   {...register("budget")}
                   onMouseEnter={() => {

@@ -24,7 +24,7 @@ const ServiceElem = ({ title, index }) => {
                 });
 
                 gsap.to(`.service-elem-${index}`, {
-                  height: "10vw",
+                  height: "14vw",
                 });
 
                 setisToggled((prev) => !prev);

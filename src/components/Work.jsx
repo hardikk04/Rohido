@@ -7,9 +7,9 @@ import SectionBadge from "./utils/SectionBadge";
 import { useGSAP } from "@gsap/react";
 import EmergingImage from "./EmergingImage";
 import Scene from "../Scene";
-import WebglCard from "./WebglCard";
 import WhiteButton from "./utils/WhiteButton";
 import Footer from "./Footer";
+import TransparentFooter from "./TransparentFooter";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -17,11 +17,13 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 
-// import required modules
-import { Pagination } from "swiper/modules";
-
 const Work = () => {
-  useGSAP(() => {});
+  useGSAP(() => {
+    gsap.from(".about-heading1 h1, .about-heading2 h1", {
+      transform: "translateY(100%)",
+      stagger: 0.1,
+    });
+  });
 
   return (
     <div className="main relative text-white z-[1]">
@@ -235,7 +237,7 @@ const Work = () => {
           ></WhiteButton>
         </div>
       </section>
-      <section className="tranparent-footer h-[100vh] w-full pointer-events-none bg-transparent"></section>
+      <TransparentFooter />
       <Footer></Footer>
     </div>
   );

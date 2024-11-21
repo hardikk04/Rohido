@@ -1,10 +1,19 @@
 import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 import Nav from "./Nav";
 import Footer from "./Footer";
 import ContactSection from "./ContactSection";
+import TransparentFooter from "./TransparentFooter";
 
 const Contact = () => {
+  useGSAP(() => {
+    gsap.from(".contact-heading1 h1, .contact-heading2 h1", {
+      transform: "translateY(100%)",
+      stagger: 0.1,
+    });
+  });
+
   return (
     <div className="main relative text-white regular z-[1]">
       <section
@@ -54,7 +63,7 @@ const Contact = () => {
         </div>
       </section>
       <ContactSection />
-      <section className="tranparent-footer h-[100vh] w-full pointer-events-none bg-transparent"></section>
+      <TransparentFooter />
       <Footer></Footer>
     </div>
   );

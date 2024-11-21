@@ -9,23 +9,11 @@ import ExperienceBox from "./ExperienceBox";
 import ClientReviewSection from "./ClientReviewSection";
 import ContactSection from "./ContactSection";
 import Footer from "./Footer";
+import TransparentFooter from "./TransparentFooter";
+import { useEffect } from "react";
 
 const About = () => {
   useGSAP(() => {
-    gsap.to(".service-elem", {
-      width: "47%",
-      backgroundImage: "linear-gradient(42deg, #000, #fe4a2e24)",
-      stagger: 0.1,
-      scrollTrigger: {
-        scroller: "body",
-        trigger: ".service-elem",
-        start: "top 100%",
-        end: "top 30%",
-        // markers: true,
-        scrub: 1,
-      },
-    });
-
     gsap.from(".about-heading h1", {
       transform: "translateY(100%)",
       stagger: 0.1,
@@ -71,6 +59,32 @@ const About = () => {
     });
   });
 
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width: 768px)"); 
+    const handleChange = (e) => {
+      if (!e.matches) {
+        gsap.to(".service-elem", {
+          width: "47%",
+          backgroundImage: "linear-gradient(42deg, #000, #fe4a2e24)",
+          stagger: 0.1,
+          scrollTrigger: {
+            scroller: "body",
+            trigger: ".service-elem",
+            start: "top 100%",
+            end: "top 30%",
+            // markers: true,
+            scrub: 1,
+          },
+        });
+      }
+    }; 
+
+    
+
+    // Add listener
+    mediaQuery.addEventListener("change", handleChange);
+  });
+
   return (
     <div className="main text-white regular relative z-[1]">
       <section
@@ -96,7 +110,7 @@ const About = () => {
         />
         <div className="mouse-follower z-[1] pointer-events-none fixed top-0 left-0 scale-0 h-[2vh] w-[2vh] bg-white rounded-full"></div>
 
-        <div className="about-hero relative h-full w-full flex flex-col items-center justify-center ">
+        <div className="about-hero relative h-full w-full flex flex-col items-center justify-center lg:pt-[8vw] sm:pt-[8vw]">
           <div
             onMouseEnter={() => {
               gsap.to(".mouse-follower", {
@@ -203,9 +217,9 @@ const About = () => {
         </div>
       </section>
       <section className="bg-black relative w-full overflow-hidden flex flex-col gap-[8vw] items-center py-[2vw] pb-[14vw]">
-        <div className="about-content w-[95%] flex gap-[3vw]">
+        <div className="about-content w-[95%] flex gap-[3vw] md:flex-col sm:flex-col">
           <div className="w-full service-elem relative shrink-0 p-[1vw] pb-0 text-white flex overflow-hidden rounded-xl flex-col justify-between gap-[8vw]">
-            <div className="flex gap-[1vw] relative z-[1]">
+            <div className="flex gap-[1vw] relative z-[1] p-[2vw]">
               <img
                 className="object-cover h-[3vw]"
                 src="/images/white-logo.png"
@@ -215,7 +229,7 @@ const About = () => {
                 <div className="mb-[2vw]">
                   <h6>Our Vision</h6>
                 </div>
-                <div className="flex flex-col gap-[2vw] w-[36vw]">
+                <div className="flex flex-col gap-[2vw] w-[36vw] md:w-full sm:w-full">
                   <p className="opacity-80 light">
                     Inspired by a flower from Rajasthan, India, Rohido Media,
                     our studio embodies quality and diligence. We are steadfast
@@ -234,7 +248,7 @@ const About = () => {
             </div>
           </div>
           <div className="w-full service-elem relative shrink-0 p-[1vw] pb-0 text-white flex overflow-hidden rounded-xl flex-col justify-between gap-[8vw]">
-            <div className="flex gap-[1vw] relative z-[1]">
+            <div className="flex gap-[1vw] relative z-[1] p-[2vw]">
               <img
                 className="object-cover h-[3vw]"
                 src="/images/white-logo.png"
@@ -244,7 +258,7 @@ const About = () => {
                 <div className="mb-[2vw]">
                   <h6>Our Mission</h6>
                 </div>
-                <div className="flex flex-col gap-[2vw] w-[36vw]">
+                <div className="flex flex-col gap-[2vw] w-[36vw] md:w-full sm:w-full">
                   <p className="opacity-80 light">
                     Driven by an entrepreneurial spirit, our mission is to impel
                     your success with expertly made-websites that engage
@@ -261,7 +275,7 @@ const About = () => {
 
       <ClientReviewSection></ClientReviewSection>
       <ContactSection></ContactSection>
-      <section className="tranparent-footer h-[100vh] w-full pointer-events-none bg-transparent"></section>
+      <TransparentFooter />
       <Footer></Footer>
     </div>
   );
