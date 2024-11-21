@@ -249,9 +249,9 @@ const Home = () => {
       scrollTrigger: {
         scroller: "body",
         trigger: ".home-services",
-        start: "top 0%",
-        end: "top -100%",
-        pin: true,
+        start: "top 40%",
+        end: "top -20%",
+        // pin: true,
         // markers: true,
         scrub: 1,
       },
@@ -444,7 +444,7 @@ const Home = () => {
             ></WhiteButton>
           </div>
         </section>
-        <section className="bg-black home-services h-[100vh] w-full flex flex-col justify-center">
+        <section className="bg-black home-services w-full flex flex-col justify-center">
           <div className="service-title text-center flex flex-col items-center">
             <SectionBadge
               c="services-badge"
@@ -462,7 +462,7 @@ const Home = () => {
             </div>
           </div>
         </section>
-        <section className="bg-black home-team pt-[3vw] pb-[10vw] relative">
+        <section className="bg-black home-team pt-[10vw] pb-[10vw] relative">
           <div className="team-title text-center flex flex-col items-center">
             <SectionBadge
               c="team-badge"

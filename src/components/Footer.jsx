@@ -15,7 +15,6 @@ const Footer = () => {
           <i className="sm:text-[3vw] md:text-[4vw] text-[1.5vw] text-[#696767] ri-twitter-x-fill"></i>
           <i className="sm:text-[3vw] md:text-[4vw] text-[1.5vw] text-[#696767] ri-linkedin-box-fill"></i>
         </div>
-
         <div className="footer-right text-right flex gap-[2vw]">
           <Link to="/">
             <div
