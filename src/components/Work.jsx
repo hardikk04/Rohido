@@ -5,9 +5,6 @@ import gsap from "gsap";
 import Nav from "./Nav";
 import SectionBadge from "./utils/SectionBadge";
 import { useGSAP } from "@gsap/react";
-import EmergingImage from "./EmergingImage";
-import Scene from "../Scene";
-import WhiteButton from "./utils/WhiteButton";
 import Footer from "./Footer";
 import TransparentFooter from "./TransparentFooter";
 
@@ -23,11 +20,61 @@ const Work = () => {
       transform: "translateY(100%)",
       stagger: 0.1,
     });
+
+    gsap.to(".project-card-0", {
+      scale: 0.8,
+      scrollTrigger: {
+        scroller: "body",
+        trigger: ".project-card-0",
+        start: "top 0%",
+        end: "top -100%",
+        // markers: true,
+        scrub: 1,
+      },
+    });
+
+    gsap.to(".project-card-1", {
+      scale: 0.8,
+      scrollTrigger: {
+        scroller: "body",
+        trigger: ".project-card-1",
+        start: "top 0%",
+        end: "top -100%",
+        // markers: true,
+        scrub: 1,
+      },
+    });
+
+    gsap.to(".project-final-img", {
+      height: "100%",
+      width: "100%",
+      scrollTrigger: {
+        scroller: "body",
+        trigger: ".project-final",
+        start: "top 0%",
+        end: "top -100%",
+        // markers: true,
+        pin: true,
+        scrub: 1,
+      },
+    });
+
+    gsap.from(".project-mail", {
+      opacity: 0,
+      scale: 0,
+      scrollTrigger: {
+        scroller: "body",
+        trigger: ".project-mail",
+        start: "top 60%",
+        end: "top 60%",
+        // markers: true,
+        scrub: 1,
+      },
+    });
   });
 
   return (
     <div className="main relative text-white z-[1]">
-      <Scene></Scene>
       <section
         onMouseMove={(dets) => {
           gsap.to(".mouse-follower", {
@@ -84,157 +131,84 @@ const Work = () => {
             <h2>Some of Our Latest  Projects</h2>
           </div>
         </div>
-        <div className="project-card flex flex-col cursor-grab items-center pt-[4vw] overflow-hidden">
-          <Swiper
-            slidesPerView={"auto"}
-            centeredSlides={true}
-            spaceBetween={30}
-            pagination={{
-              clickable: true,
-            }}
-            loop={true}
-            className="mySwiper h-[90vh] w-[95%]"
-          >
-            <SwiperSlide>
-              <div className="w-full h-full flex pb-[2vw]">
-                <div className="swiper-left relative w-[50%] h-full">
-                  <div className="absolute top-0 left-0 bg-black/10 h-full w-full"></div>
-                  <EmergingImage
-                    type={1}
-                    url="/images/project1.png"
-                    className="w-full h-full bg-center bg-cover"
-                  />
-                </div>
-                <div className="swiper-right w-[50%] h-full bg-white p-[3vw] text-black flex flex-col justify-center">
-                  <span className="font-[400] opacity-70 cursor-text">01</span>
-                  <span className="font-[400] opacity-70 cursor-text">
-                    23.11.2024
-                  </span>
-                  <h3 className="my-[.5vw] cursor-text">
-                    Dare to Stand Out: Navigation Differentation in the Age of
-                    "Blanding"
-                  </h3>
-                  <span className="font-[400] opacity-70 cursor-text">
-                    Explore how to make your brand truly distinctive in a sea of
-                    similar designs with our insightful
-                  </span>
-                  <h6 className="font-[400] mt-[1vw] cursor-pointer">
-                    Read more <i className="ri-arrow-right-line"></i>
-                  </h6>
-                </div>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className="w-full h-full flex pb-[2vw]">
-                <div className="swiper-left w-[50%] h-full">
-                  <EmergingImage
-                    type={1}
-                    url="/images/project2.png"
-                    className="w-full h-full bg-center bg-cover"
-                  />
-                </div>
-                <div className="swiper-right w-[50%] h-full bg-white p-[3vw] text-black flex flex-col justify-center">
-                  <span className="thin">02</span>
-                  <span className="thin">23.11.2024</span>
-                  <h3 className="my-[.5vw]">
-                    Dare to Stand Out: Navigation Differentation in the Age of
-                    "Blanding"
-                  </h3>
-                  <span className="thin">
-                    Explore how to make your brand truly distinctive in a sea of
-                    similar designs with our insightful
-                  </span>
-                  <h6 className="mt-[.5vw]">
-                    Read more <i className="ri-arrow-right-line"></i>
-                  </h6>
-                </div>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className="w-full h-full flex pb-[2vw]">
-                <div className="swiper-left w-[50%] h-full">
-                  <EmergingImage
-                    type={1}
-                    url="/images/project3.png"
-                    className="w-full h-full bg-center bg-cover"
-                  />
-                </div>
-                <div className="swiper-right w-[50%] h-full bg-white p-[3vw] text-black flex flex-col justify-center">
-                  <span className="thin">03</span>
-                  <span className="thin">23.11.2024</span>
-                  <h3 className="my-[.5vw]">
-                    Dare to Stand Out: Navigation Differentation in the Age of
-                    "Blanding"
-                  </h3>
-                  <span className="thin">
-                    Explore how to make your brand truly distinctive in a sea of
-                    similar designs with our insightful
-                  </span>
-                  <h6 className="mt-[.5vw]">
-                    Read more <i className="ri-arrow-right-line"></i>
-                  </h6>
-                </div>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className="w-full h-full flex pb-[2vw]">
-                <div className="swiper-left w-[50%] h-full">
-                  <EmergingImage
-                    type={1}
-                    url="/images/project4.png"
-                    className="w-full h-full bg-center bg-cover"
-                  />
-                </div>
-                <div className="swiper-right w-[50%] h-full bg-white p-[3vw] text-black flex flex-col justify-center">
-                  <span className="thin">04</span>
-                  <span className="thin">23.11.2024</span>
-                  <h3 className="my-[.5vw]">
-                    Dare to Stand Out: Navigation Differentation in the Age of
-                    "Blanding"
-                  </h3>
-                  <span className="thin">
-                    Explore how to make your brand truly distinctive in a sea of
-                    similar designs with our insightful
-                  </span>
-                  <h6 className="mt-[.5vw]">
-                    Read more <i className="ri-arrow-right-line"></i>
-                  </h6>
-                </div>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className="w-full h-full flex pb-[2vw]">
-                <div className="swiper-left w-[50%] h-full">
-                  <EmergingImage
-                    type={1}
-                    url="/images/project5.png"
-                    className="w-full h-full bg-center bg-cover"
-                  />
-                </div>
-                <div className="swiper-right w-[50%] h-full bg-white p-[3vw] text-black flex flex-col justify-center">
-                  <span className="thin">05</span>
-                  <span className="thin">23.11.2024</span>
-                  <h3 className="my-[.5vw]">
-                    Dare to Stand Out: Navigation Differentation in the Age of
-                    "Blanding"
-                  </h3>
-                  <span className="thin">
-                    Explore how to make your brand truly distinctive in a sea of
-                    similar designs with our insightful
-                  </span>
-                  <h6 className="mt-[.5vw]">
-                    Read more <i className="ri-arrow-right-line"></i>
-                  </h6>
-                </div>
-              </div>
-            </SwiperSlide>
-          </Swiper>
+        <div className="project-cards w-full pt-[4vw] min-h-screen flex items-center flex-col relative">
+          <div className="project-card project-card-0 sticky top-0 h-[100vh] w-full flex justify-center items-center">
+            <h2 className="relative z-[1]">Blue Abstractions</h2>
+            <div className="project-overlay absolute top-0 left-0 h-full w-full bg-black/10"></div>
+          </div>
+          <div className="project-card project-card-1 sticky top-0 h-[100vh] w-full flex justify-center items-center">
+            <h2 className="relative z-[1]">red Abstractions</h2>
+            <div className="project-overlay absolute top-0 left-0 h-full w-full bg-black/10"></div>
+          </div>
+          <div className="project-card project-card-2 sticky top-0 h-[100vh] w-full flex justify-center items-center">
+            <h2 className="relative z-[1]">green Abstractions</h2>
+            <div className="project-overlay absolute top-0 left-0 h-full w-full bg-black/10"></div>
+          </div>
         </div>
-        <div className="flex justify-center pb-[2vw]">
-          <WhiteButton
-            text="Book a call"
-            icon={<i className="ri-arrow-right-s-line font-[600]"></i>}
-          ></WhiteButton>
+      </section>
+      <section className="w-full bg-black flex justify-center">
+        <h2 className="text-[30vw] font-[700] leading-normal">ALL-4</h2>
+      </section>
+      <section className="bg-black min-h-screen w-full relative">
+        <div className="sticky top-1/2 -translate-y-1/2 text-center left-1/2 -translate-x-1/2 w-fit">
+          <h2 className="font-[600]">Let's start a</h2>
+          <div>
+            <h2 className="font-[600]">Project</h2>
+          </div>
+        </div>
+        <div className="w-full pl-[4vw]">
+          <div className="h-[35vh] w-[20vw] overflow-hidden rounded-xl">
+            <img
+              className="w-full h-full object-cover"
+              src="https://images.unsplash.com/photo-1726413980098-d5148ea519a9?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt=""
+            />
+          </div>
+        </div>
+        <div className="w-full pt-[6vw] pr-[4vw] flex justify-end">
+          <div className="h-[35vh] w-[20vw] overflow-hidden rounded-xl">
+            <img
+              className="w-full h-full object-cover"
+              src="https://images.unsplash.com/photo-1729262901083-d9f562d0c36f?q=80&w=2000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt=""
+            />
+          </div>
+        </div>
+        <div className="w-full pl-[4vw]">
+          <div className="h-[35vh] w-[20vw] overflow-hidden rounded-xl">
+            <img
+              className="w-full h-full object-cover"
+              src="https://images.unsplash.com/photo-1655711789589-b6367b970712?q=80&w=1989&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt=""
+            />
+          </div>
+        </div>
+        <div className="w-full pt-[6vw] pr-[4vw] flex justify-end">
+          <div className="h-[35vh] w-[20vw] overflow-hidden rounded-xl">
+            <img
+              className="w-full h-full object-cover"
+              src="https://images.unsplash.com/photo-1730078526638-43802b6b5286?q=80&w=2128&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt=""
+            />
+          </div>
+        </div>
+
+        <div className="project-final w-full h-screen flex justify-center items-center relative z-[1]">
+          <div className="project-final-img h-[35%] w-[25%] overflow-hidden rounded-xl relative">
+            <img
+              className="w-full h-full object-cover"
+              src="https://images.unsplash.com/photo-1730117637264-7c80b17edfa5?q=80&w=1925&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt=""
+            />
+            <div className="project-mail absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-black px-[3vw] py-[1vw] rounded-full">
+              <a
+                className="text-6xl leading-[.7]"
+                href="mailto:info@rohido.com"
+              >
+                info@rohido.com
+              </a>
+            </div>
+          </div>
         </div>
       </section>
       <TransparentFooter />

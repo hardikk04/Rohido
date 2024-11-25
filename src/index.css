@@ -284,6 +284,18 @@ input[type="number"] {
   fill: #fe4a2e;
 }
 
+.project-card-0 {
+  background-image: url("https://images.unsplash.com/photo-1577083552792-a0d461cb1dd6?q=80&w=1940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+}
+
+.project-card-1 {
+  background-image: url("https://images.unsplash.com/photo-1501366062246-723b4d3e4eb6?q=80&w=2096&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+}
+
+.project-card-2 {
+  background-image: url("https://images.unsplash.com/photo-1649101709109-96df36d074f6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+}
+
 @media (max-width: 1023px) {
   h1 {
     font-size: 6.5vw;
@@ -380,7 +392,6 @@ input[type="number"] {
   .project-elem-3 {
     background-image: url("/images/project4.png");
   }
-
 
   .service-elem {
     background-image: linear-gradient(42deg, #000, #923426b1);
