@@ -238,7 +238,7 @@ const Work = () => {
         </div>
       </section>
       <TransparentFooter />
-      <Footer></Footer>
+      <Footer />
     </div>
   );
 };

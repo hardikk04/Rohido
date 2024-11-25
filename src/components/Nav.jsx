@@ -11,7 +11,7 @@ const Nav = () => {
       <div className="absolute top-0 left-0 h-full w-full backdrop-blur rounded-[1.5vw]"></div>
       <div className="nav-left relative z-[1]">
         <TransitionLink href="/">
-          <img src="/images/main-logo.png" alt="" />
+          <img className="h-[1vw] object-cover" src="/images/main-logo.png" alt="" />
         </TransitionLink>
       </div>
       <div

@@ -56,12 +56,6 @@ const ClientReviewSection = () => {
 
   const clientReviewLoop = () => {
     const interval = setInterval(() => {
-      gsap.from(".client-center", {
-        opacity: 0,
-        duration: 0.5,
-        y: 30,
-      });
-
       setClientReviews((prevReviews) => {
         activeIndexRef.current =
           (activeIndexRef.current + 1) % clientReviews.length;
@@ -84,11 +78,7 @@ const ClientReviewSection = () => {
           if (intervalRef.current) {
             clearInterval(intervalRef.current);
           }
-          gsap.from(".client-center", {
-            opacity: 0,
-            duration: 0.5,
-            y: 30,
-          });
+
           return { ...review, isActive: true };
         }
         return { ...review, isActive: false };

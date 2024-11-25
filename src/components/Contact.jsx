@@ -43,7 +43,7 @@ const Contact = () => {
           <div
             onMouseEnter={() => {
               gsap.to(".mouse-follower", {
-                scale: 10,
+                scale: 5,
               });
             }}
             onMouseLeave={() => {
@@ -64,7 +64,7 @@ const Contact = () => {
       </section>
       <ContactSection />
       <TransparentFooter />
-      <Footer></Footer>
+      <Footer />
     </div>
   );
 };

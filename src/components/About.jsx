@@ -10,7 +10,6 @@ import ClientReviewSection from "./ClientReviewSection";
 import ContactSection from "./ContactSection";
 import Footer from "./Footer";
 import TransparentFooter from "./TransparentFooter";
-import { useEffect } from "react";
 
 const About = () => {
   useGSAP(() => {
@@ -23,6 +22,20 @@ const About = () => {
       width: "20%",
       duration: 0.5,
       ease: "power1.inOut",
+    });
+
+    gsap.to(".service-elem", {
+      width: "47%",
+      backgroundImage: "linear-gradient(42deg, #000, #fe4a2e24)",
+      stagger: 0.1,
+      scrollTrigger: {
+        scroller: "body",
+        trigger: ".service-elem",
+        start: "top 100%",
+        end: "top 30%",
+        // markers: true,
+        scrub: 1,
+      },
     });
 
     gsap.from(".clientes-badge", {
@@ -59,32 +72,6 @@ const About = () => {
     });
   });
 
-  useEffect(() => {
-    const mediaQuery = window.matchMedia("(max-width: 768px)"); 
-    const handleChange = (e) => {
-      if (!e.matches) {
-        gsap.to(".service-elem", {
-          width: "47%",
-          backgroundImage: "linear-gradient(42deg, #000, #fe4a2e24)",
-          stagger: 0.1,
-          scrollTrigger: {
-            scroller: "body",
-            trigger: ".service-elem",
-            start: "top 100%",
-            end: "top 30%",
-            // markers: true,
-            scrub: 1,
-          },
-        });
-      }
-    }; 
-
-    
-
-    // Add listener
-    mediaQuery.addEventListener("change", handleChange);
-  });
-
   return (
     <div className="main text-white regular relative z-[1]">
       <section
@@ -114,7 +101,7 @@ const About = () => {
           <div
             onMouseEnter={() => {
               gsap.to(".mouse-follower", {
-                scale: 10,
+                scale: 5,
               });
             }}
             onMouseLeave={() => {
@@ -272,11 +259,10 @@ const About = () => {
           </div>
         </div>
       </section>
-
-      <ClientReviewSection></ClientReviewSection>
-      <ContactSection></ContactSection>
+      <ClientReviewSection />
+      <ContactSection />
       <TransparentFooter />
-      <Footer></Footer>
+      <Footer />
     </div>
   );
 };

@@ -39,19 +39,6 @@ const Service = () => {
       stagger: 0.1,
     });
 
-    gsap.to(".half-circle", {
-      borderTopLeftRadius: "0vw",
-      borderTopRightRadius: "0vw",
-      scrollTrigger: {
-        scroller: "body",
-        trigger: ".half-circle",
-        start: "top 80%",
-        end: "top -20%",
-        scrub: 1,
-        // markers: true,
-      },
-    });
-
     gsap.from(".services-badge", {
       opacity: 0,
       scrollTrigger: {
@@ -153,16 +140,26 @@ const Service = () => {
             delay: 0.1,
           });
         }}
-        className="bg-black service-start pt-[12vw] w-full relative overflow-hidden"
+        className="bg-black h-[100vh] service-start w-full relative overflow-hidden"
       >
         <Nav></Nav>
+        <img
+          className="absolute service-img h-[50vw] top-0 left-0 pointer-events-none rotate-180"
+          src="/images/Star2.png"
+          alt=""
+        />
+        <img
+          className="absolute service-img h-[50vw] top-[10%] right-0 pointer-events-none rotate-0"
+          src="/images/Star2.png"
+          alt=""
+        />
         <div className="mouse-follower z-[1] pointer-events-none fixed top-0 left-0 scale-0 h-[2vh] w-[2vh] bg-white rounded-full"></div>
 
-        <div className="service-hero h-full w-full flex flex-col items-center justify-center lg:pt-[6vw] md:pt-[12vw] sm:pt-[12vw]">
+        <div className="service-hero relative h-full w-full flex flex-col items-center justify-center ">
           <div
             onMouseEnter={() => {
               gsap.to(".mouse-follower", {
-                scale: 10,
+                scale: 5,
               });
             }}
             onMouseLeave={() => {
@@ -173,20 +170,15 @@ const Service = () => {
             className="service-heading relative z-[1] text-white mix-blend-difference leading-[1.2] text-center mb-[2vw]"
           >
             <div className="service-heading1 overflow-hidden">
-              <h1>Robust Solutions That You</h1>
+              <h1>Connect With Rohido Media</h1>
             </div>
             <div className="service-heading2 overflow-hidden pb-[.5vw]">
-              <h1>Always Wanted</h1>
+              <h1>To Grow Your Business</h1>
             </div>
           </div>
         </div>
       </section>
-      <section className="bg-black relative w-full overflow-hidden flex flex-col gap-[8vw] items-center md:pt-[32vw] pt-[26vw] pb-[4vw]">
-        <div
-          style={{ boxShadow: "0px 0px 100px red" }}
-          className="half-circle pointer-events-none absolute w-full flex flex-col items-center h-full scale-x-[1.5] border-white/30 border-[3px] rounded-t-[60vw] top-[15%] sm:top-[20%] md:top-[25%] lg:top-[20%] xl:top-[20%]"
-        ></div>
-
+      <section className="bg-black relative w-full overflow-hidden flex flex-col gap-[8vw] items-center pb-[4vw]">
         <div className="w-full">
           <div className="services-title text-center flex flex-col items-center">
             <SectionBadge
@@ -271,8 +263,8 @@ const Service = () => {
       </section>
       <ClientReviewSection />
       <ContactSection />
-      <TransparentFooter/>
-      <Footer></Footer>
+      <TransparentFooter />
+      <Footer />
     </div>
   );
 };
