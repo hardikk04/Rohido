@@ -8,12 +8,6 @@ import { useGSAP } from "@gsap/react";
 import Footer from "./Footer";
 import TransparentFooter from "./TransparentFooter";
 
-import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
-
 const Work = () => {
   useGSAP(() => {
     gsap.from(".about-heading1 h1, .about-heading2 h1", {
