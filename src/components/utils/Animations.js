@@ -23,69 +23,69 @@ const paths = {
 
 let isAnimating = false;
 
-export const animationPageIn = () => {
-  // const bannerOne = document.querySelector(".banner-1");
-  // const bannerTwo = document.querySelector(".banner-2");
-  // const bannerThree = document.querySelector(".banner-3");
-  // const bannerFour = document.querySelector(".banner-4");
+// export const animationPageIn = () => {
+//   // const bannerOne = document.querySelector(".banner-1");
+//   // const bannerTwo = document.querySelector(".banner-2");
+//   // const bannerThree = document.querySelector(".banner-3");
+//   // const bannerFour = document.querySelector(".banner-4");
 
-  // if (bannerOne && bannerTwo && bannerThree && bannerFour) {
-  //   const tl = gsap.timeline();
+//   // if (bannerOne && bannerTwo && bannerThree && bannerFour) {
+//   //   const tl = gsap.timeline();
 
-  //   tl.set([bannerOne, bannerTwo, bannerThree, bannerFour], {
-  //     yPercent: 0,
-  //   }).to([bannerOne, bannerTwo, bannerThree, bannerFour], {
-  //     yPercent: 100,
-  //     stagger: 0.2,
-  //   });
-  // }
-  const overlayPath = document.querySelector(".overlay__path");
+//   //   tl.set([bannerOne, bannerTwo, bannerThree, bannerFour], {
+//   //     yPercent: 0,
+//   //   }).to([bannerOne, bannerTwo, bannerThree, bannerFour], {
+//   //     yPercent: 100,
+//   //     stagger: 0.2,
+//   //   });
+//   // }
+//   const overlayPath = document.querySelector(".overlay__path");
 
-  if (overlayPath) {
-    if (isAnimating) return;
-    isAnimating = true;
+//   if (overlayPath) {
+//     if (isAnimating) return;
+//     isAnimating = true;
 
-    const pageSwitchTimelineOut = gsap
-      .timeline({
-        paused: true,
-        onComplete: () => (isAnimating = false),
-      })
-      .set(overlayPath, {
-        attr: { d: paths.step1.unfilled },
-      })
-      .to(
-        overlayPath,
-        {
-          duration: 0.8,
-          ease: "power3.in",
-          attr: { d: paths.step1.inBetween },
-        },
-        0
-      )
-      .to(overlayPath, {
-        duration: 0.2,
-        ease: "power1",
-        attr: { d: paths.step1.filled },
-      })
+//     const pageSwitchTimelineOut = gsap
+//       .timeline({
+//         paused: true,
+//         onComplete: () => (isAnimating = false),
+//       })
+//       .set(overlayPath, {
+//         attr: { d: paths.step1.unfilled },
+//       })
+//       .to(
+//         overlayPath,
+//         {
+//           duration: 0.8,
+//           ease: "power3.in",
+//           attr: { d: paths.step1.inBetween },
+//         },
+//         0
+//       )
+//       .to(overlayPath, {
+//         duration: 0.2,
+//         ease: "power1",
+//         attr: { d: paths.step1.filled },
+//       })
 
-      .set(overlayPath, {
-        attr: { d: paths.step2.filled },
-      })
+//       .set(overlayPath, {
+//         attr: { d: paths.step2.filled },
+//       })
 
-      .to(overlayPath, {
-        duration: 0.15,
-        ease: "sine.in",
-        attr: { d: paths.step2.inBetween },
-      })
-      .to(overlayPath, {
-        duration: 1,
-        ease: "power4",
-        attr: { d: paths.step2.unfilled },
-      });
+//       .to(overlayPath, {
+//         duration: 0.15,
+//         ease: "sine.in",
+//         attr: { d: paths.step2.inBetween },
+//       })
+//       .to(overlayPath, {
+//         duration: 1,
+//         ease: "power4",
+//         attr: { d: paths.step2.unfilled },
+//       });
 
-    pageSwitchTimelineOut.play(0);
-  }
-};
+//     pageSwitchTimelineOut.play(0);
+//   }
+// };
 
 export const animationPageOut = (href, router) => {
   // const bannerOne = document.querySelector(".banner-1");

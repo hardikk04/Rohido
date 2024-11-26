@@ -24,7 +24,7 @@ const Contact = () => {
             delay: 0.1,
           });
         }}
-        className="bg-black h-[100vh] service-start w-full relative overflow-hidden"
+        className="bg-black h-[100vh] sm:h-[50vh] sm:pt-[22vw] service-start w-full relative overflow-hidden"
       >
         <Nav></Nav>
         <img

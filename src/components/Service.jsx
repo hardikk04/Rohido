@@ -140,7 +140,7 @@ const Service = () => {
             delay: 0.1,
           });
         }}
-        className="bg-black h-[100vh] service-start w-full relative overflow-hidden"
+        className="bg-black h-[100vh] sm:h-[60vh]  service-start w-full relative overflow-hidden"
       >
         <Nav></Nav>
         <img
@@ -180,7 +180,7 @@ const Service = () => {
       </section>
       <section className="bg-black relative w-full overflow-hidden flex flex-col gap-[8vw] items-center pb-[4vw]">
         <div className="w-full">
-          <div className="services-title text-center flex flex-col items-center">
+          <div className="services-title sm:pb-[12vw] text-center flex flex-col items-center">
             <SectionBadge
               c="services-badge"
               text="Problem Solving + Creativity = Innovation"
@@ -206,7 +206,7 @@ const Service = () => {
       </section>
       <section className="w-full flex justify-center bg-black pb-[6vw]">
         <div className="service-help w-[95%] flex justify-between md:flex-col sm:flex-col">
-          <div className="help-left w-[56%] md:w-full sm:w-full">
+          <div className="help-left sm:py-[12vw] w-[56%] md:w-full sm:w-full">
             <SectionBadge
               c="thin help-badge"
               text="What we offer : "
@@ -250,7 +250,7 @@ const Service = () => {
         </div>
       </section>
       <section className="w-full relative bg-black">
-        <div className="flex justify-center py-[2vw] border-t border-b border-white/30">
+        <div className="flex justify-center sm:my-[12vw] py-[2vw] border-t border-b border-white/30">
           <h2>How We Do That?</h2>
         </div>
         <div className="w-full flex justify-center py-[12vw]">

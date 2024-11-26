@@ -1,5 +1,5 @@
 // Library imports
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
@@ -12,13 +12,14 @@ import About from "./components/About";
 import Service from "./components/Service";
 import Contact from "./components/Contact";
 import Work from "./components/Work";
-import { animationPageIn } from "./components/utils/Animations";
+// import { animationPageIn } from "./components/utils/Animations";
 
 const App = () => {
   const location = useLocation();
 
   useEffect(() => {
-    animationPageIn();
+    
+    // animationPageIn();
 
     window.scrollTo(0, 0);
   }, [location]);

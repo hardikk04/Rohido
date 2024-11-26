@@ -11,7 +11,7 @@ const Nav = () => {
       <div className="absolute top-0 left-0 h-full w-full backdrop-blur rounded-[1.5vw]"></div>
       <div className="nav-left relative z-[1]">
         <TransitionLink href="/">
-          <img className="h-[1vw] object-cover" src="/images/main-logo.png" alt="" />
+          <img className="h-[1vw] sm:h-[2.5vw] object-cover" src="/images/main-logo.png" alt="" />
         </TransitionLink>
       </div>
       <div
@@ -34,7 +34,7 @@ const Nav = () => {
       >
         <BlackButton text="Menu"></BlackButton>
       </div>
-      <div className="menu backdrop-blur text-white pointer-events-none opacity-0 absolute right-0 top-[105%] border-[2px] border-white/30 p-[1.5vw] flex flex-col gap-[1.5vw] rounded-xl">
+      <div className="menu backdrop-blur text-white pointer-events-none opacity-0 absolute right-0 top-[105%] border-[2px] border-white/30 p-[1.5vw] flex flex-col gap-[1.5vw] rounded-xl sm:top-[120%] sm:left-0 sm:z-10 sm:text-center">
         <TransitionLink href="/">
           <div
             onMouseEnter={() => {
@@ -49,10 +49,10 @@ const Nav = () => {
                 ease: "power1.inOut",
               });
             }}
-            className="home-h3 sm:h-[3.5vw] md:h-[3vw] lg:h-[3.5vw] h-[2.5vw] overflow-hidden"
+            className="home-h3  sm:h-[8vw] md:h-[3vw] lg:h-[3.5vw] h-[2.5vw] overflow-hidden"
           >
-            <h3 className="opacity-70">Home</h3>
-            <h3 className="opacity-70">Home</h3>
+            <h3 className="opacity-70 sm:text-2xl">Home</h3>
+            <h3 className="opacity-70 sm:text-2xl">Home</h3>
           </div>
         </TransitionLink>
         <TransitionLink href="/about">
@@ -69,10 +69,10 @@ const Nav = () => {
                 ease: "power1.inOut",
               });
             }}
-            className="about-h3 sm:h-[3.5vw] md:h-[3vw] lg:h-[3.5vw] h-[2.5vw] overflow-hidden"
+            className="about-h3 sm:h-[8vw] md:h-[3vw] lg:h-[3.5vw] h-[2.5vw] overflow-hidden"
           >
-            <h3 className="opacity-70">About Us</h3>
-            <h3 className="opacity-70">About Us</h3>
+            <h3 className="opacity-70 sm:text-2xl">About Us</h3>
+            <h3 className="opacity-70 sm:text-2xl">About Us</h3>
           </div>
         </TransitionLink>
         <TransitionLink href="/service">
@@ -89,10 +89,10 @@ const Nav = () => {
                 ease: "power1.inOut",
               });
             }}
-            className="services-h3 sm:h-[3.5vw] md:h-[3vw] lg:h-[3.5vw] h-[2.5vw] overflow-hidden"
+            className="services-h3 sm:h-[8vw] md:h-[3vw] lg:h-[3.5vw] h-[2.5vw] overflow-hidden"
           >
-            <h3 className="opacity-70">Services</h3>
-            <h3 className="opacity-70">Services</h3>
+            <h3 className="opacity-70 sm:text-2xl">Services</h3>
+            <h3 className="opacity-70 sm:text-2xl">Services</h3>
           </div>
         </TransitionLink>
         <TransitionLink href="/work">
@@ -109,10 +109,10 @@ const Nav = () => {
                 ease: "power1.inOut",
               });
             }}
-            className="work-h3 sm:h-[3.5vw] md:h-[3vw] lg:h-[3.5vw] h-[2.5vw] overflow-hidden"
+            className="work-h3 sm:h-[8vw] md:h-[3vw] lg:h-[3.5vw] h-[2.5vw] overflow-hidden"
           >
-            <h3 className="opacity-70">Work</h3>
-            <h3 className="opacity-70">Work</h3>
+            <h3 className="opacity-70 sm:text-2xl">Work</h3>
+            <h3 className="opacity-70 sm:text-2xl">Work</h3>
           </div>
         </TransitionLink>
         <TransitionLink href="/contact">
@@ -129,10 +129,10 @@ const Nav = () => {
                 ease: "power1.inOut",
               });
             }}
-            className="contact-h3 sm:h-[3.5vw] md:h-[3vw] lg:h-[3.5vw] h-[2.5vw] overflow-hidden"
+            className="contact-h3 sm:h-[8vw] md:h-[3vw] lg:h-[3.5vw] h-[2.5vw] overflow-hidden"
           >
-            <h3 className="opacity-70">Contact Us</h3>
-            <h3 className="opacity-70">Contact Us</h3>
+            <h3 className="opacity-70 sm:text-2xl">Contact Us</h3>
+            <h3 className="opacity-70 sm:text-2xl">Contact Us</h3>
           </div>
         </TransitionLink>
       </div>

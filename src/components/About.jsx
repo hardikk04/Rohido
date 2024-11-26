@@ -24,19 +24,25 @@ const About = () => {
       ease: "power1.inOut",
     });
 
-    gsap.to(".service-elem", {
-      width: "47%",
-      backgroundImage: "linear-gradient(42deg, #000, #fe4a2e24)",
-      stagger: 0.1,
-      scrollTrigger: {
-        scroller: "body",
-        trigger: ".service-elem",
-        start: "top 100%",
-        end: "top 30%",
-        // markers: true,
-        scrub: 1,
-      },
-    });
+    if (
+      !/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|OperaMini/i.test(
+        navigator.userAgent
+      )
+    ) {
+      gsap.to(".service-elem", {
+        width: "47%",
+        backgroundImage: "linear-gradient(42deg, #000, #fe4a2e24)",
+        stagger: 0.1,
+        scrollTrigger: {
+          scroller: "body",
+          trigger: ".service-elem",
+          start: "top 100%",
+          end: "top 30%",
+          // markers: true,
+          scrub: 1,
+        },
+      });
+    }
 
     gsap.from(".clientes-badge", {
       opacity: 0,
@@ -82,7 +88,7 @@ const About = () => {
             delay: 0.1,
           });
         }}
-        className="bg-black pt-[12vw] about-start w-full relative overflow-hidden"
+        className="bg-black pt-[12vw] sm:pt-[26vw] sm:pb-[16vw] about-start w-full relative overflow-hidden"
       >
         <Nav></Nav>
         <img
@@ -95,7 +101,7 @@ const About = () => {
           src="/images/Star2.png"
           alt=""
         />
-        <div className="mouse-follower z-[1] pointer-events-none fixed top-0 left-0 scale-0 h-[2vh] w-[2vh] bg-white rounded-full"></div>
+        <div className="mouse-follower sm:hidden z-[1] pointer-events-none fixed top-0 left-0 scale-0 h-[2vh] w-[2vh] bg-white rounded-full"></div>
 
         <div className="about-hero relative h-full w-full flex flex-col items-center justify-center lg:pt-[8vw] sm:pt-[8vw]">
           <div
@@ -125,7 +131,7 @@ const About = () => {
           </div>
         </div>
       </section>
-      <section className="bg-black relative w-full overflow-hidden flex flex-col items-center py-[8vw]">
+      <section className="bg-black relative w-full overflow-hidden flex flex-col items-center py-[8vw] sm:pb-[22vw]">
         <div
           onMouseEnter={() => {
             gsap.to(`.about-content`, {

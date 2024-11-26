@@ -1,6 +1,6 @@
 // Libraries imports
 import { useGSAP } from "@gsap/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
@@ -19,6 +19,7 @@ import ClientReviewSection from "./ClientReviewSection";
 import Footer from "./Footer";
 import ContactSection from "./ContactSection";
 import TransparentFooter from "./TransparentFooter";
+import Loader from "./Loader";
 
 const Home = () => {
   const [swiperCardData, setSwiperCardData] = useState([
@@ -83,8 +84,8 @@ const Home = () => {
     },
   ]);
 
+  const tl = gsap.timeline({paused:true});
   useGSAP(() => {
-    const tl = gsap.timeline();
 
     tl.from(".home-badge", {
       opacity: 0,
@@ -259,9 +260,19 @@ const Home = () => {
     });
   });
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      tl.play(0);
+      gsap.to(".loader", {
+        opacity: 0,
+      });
+    }, 2000); // 2 seconds delay
+  }, []);
+
   return (
     <>
       <div className="main text-white regular relative z-[1]">
+        <Loader />
         <section
           onMouseMove={(dets) => {
             gsap.to(".mouse-follower", {
@@ -274,8 +285,8 @@ const Home = () => {
         >
           <Nav />
 
-          <div className="mouse-follower pointer-events-none fixed top-0 left-0 scale-0 h-[2vh] w-[2vh] bg-white rounded-full"></div>
-          <div className="home-hero h-full w-full flex flex-col items-center justify-center ">
+          <div className="mouse-follower sm:opacity-0 pointer-events-none fixed top-0 left-0 scale-0 h-[2vh] w-[2vh] bg-white rounded-full"></div>
+          <div className="home-hero sm:py-[16vw] h-full w-full flex flex-col items-center justify-center ">
             <SectionBadge
               c="home-badge"
               text="From design to development 🚀"
@@ -315,12 +326,12 @@ const Home = () => {
         <section className="bg-black home-about relative w-full overflow-hidden flex flex-col gap-[8vw] items-center md:pt-[22vw] pt-[16vw] pb-[8vw] sm:pt-[28vw]">
           <div
             style={{ boxShadow: "0px 0px 100px red" }}
-            className="half-circle pointer-events-none absolute w-full flex flex-col items-center h-full scale-x-[1.1] border-white/30 border-[3px] rounded-t-[60vw] top-[10%] md:top-[10%] sm:top-[8%]"
+            className="half-circle pointer-events-none absolute w-full flex flex-col items-center h-full scale-x-[1.1] border-white/30 sm:border-[1px] border-[3px] rounded-t-[60vw] top-[10%] md:top-[10%] sm:top-[8%]"
           ></div>
           <div className="w-[95%] flex justify-center">
             <BrandSwiper></BrandSwiper>
           </div>
-          <div className="home-about-content sm:flex-col md:flex-col w-[95%] flex gap-[3vw] md:gap-[1vw]">
+          <div className="home-about-content sm:pt-[8vw] sm:flex-col md:flex-col w-[95%] flex gap-[3vw] md:gap-[1vw]">
             <div
               onMouseEnter={() => {
                 gsap.to(`.home-about-left`, {
@@ -398,7 +409,7 @@ const Home = () => {
           </div>
         </section>
         <section className="bg-black home-projects relative">
-          <div className="project-title text-center flex flex-col items-center">
+          <div className="project-title sm:py-[12vw] text-center flex flex-col items-center">
             <SectionBadge
               c="project-badge"
               text="Technology + Innovation = Digital Transformations"
@@ -446,7 +457,7 @@ const Home = () => {
           </div>
         </section>
         <section className="bg-black home-services w-full flex flex-col justify-center">
-          <div className="service-title text-center flex flex-col items-center">
+          <div className="service-title sm:py-[12vw] text-center flex flex-col items-center">
             <SectionBadge
               c="services-badge"
               text="Problem Solving + Creativity = Innovation"
@@ -464,7 +475,7 @@ const Home = () => {
           </div>
         </section>
         <section className="bg-black home-team pt-[10vw] pb-[10vw] relative">
-          <div className="team-title text-center flex flex-col items-center">
+          <div className="team-title sm:py-[12vw] text-center flex flex-col items-center">
             <SectionBadge
               c="team-badge"
               text="Recognition & Awards"

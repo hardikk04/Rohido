@@ -45,10 +45,10 @@ const Work = () => {
       scrollTrigger: {
         scroller: "body",
         trigger: ".project-final",
-        start: "top 0%",
-        end: "top -100%",
+        start: "top 100%",
+        end: "top 0%",
         // markers: true,
-        pin: true,
+        // pin: true,
         scrub: 1,
       },
     });
@@ -60,7 +60,7 @@ const Work = () => {
         scroller: "body",
         trigger: ".project-mail",
         start: "top 60%",
-        end: "top 60%",
+        end: "top 50%",
         // markers: true,
         scrub: 1,
       },
@@ -77,7 +77,7 @@ const Work = () => {
             delay: 0.1,
           });
         }}
-        className="bg-black about-start h-[100vh] w-full relative overflow-hidden"
+        className="bg-black about-start sm:h-[50vh] sm:pt-[16vw] h-[100vh] w-full relative overflow-hidden"
       >
         <Nav></Nav>
         <img
@@ -116,7 +116,7 @@ const Work = () => {
         </div>
       </section>
       <section className="w-full bg-black">
-        <div className="project-title text-center flex flex-col items-center">
+        <div className="project-title sm:py-[12vw] text-center flex flex-col items-center">
           <SectionBadge
             c="project-badge"
             text="Technology + Innovation = Digital Transformations"
@@ -150,8 +150,8 @@ const Work = () => {
             <h2 className="font-[600]">Project</h2>
           </div>
         </div>
-        <div className="w-full pl-[4vw]">
-          <div className="h-[35vh] w-[20vw] overflow-hidden rounded-xl">
+        <div className="w-full pl-[4vw] sm:h-[50vh]">
+          <div className="h-[35vh] w-[20vw] sm:h-[30vw] sm:w-[45vw] overflow-hidden rounded-xl">
             <img
               className="w-full h-full object-cover"
               src="https://images.unsplash.com/photo-1726413980098-d5148ea519a9?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -159,8 +159,8 @@ const Work = () => {
             />
           </div>
         </div>
-        <div className="w-full pt-[6vw] pr-[4vw] flex justify-end">
-          <div className="h-[35vh] w-[20vw] overflow-hidden rounded-xl">
+        <div className="w-full pt-[6vw] pr-[4vw] flex justify-end sm:h-[50vh]">
+          <div className="h-[35vh] w-[20vw] sm:h-[30vw] sm:w-[45vw] overflow-hidden rounded-xl">
             <img
               className="w-full h-full object-cover"
               src="https://images.unsplash.com/photo-1729262901083-d9f562d0c36f?q=80&w=2000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -168,8 +168,8 @@ const Work = () => {
             />
           </div>
         </div>
-        <div className="w-full pl-[4vw]">
-          <div className="h-[35vh] w-[20vw] overflow-hidden rounded-xl">
+        <div className="w-full pl-[4vw] sm:h-[50vh]">
+          <div className="h-[35vh] w-[20vw] sm:h-[30vw] sm:w-[45vw] overflow-hidden rounded-xl">
             <img
               className="w-full h-full object-cover"
               src="https://images.unsplash.com/photo-1655711789589-b6367b970712?q=80&w=1989&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -177,8 +177,8 @@ const Work = () => {
             />
           </div>
         </div>
-        <div className="w-full pt-[6vw] pr-[4vw] flex justify-end">
-          <div className="h-[35vh] w-[20vw] overflow-hidden rounded-xl">
+        <div className="w-full pt-[6vw] pr-[4vw] flex justify-end sm:h-[50vh]">
+          <div className="h-[35vh] w-[20vw] sm:h-[30vw] sm:w-[45vw] overflow-hidden rounded-xl">
             <img
               className="w-full h-full object-cover"
               src="https://images.unsplash.com/photo-1730078526638-43802b6b5286?q=80&w=2128&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -196,7 +196,7 @@ const Work = () => {
             />
             <div className="project-mail absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-black px-[3vw] py-[1vw] rounded-full">
               <a
-                className="text-6xl leading-[.7]"
+                className="text-6xl sm:text-3xl leading-[.7]"
                 href="mailto:info@rohido.com"
               >
                 info@rohido.com
