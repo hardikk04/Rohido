@@ -77,7 +77,7 @@ const Work = () => {
             delay: 0.1,
           });
         }}
-        className="bg-black about-start sm:h-[50vh] sm:pt-[16vw] h-[100vh] w-full relative overflow-hidden"
+        className="bg-black about-start sm:h-[35vh] sm:pt-[16vw] h-[100vh] w-full relative overflow-hidden"
       >
         <Nav></Nav>
         <img

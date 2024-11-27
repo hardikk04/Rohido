@@ -20,6 +20,13 @@ import Footer from "./Footer";
 import ContactSection from "./ContactSection";
 import TransparentFooter from "./TransparentFooter";
 import Loader from "./Loader";
+import MobileSwiperCard from "./MobileSwiperCard";
+
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
 
 const Home = () => {
   const [swiperCardData, setSwiperCardData] = useState([
@@ -84,9 +91,8 @@ const Home = () => {
     },
   ]);
 
-  const tl = gsap.timeline({paused:true});
+  const tl = gsap.timeline({ paused: true });
   useGSAP(() => {
-
     tl.from(".home-badge", {
       opacity: 0,
     })
@@ -311,7 +317,7 @@ const Home = () => {
                 <h1>Impactful websites</h1>
               </div>
             </div>
-            <p className="opacity-70 light mix-blend-difference text-center">
+            <p className="opacity-70 light mix-blend-difference text-center sm:w-[95%]">
               Empowering your business through an expertly developed website.
             </p>
             <div className="mt-[3vw]">
@@ -408,7 +414,7 @@ const Home = () => {
             </div>
           </div>
         </section>
-        <section className="bg-black home-projects relative">
+        <section className="bg-black sm:hidden md:hidden home-projects relative">
           <div className="project-title sm:py-[6vw] text-center flex flex-col items-center">
             <SectionBadge
               c="project-badge"
@@ -454,6 +460,30 @@ const Home = () => {
               text="Book a call"
               icon={<i className="ri-arrow-right-s-line font-[600]"></i>}
             ></WhiteButton>
+          </div>
+        </section>
+        <section className="home-projects-mobile hidden sm:flex md:flex w-full h-[60vh] bg-black justify-center">
+          <div className="w-[95%] text-black py-[6vw]">
+            <Swiper
+              slidesPerView={"auto"}
+              spaceBetween={10}
+              loop={true}
+              pagination={{
+                clickable: true,
+              }}
+              className="mySwiper"
+            >
+              {projectCard.map((data, index) => {
+                return (
+                  <SwiperSlide key={index}>
+                    <MobileSwiperCard
+                      c={`project-mobile-card-${index}`}
+                      data={data}
+                    />
+                  </SwiperSlide>
+                );
+              })}
+            </Swiper>
           </div>
         </section>
         <section className="bg-black home-services w-full flex flex-col justify-center">
