@@ -96,7 +96,7 @@ const ClientReviewSection = () => {
 
   return (
     <section className="bg-black w-full">
-      <div className="clientes-title sm:py-[12vw] text-center flex flex-col items-center">
+      <div className="clientes-title sm:py-[6vw] text-center flex flex-col items-center">
         <SectionBadge
           c="clientes-badge"
           text="Design+Development = Growth 💸"

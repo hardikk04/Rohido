@@ -12,7 +12,7 @@ const ContactSection = () => {
   const { register, handleSubmit, reset } = useForm();
 
   return (
-    <section className="bg-black contact-section pb-[6vw] sm:pt-[12vw]">
+    <section className="bg-black contact-section pb-[6vw] sm:pt-[6vw]">
       <ScrollerX></ScrollerX>
       <div className="w-full flex justify-center sm:pt-[12vw]">
         <div className="w-[95%] flex justify-between sm:flex-col md:flex-col">
@@ -21,7 +21,7 @@ const ContactSection = () => {
               <div className="contact-headings overflow-hidden">
                 <h2 className="medium leading-[1.2]">Book A Call</h2>
               </div>
-              <p className="thin opacity-70 my-[2vw]">
+              <p className="thin opacity-70 my-[2vw] text-center">
                 You Might have caught our idea on how we convert a plan into a
                 functinal business.
               </p>

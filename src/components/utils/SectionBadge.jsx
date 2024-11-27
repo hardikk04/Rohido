@@ -9,7 +9,7 @@ const TransformationBadge = ({ text, c = "", mail = false }) => {
     </div>
   ) : (
     <div
-      className={`${c} whitespace-nowrap flex items-center w-fit space-x-2 px-4 py-2 bg-gradient-to-r from-red-500 to-black rounded-full text-white`}
+      className={`${c} sm:mb-[3vw] whitespace-nowrap flex items-center w-fit space-x-2 px-4 py-2 bg-gradient-to-r from-red-500 to-black rounded-full text-white`}
     >
       <span>{text}</span>
     </div>

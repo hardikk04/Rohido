@@ -281,7 +281,7 @@ const Home = () => {
               delay: 0.1,
             });
           }}
-          className="bg-black home-start sm:pt-[22vw] pt-[12vw] w-full relative overflow-hidden"
+          className="bg-black home-start sm:pt-[16vw] pt-[12vw] w-full relative overflow-hidden"
         >
           <Nav />
 
@@ -311,7 +311,7 @@ const Home = () => {
                 <h1>Impactful websites</h1>
               </div>
             </div>
-            <p className="opacity-70 light mix-blend-difference">
+            <p className="opacity-70 light mix-blend-difference text-center">
               Empowering your business through an expertly developed website.
             </p>
             <div className="mt-[3vw]">
@@ -409,7 +409,7 @@ const Home = () => {
           </div>
         </section>
         <section className="bg-black home-projects relative">
-          <div className="project-title sm:py-[12vw] text-center flex flex-col items-center">
+          <div className="project-title sm:py-[6vw] text-center flex flex-col items-center">
             <SectionBadge
               c="project-badge"
               text="Technology + Innovation = Digital Transformations"
@@ -457,7 +457,7 @@ const Home = () => {
           </div>
         </section>
         <section className="bg-black home-services w-full flex flex-col justify-center">
-          <div className="service-title sm:py-[12vw] text-center flex flex-col items-center">
+          <div className="service-title sm:py-[6vw] text-center flex flex-col items-center">
             <SectionBadge
               c="services-badge"
               text="Problem Solving + Creativity = Innovation"
@@ -475,7 +475,7 @@ const Home = () => {
           </div>
         </section>
         <section className="bg-black home-team pt-[10vw] pb-[10vw] relative">
-          <div className="team-title sm:py-[12vw] text-center flex flex-col items-center">
+          <div className="team-title sm:py-[6vw] text-center flex flex-col items-center">
             <SectionBadge
               c="team-badge"
               text="Recognition & Awards"
