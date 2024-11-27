@@ -140,7 +140,7 @@ const Service = () => {
             delay: 0.1,
           });
         }}
-        className="bg-black h-[100vh] sm:h-[60vh]  service-start w-full relative overflow-hidden"
+        className="bg-black h-[100vh] sm:h-[50vh]  service-start w-full relative overflow-hidden"
       >
         <Nav></Nav>
         <img
@@ -155,7 +155,7 @@ const Service = () => {
         />
         <div className="mouse-follower z-[1] pointer-events-none fixed top-0 left-0 scale-0 h-[2vh] w-[2vh] bg-white rounded-full"></div>
 
-        <div className="service-hero relative h-full w-full flex flex-col items-center justify-center ">
+        <div className="service-hero sm:pt-[12vw] relative h-full w-full flex flex-col items-center justify-center ">
           <div
             onMouseEnter={() => {
               gsap.to(".mouse-follower", {
@@ -180,7 +180,7 @@ const Service = () => {
       </section>
       <section className="bg-black relative w-full overflow-hidden flex flex-col gap-[8vw] items-center pb-[4vw]">
         <div className="w-full">
-          <div className="services-title sm:pb-[12vw] text-center flex flex-col items-center">
+          <div className="services-title sm:pb-[6vw] text-center flex flex-col items-center">
             <SectionBadge
               c="services-badge"
               text="Problem Solving + Creativity = Innovation"
@@ -250,7 +250,7 @@ const Service = () => {
         </div>
       </section>
       <section className="w-full relative bg-black">
-        <div className="flex justify-center sm:my-[12vw] py-[2vw] border-t border-b border-white/30">
+        <div className="flex justify-center sm:py-[6vw] py-[2vw] border-t border-b border-white/30">
           <h2>How We Do That?</h2>
         </div>
         <div className="w-full flex justify-center py-[12vw]">

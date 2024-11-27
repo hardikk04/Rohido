@@ -51,8 +51,8 @@ const Nav = () => {
             }}
             className="home-h3  sm:h-[8vw] md:h-[3vw] lg:h-[3.5vw] h-[2.5vw] overflow-hidden"
           >
-            <h3 className="opacity-70 sm:text-2xl">Home</h3>
-            <h3 className="opacity-70 sm:text-2xl">Home</h3>
+            <h3 className="opacity-70 sm:opacity-100 sm:text-2xl">Home</h3>
+            <h3 className="opacity-70 sm:opacity-100 sm:text-2xl">Home</h3>
           </div>
         </TransitionLink>
         <TransitionLink href="/about">
@@ -71,8 +71,8 @@ const Nav = () => {
             }}
             className="about-h3 sm:h-[8vw] md:h-[3vw] lg:h-[3.5vw] h-[2.5vw] overflow-hidden"
           >
-            <h3 className="opacity-70 sm:text-2xl">About Us</h3>
-            <h3 className="opacity-70 sm:text-2xl">About Us</h3>
+            <h3 className="opacity-70 sm:opacity-100 sm:text-2xl">About Us</h3>
+            <h3 className="opacity-70 sm:opacity-100 sm:text-2xl">About Us</h3>
           </div>
         </TransitionLink>
         <TransitionLink href="/service">
@@ -91,8 +91,8 @@ const Nav = () => {
             }}
             className="services-h3 sm:h-[8vw] md:h-[3vw] lg:h-[3.5vw] h-[2.5vw] overflow-hidden"
           >
-            <h3 className="opacity-70 sm:text-2xl">Services</h3>
-            <h3 className="opacity-70 sm:text-2xl">Services</h3>
+            <h3 className="opacity-70 sm:opacity-100 sm:text-2xl">Services</h3>
+            <h3 className="opacity-70 sm:opacity-100 sm:text-2xl">Services</h3>
           </div>
         </TransitionLink>
         <TransitionLink href="/work">
@@ -111,8 +111,8 @@ const Nav = () => {
             }}
             className="work-h3 sm:h-[8vw] md:h-[3vw] lg:h-[3.5vw] h-[2.5vw] overflow-hidden"
           >
-            <h3 className="opacity-70 sm:text-2xl">Work</h3>
-            <h3 className="opacity-70 sm:text-2xl">Work</h3>
+            <h3 className="opacity-70 sm:opacity-100 sm:text-2xl">Work</h3>
+            <h3 className="opacity-70 sm:opacity-100 sm:text-2xl">Work</h3>
           </div>
         </TransitionLink>
         <TransitionLink href="/contact">
@@ -131,8 +131,8 @@ const Nav = () => {
             }}
             className="contact-h3 sm:h-[8vw] md:h-[3vw] lg:h-[3.5vw] h-[2.5vw] overflow-hidden"
           >
-            <h3 className="opacity-70 sm:text-2xl">Contact Us</h3>
-            <h3 className="opacity-70 sm:text-2xl">Contact Us</h3>
+            <h3 className="opacity-70 sm:opacity-100 sm:text-2xl">Contact Us</h3>
+            <h3 className="opacity-70 sm:opacity-100 sm:text-2xl">Contact Us</h3>
           </div>
         </TransitionLink>
       </div>

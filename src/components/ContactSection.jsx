@@ -14,14 +14,14 @@ const ContactSection = () => {
   return (
     <section className="bg-black contact-section pb-[6vw] sm:pt-[6vw]">
       <ScrollerX></ScrollerX>
-      <div className="w-full flex justify-center sm:pt-[12vw]">
+      <div className="w-full flex justify-center sm:pt-[6vw]">
         <div className="w-[95%] flex justify-between sm:flex-col md:flex-col">
           <div className="contact-left w-[40%] sm:w-full md:w-full flex flex-col justify-center pb-[12vw] sm:pb-[6vw] sm:items-center md:pb-[6vw] md:items-center">
             <div className="w-[70%] sm:pb-[12vw] md:w-fit md:flex md:flex-col md:justify-center md:items-center sm:w-fit sm:flex sm:flex-col sm:justify-center sm:items-center">
               <div className="contact-headings overflow-hidden">
                 <h2 className="medium leading-[1.2]">Book A Call</h2>
               </div>
-              <p className="thin opacity-70 my-[2vw] text-center">
+              <p className="thin opacity-70 my-[1vw] sm:text-center">
                 You Might have caught our idea on how we convert a plan into a
                 functinal business.
               </p>

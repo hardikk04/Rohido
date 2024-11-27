@@ -30,7 +30,7 @@ const Footer = () => {
                   ease: "power1.inOut",
                 });
               }}
-              className="terms-service sm:h-[3vw] md:h-[3.5vw] lg:h-[3.5vw] h-[1.5vw] overflow-hidden"
+              className="terms-service sm:h-[5vw] md:h-[3.5vw] lg:h-[3.5vw] h-[1.5vw] overflow-hidden"
             >
               <p className="opacity-70 thin">Terms of Service</p>
               <p className="opacity-70 thin">Terms of Service</p>
@@ -50,7 +50,7 @@ const Footer = () => {
                   ease: "power1.inOut",
                 });
               }}
-              className="privacy-policy sm:h-[3vw] md:h-[3.5vw] lg:h-[3.5vw] h-[1.5vw] overflow-hidden"
+              className="privacy-policy sm:h-[5vw] md:h-[3.5vw] lg:h-[3.5vw] h-[1.5vw] overflow-hidden"
             >
               <p className="opacity-70 thin">Privacy Policy</p>
               <p className="opacity-70 thin">Privacy Policy</p>

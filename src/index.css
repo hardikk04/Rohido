@@ -404,20 +404,20 @@ input[type="number"] {
   }
 
   h2 {
-    font-size: 4.5vw;
+    font-size: 5.5vw;
   }
 
   h3 {
-    font-size: 3vw;
+    font-size: 4vw;
     line-height: 1.2;
   }
 
   h6 {
-    font-size: 2.2vw;
+    font-size: 3.2vw;
   }
 
   p {
-    font-size: 3.6vw;
+    font-size: 3.8vw;
   }
 
   span {
@@ -427,7 +427,7 @@ input[type="number"] {
   }
 
   button {
-    font-size: 2vw;
+    font-size: 2.6vw;
   }
 
   .project-elem-0 {

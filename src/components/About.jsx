@@ -88,7 +88,7 @@ const About = () => {
             delay: 0.1,
           });
         }}
-        className="bg-black pt-[12vw] sm:pt-[26vw] sm:pb-[16vw] about-start w-full relative overflow-hidden"
+        className="bg-black pt-[12vw] sm:pt-[26vw] sm:pb-[6vw] about-start w-full relative overflow-hidden"
       >
         <Nav></Nav>
         <img
@@ -124,14 +124,14 @@ const About = () => {
               <h1>Your Business To Grow</h1>
             </div>
             <div className="w-full flex justify-center py-[3vw] pt-[8vw]">
-              <div className="w-[70%] flex justify-center">
+              <div className="w-[70%] sm:w-[65%] flex justify-center">
                 <BrandSwiper></BrandSwiper>
               </div>
             </div>
           </div>
         </div>
       </section>
-      <section className="bg-black relative w-full overflow-hidden flex flex-col items-center py-[8vw] sm:pb-[22vw]">
+      <section className="bg-black relative w-full overflow-hidden flex flex-col items-center py-[8vw] sm:pb-[12vw]">
         <div
           onMouseEnter={() => {
             gsap.to(`.about-content`, {
@@ -209,7 +209,7 @@ const About = () => {
           </div>
         </div>
       </section>
-      <section className="bg-black relative w-full overflow-hidden flex flex-col gap-[8vw] items-center py-[2vw] pb-[14vw]">
+      <section className="bg-black relative w-full overflow-hidden flex flex-col gap-[8vw] items-center py-[2vw] pb-[14vw] sm:pb-[6vw]">
         <div className="about-content w-[95%] flex gap-[3vw] md:flex-col sm:flex-col">
           <div className="w-full service-elem relative shrink-0 p-[1vw] pb-0 text-white flex overflow-hidden rounded-xl flex-col justify-between gap-[8vw]">
             <div className="flex gap-[1vw] relative z-[1] p-[2vw]">

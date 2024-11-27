@@ -116,7 +116,7 @@ const Work = () => {
         </div>
       </section>
       <section className="w-full bg-black">
-        <div className="project-title sm:py-[12vw] text-center flex flex-col items-center">
+        <div className="project-title sm:py-[6vw] text-center flex flex-col items-center">
           <SectionBadge
             c="project-badge"
             text="Technology + Innovation = Digital Transformations"
@@ -144,13 +144,13 @@ const Work = () => {
         <h2 className="text-[30vw] font-[700] leading-normal">ALL-4</h2>
       </section>
       <section className="bg-black min-h-screen w-full relative">
-        <div className="sticky top-1/2 -translate-y-1/2 text-center left-1/2 -translate-x-1/2 w-fit">
+        <div className="sticky top-1/2 -translate-y-1/2 text-center left-1/2 -translate-x-1/2 w-fit ">
           <h2 className="font-[600]">Let's start a</h2>
           <div>
             <h2 className="font-[600]">Project</h2>
           </div>
         </div>
-        <div className="w-full pl-[4vw] sm:h-[50vh]">
+        <div className="w-full pl-[4vw] sm:h-[50vh] relative z-[1]">
           <div className="h-[35vh] w-[20vw] sm:h-[30vw] sm:w-[45vw] overflow-hidden rounded-xl">
             <img
               className="w-full h-full object-cover"
@@ -159,7 +159,7 @@ const Work = () => {
             />
           </div>
         </div>
-        <div className="w-full pt-[6vw] pr-[4vw] flex justify-end sm:h-[50vh]">
+        <div className="w-full pt-[6vw] pr-[4vw] flex justify-end sm:h-[50vh] relative z-[1]">
           <div className="h-[35vh] w-[20vw] sm:h-[30vw] sm:w-[45vw] overflow-hidden rounded-xl">
             <img
               className="w-full h-full object-cover"
@@ -168,7 +168,7 @@ const Work = () => {
             />
           </div>
         </div>
-        <div className="w-full pl-[4vw] sm:h-[50vh]">
+        <div className="w-full pl-[4vw] sm:h-[50vh] relative z-[1]">
           <div className="h-[35vh] w-[20vw] sm:h-[30vw] sm:w-[45vw] overflow-hidden rounded-xl">
             <img
               className="w-full h-full object-cover"
@@ -177,7 +177,7 @@ const Work = () => {
             />
           </div>
         </div>
-        <div className="w-full pt-[6vw] pr-[4vw] flex justify-end sm:h-[50vh]">
+        <div className="w-full pt-[6vw] pr-[4vw] flex justify-end sm:h-[50vh] relative z-[1]">
           <div className="h-[35vh] w-[20vw] sm:h-[30vw] sm:w-[45vw] overflow-hidden rounded-xl">
             <img
               className="w-full h-full object-cover"

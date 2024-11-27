@@ -286,7 +286,7 @@ const Home = () => {
           <Nav />
 
           <div className="mouse-follower sm:opacity-0 pointer-events-none fixed top-0 left-0 scale-0 h-[2vh] w-[2vh] bg-white rounded-full"></div>
-          <div className="home-hero sm:py-[16vw] h-full w-full flex flex-col items-center justify-center ">
+          <div className="home-hero sm:py-[12vw] h-full w-full flex flex-col items-center justify-center ">
             <SectionBadge
               c="home-badge"
               text="From design to development 🚀"
