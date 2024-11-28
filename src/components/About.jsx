@@ -79,7 +79,8 @@ const About = () => {
   });
 
   return (
-    <div className="main text-white regular relative z-[1]">
+    <div className="main bg-black text-white regular relative z-[1]">
+      <Nav></Nav>
       <section
         onMouseMove={(dets) => {
           gsap.to(".mouse-follower", {
@@ -90,7 +91,6 @@ const About = () => {
         }}
         className="bg-black pt-[12vw] sm:pt-[26vw] sm:pb-[6vw] about-start w-full relative overflow-hidden"
       >
-        <Nav></Nav>
         <img
           className="absolute about-img h-[50vw] top-0 left-0 pointer-events-none rotate-180"
           src="/images/Star2.png"

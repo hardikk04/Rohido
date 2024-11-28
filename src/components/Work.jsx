@@ -68,7 +68,8 @@ const Work = () => {
   });
 
   return (
-    <div className="main relative text-white z-[1]">
+    <div className="main bg-black relative text-white z-[1]">
+      <Nav />
       <section
         onMouseMove={(dets) => {
           gsap.to(".mouse-follower", {
@@ -79,7 +80,6 @@ const Work = () => {
         }}
         className="bg-black about-start sm:h-[35vh] sm:pt-[16vw] h-[100vh] w-full relative overflow-hidden"
       >
-        <Nav></Nav>
         <img
           className="absolute about-img h-[50vw] top-0 left-0 pointer-events-none rotate-180"
           src="/images/Star2.png"
@@ -116,7 +116,7 @@ const Work = () => {
         </div>
       </section>
       <section className="w-full bg-black">
-        <div className="project-title sm:py-[6vw] text-center flex flex-col items-center">
+        <div className="project-title sm:py-[6vw] sm:pb-[0] text-center flex flex-col items-center">
           <SectionBadge
             c="project-badge"
             text="Technology + Innovation = Digital Transformations"

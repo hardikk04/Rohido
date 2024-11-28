@@ -96,7 +96,7 @@ const ClientReviewSection = () => {
 
   return (
     <section className="bg-black w-full">
-      <div className="clientes-title sm:py-[6vw] text-center flex flex-col items-center">
+      <div className="clientes-title sm:py-[6vw] sm:pb-[0] text-center flex flex-col items-center">
         <SectionBadge
           c="clientes-badge"
           text="Design+Development = Growth 💸"
@@ -106,7 +106,7 @@ const ClientReviewSection = () => {
         </div>
       </div>
       <div className="w-full flex justify-center py-[6vw]">
-        <div className="client-container sm:justify-between sm:h-fit sm:flex-col md:justify-between md:h-fit md:flex-col w-full px-[5vw] border-t  h-[60vh] border-b border-white/30 flex justify-between">
+        <div className="client-container sm:justify-between sm:h-fit sm:flex-col md:justify-between md:h-fit md:flex-col w-full px-[5vw] border-t  h-[60vh] sm:border-none border-b border-white/30 flex justify-between">
           <div className="client-left w-[16%]  sm:w-full sm:flex md:w-full md:flex">
             <ClientReviews
               index="0"
@@ -130,7 +130,7 @@ const ClientReviewSection = () => {
               active={clientReviews[2].isActive}
             />
           </div>
-          <div className="client-center w-[59%] sm:w-full md:w-full h-full">
+          <div className="client-center sm:border-l sm: border-white/30 sm:border-r  w-[59%] sm:w-full md:w-full h-full">
             {clientReviews.map(
               (item, index) =>
                 item.isActive && (

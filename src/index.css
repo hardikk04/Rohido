@@ -138,7 +138,7 @@ button {
 }
 
 .brands-ani {
-  animation: brandSwiper 16s linear infinite both;
+  animation: brandSwiper 10s linear infinite both;
 }
 
 @keyframes brandSwiper {
@@ -413,21 +413,21 @@ input[type="number"] {
   }
 
   h6 {
-    font-size: 3.2vw;
+    font-size: 4.5vw;
   }
 
   p {
-    font-size: 3.8vw;
+    font-size: 3.5vw;
   }
 
   span {
-    font-size: 2.6vw;
+    font-size: 3vw;
     line-height: 1.2;
     display: inline-block;
   }
 
   button {
-    font-size: 2.6vw;
+    font-size: 4vw;
   }
 
   .project-elem-0 {

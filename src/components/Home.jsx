@@ -252,18 +252,24 @@ const Home = () => {
       },
     });
 
-    gsap.to(".services-cards", {
-      left: "-50%",
-      scrollTrigger: {
-        scroller: "body",
-        trigger: ".home-services",
-        start: "top 40%",
-        end: "top -20%",
-        // pin: true,
-        // markers: true,
-        scrub: 1,
-      },
-    });
+    if (
+      !/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|OperaMini/i.test(
+        navigator.userAgent
+      )
+    ) {
+      gsap.to(".services-cards", {
+        left: "-50%",
+        scrollTrigger: {
+          scroller: "body",
+          trigger: ".home-services",
+          start: "top 40%",
+          end: "top -20%",
+          // pin: true,
+          // markers: true,
+          scrub: 1,
+        },
+      });
+    }
   });
 
   useEffect(() => {
@@ -277,7 +283,8 @@ const Home = () => {
 
   return (
     <>
-      <div className="main text-white regular relative z-[1]">
+      <div className="main text-white bg-black regular relative z-[1] overflow-x-hidden">
+        <Nav />
         <Loader />
         <section
           onMouseMove={(dets) => {
@@ -287,9 +294,8 @@ const Home = () => {
               delay: 0.1,
             });
           }}
-          className="bg-black home-start sm:pt-[16vw] pt-[12vw] w-full relative overflow-hidden"
+          className="bg-black sm:h-[75vh] home-start sm:pt-[16vw] pt-[12vw] w-full relative overflow-hidden"
         >
-          <Nav />
 
           <div className="mouse-follower sm:opacity-0 pointer-events-none fixed top-0 left-0 scale-0 h-[2vh] w-[2vh] bg-white rounded-full"></div>
           <div className="home-hero sm:py-[12vw] h-full w-full flex flex-col items-center justify-center ">
@@ -351,7 +357,7 @@ const Home = () => {
                     "linear-gradient(to bottom right, #000 , #000)",
                 });
               }}
-              className="w-[70%] sm:w-full md:w-full home-about-left relative p-[1vw] pb-0 text-white flex overflow-hidden rounded-xl flex-col justify-between gap-[8vw]"
+              className="w-[70%] sm:w-full md:w-full home-about-left relative p-[2vw] pb-0 text-white flex overflow-hidden rounded-xl flex-col justify-between gap-[8vw]"
             >
               <img
                 className="object-cover about-start absolute top-0 left-0 rotate-180 pointer-events-none"
@@ -389,7 +395,7 @@ const Home = () => {
                 })}
               </div>
             </div>
-            <div className="w-[30%] sm:w-full md:w-full overflow-hidden relative h-full border-white/10 border-[2px] rounded-xl">
+            <div className="w-[30%] sm:w-full sm:pb-[3vw] md:w-full overflow-hidden relative h-full border-white/10 border-[2px] rounded-xl">
               <img
                 className="object-cover w-full sm:h-[35vh] md:h-[40vh]"
                 src="/images/about-earth.png"
@@ -487,7 +493,7 @@ const Home = () => {
           </div>
         </section>
         <section className="bg-black home-services w-full flex flex-col justify-center">
-          <div className="service-title sm:py-[6vw] text-center flex flex-col items-center">
+          <div className="service-title sm:py-[6vw] sm:pb-[0] text-center flex flex-col items-center">
             <SectionBadge
               c="services-badge"
               text="Problem Solving + Creativity = Innovation"
@@ -496,8 +502,8 @@ const Home = () => {
               <h2>Services we proudly provide</h2>
             </div>
           </div>
-          <div className="flex pt-[6vw] overflow-x-hidden relative">
-            <div className="services-cards flex gap-[1vw] relative">
+          <div className="flex pt-[6vw] relative sm:overflow-x-scroll">
+            <div className="services-cards flex  gap-[1vw] relative">
               {swiperCardData.map((item, index) => (
                 <SwiperCard index={index} key={index} data={item}></SwiperCard>
               ))}
@@ -505,7 +511,7 @@ const Home = () => {
           </div>
         </section>
         <section className="bg-black home-team pt-[10vw] pb-[10vw] relative">
-          <div className="team-title sm:py-[6vw] text-center flex flex-col items-center">
+          <div className="team-title sm:py-[6vw] sm:pb-[0] text-center flex flex-col items-center">
             <SectionBadge
               c="team-badge"
               text="Recognition & Awards"
