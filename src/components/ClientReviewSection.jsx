@@ -106,7 +106,7 @@ const ClientReviewSection = () => {
         </div>
       </div>
       <div className="w-full flex justify-center py-[6vw]">
-        <div className="client-container sm:justify-between sm:h-fit sm:flex-col md:justify-between md:h-fit md:flex-col w-full px-[5vw] border-t  h-[60vh] sm:border-none border-b border-white/30 flex justify-between">
+        <div className="client-container sm:justify-between sm:h-fit sm:flex-col md:justify-between md:h-fit md:flex-col w-full px-[3vw] border-t  h-[60vh] sm:border-none border-b border-white/30 flex justify-between">
           <div className="client-left w-[16%]  sm:w-full sm:flex md:w-full md:flex">
             <ClientReviews
               index="0"

@@ -1,4 +1,4 @@
-import BlackButton from "./utils/BlackButton";
+import { NavLink } from "react-router-dom";
 import gsap from "gsap";
 import { useState } from "react";
 import TransitionLink from "./TransitionLink";
@@ -76,118 +76,153 @@ const Nav = () => {
         </div>
       </div>
       <div className="menu backdrop-blur sm:bg-black md:bg-black text-white pointer-events-none sm:border-[1px] opacity-0 sm:w-full md:w-full w-[16vw] absolute right-0 top-[105%] border-[2px] border-white/30 p-[1.5vw] flex flex-col gap-[1.5vw] rounded-xl sm:top-[120%] sm:left-0 sm:px-[3vw]">
-        <div className="menu-navigation">
+        <div className="menu-navigation sm:flex sm:flex-col sm:gap-[4vw]">
           <TransitionLink href="/">
-            <div
-              onMouseEnter={() => {
-                gsap.to(".home-h3 h3", {
-                  transform: "translateY(-100%)",
-                  ease: "power1.inOut",
-                });
-              }}
-              onMouseLeave={() => {
-                gsap.to(".home-h3 h3", {
-                  transform: "translateY(0%)",
-                  ease: "power1.inOut",
-                });
-              }}
-              className="home-h3  sm:h-[8vw] md:h-[3vw] lg:h-[3.5vw] h-[2.5vw] overflow-hidden"
+            <NavLink
+              to="/"
+              className={({ isActive }) =>
+                isActive ? "text-[#fe492e] pointer-events-none" : "pointer-events-none"
+              }
             >
-              <h3 className="opacity-70 sm:opacity-100 sm:text-2xl">Home</h3>
-              <h3 className="opacity-70 sm:opacity-100 sm:text-2xl">Home</h3>
-            </div>
+              <div
+                onMouseEnter={() => {
+                  gsap.to(".home-h3 h3", {
+                    transform: "translateY(-100%)",
+                    ease: "power1.inOut",
+                  });
+                }}
+                onMouseLeave={() => {
+                  gsap.to(".home-h3 h3", {
+                    transform: "translateY(0%)",
+                    ease: "power1.inOut",
+                  });
+                }}
+                className="home-h3  sm:h-[8vw] md:h-[3vw] lg:h-[3.5vw] h-[2.5vw] overflow-hidden"
+              >
+                <h3 className="opacity-70 sm:opacity-100 sm:text-2xl">Home</h3>
+                <h3 className="opacity-70 sm:opacity-100 sm:text-2xl">Home</h3>
+              </div>
+            </NavLink>
           </TransitionLink>
           <TransitionLink href="/about">
-            <div
-              onMouseEnter={() => {
-                gsap.to(".about-h3 h3", {
-                  transform: "translateY(-100%)",
-                  ease: "power1.inOut",
-                });
-              }}
-              onMouseLeave={() => {
-                gsap.to(".about-h3 h3", {
-                  transform: "translateY(0%)",
-                  ease: "power1.inOut",
-                });
-              }}
-              className="about-h3 sm:h-[8vw] md:h-[3vw] lg:h-[3.5vw] h-[2.5vw] overflow-hidden"
+            <NavLink
+              to="/about"
+              className={({ isActive }) =>
+                isActive ? "text-[#fe492e] pointer-events-none" : "pointer-events-none"
+              }
             >
-              <h3 className="opacity-70 sm:opacity-100 sm:text-2xl">
-                About Us
-              </h3>
-              <h3 className="opacity-70 sm:opacity-100 sm:text-2xl">
-                About Us
-              </h3>
-            </div>
+              <div
+                onMouseEnter={() => {
+                  gsap.to(".about-h3 h3", {
+                    transform: "translateY(-100%)",
+                    ease: "power1.inOut",
+                  });
+                }}
+                onMouseLeave={() => {
+                  gsap.to(".about-h3 h3", {
+                    transform: "translateY(0%)",
+                    ease: "power1.inOut",
+                  });
+                }}
+                className="about-h3 sm:h-[8vw] md:h-[3vw] lg:h-[3.5vw] h-[2.5vw] overflow-hidden"
+              >
+                <h3 className="opacity-70 sm:opacity-100 sm:text-2xl">
+                  About Us
+                </h3>
+                <h3 className="opacity-70 sm:opacity-100 sm:text-2xl">
+                  About Us
+                </h3>
+              </div>
+            </NavLink>
           </TransitionLink>
           <TransitionLink href="/service">
-            <div
-              onMouseEnter={() => {
-                gsap.to(".services-h3 h3", {
-                  transform: "translateY(-100%)",
-                  ease: "power1.inOut",
-                });
-              }}
-              onMouseLeave={() => {
-                gsap.to(".services-h3 h3", {
-                  transform: "translateY(0%)",
-                  ease: "power1.inOut",
-                });
-              }}
-              className="services-h3 sm:h-[8vw] md:h-[3vw] lg:h-[3.5vw] h-[2.5vw] overflow-hidden"
+            <NavLink
+              to="/service"
+              className={({ isActive }) =>
+                isActive ? "text-[#fe492e] pointer-events-none" : "pointer-events-none"
+              }
             >
-              <h3 className="opacity-70 sm:opacity-100 sm:text-2xl">
-                Services
-              </h3>
-              <h3 className="opacity-70 sm:opacity-100 sm:text-2xl">
-                Services
-              </h3>
-            </div>
+              <div
+                onMouseEnter={() => {
+                  gsap.to(".services-h3 h3", {
+                    transform: "translateY(-100%)",
+                    ease: "power1.inOut",
+                  });
+                }}
+                onMouseLeave={() => {
+                  gsap.to(".services-h3 h3", {
+                    transform: "translateY(0%)",
+                    ease: "power1.inOut",
+                  });
+                }}
+                className="services-h3 sm:h-[8vw] md:h-[3vw] lg:h-[3.5vw] h-[2.5vw] overflow-hidden"
+              >
+                <h3 className="opacity-70 sm:opacity-100 sm:text-2xl">
+                  Services
+                </h3>
+                <h3 className="opacity-70 sm:opacity-100 sm:text-2xl">
+                  Services
+                </h3>
+              </div>
+            </NavLink>
           </TransitionLink>
           <TransitionLink href="/work">
-            <div
-              onMouseEnter={() => {
-                gsap.to(".work-h3 h3", {
-                  transform: "translateY(-100%)",
-                  ease: "power1.inOut",
-                });
-              }}
-              onMouseLeave={() => {
-                gsap.to(".work-h3 h3", {
-                  transform: "translateY(0%)",
-                  ease: "power1.inOut",
-                });
-              }}
-              className="work-h3 sm:h-[8vw] md:h-[3vw] lg:h-[3.5vw] h-[2.5vw] overflow-hidden"
+            <NavLink
+              to="/work"
+              className={({ isActive }) =>
+                isActive ? "text-[#fe492e] pointer-events-none" : "pointer-events-none"
+              }
             >
-              <h3 className="opacity-70 sm:opacity-100 sm:text-2xl">Work</h3>
-              <h3 className="opacity-70 sm:opacity-100 sm:text-2xl">Work</h3>
-            </div>
+              <div
+                onMouseEnter={() => {
+                  gsap.to(".work-h3 h3", {
+                    transform: "translateY(-100%)",
+                    ease: "power1.inOut",
+                  });
+                }}
+                onMouseLeave={() => {
+                  gsap.to(".work-h3 h3", {
+                    transform: "translateY(0%)",
+                    ease: "power1.inOut",
+                  });
+                }}
+                className="work-h3 sm:h-[8vw] md:h-[3vw] lg:h-[3.5vw] h-[2.5vw] overflow-hidden"
+              >
+                <h3 className="opacity-70 sm:opacity-100 sm:text-2xl">Work</h3>
+                <h3 className="opacity-70 sm:opacity-100 sm:text-2xl">Work</h3>
+              </div>
+            </NavLink>
           </TransitionLink>
           <TransitionLink href="/contact">
-            <div
-              onMouseEnter={() => {
-                gsap.to(".contact-h3 h3", {
-                  transform: "translateY(-100%)",
-                  ease: "power1.inOut",
-                });
-              }}
-              onMouseLeave={() => {
-                gsap.to(".contact-h3 h3", {
-                  transform: "translateY(0%)",
-                  ease: "power1.inOut",
-                });
-              }}
-              className="contact-h3 sm:h-[8vw] md:h-[3vw] lg:h-[3.5vw] h-[2.5vw] overflow-hidden"
+            <NavLink
+              to="/contact"
+              className={({ isActive }) =>
+                isActive ? "text-[#fe492e] pointer-events-none" : "pointer-events-none"
+              }
             >
-              <h3 className="opacity-70 sm:opacity-100 sm:text-2xl">
-                Contact Us
-              </h3>
-              <h3 className="opacity-70 sm:opacity-100 sm:text-2xl">
-                Contact Us
-              </h3>
-            </div>
+              <div
+                onMouseEnter={() => {
+                  gsap.to(".contact-h3 h3", {
+                    transform: "translateY(-100%)",
+                    ease: "power1.inOut",
+                  });
+                }}
+                onMouseLeave={() => {
+                  gsap.to(".contact-h3 h3", {
+                    transform: "translateY(0%)",
+                    ease: "power1.inOut",
+                  });
+                }}
+                className="contact-h3 sm:h-[8vw] md:h-[3vw] lg:h-[3.5vw] h-[2.5vw] overflow-hidden"
+              >
+                <h3 className="opacity-70 sm:opacity-100 sm:text-2xl">
+                  Contact Us
+                </h3>
+                <h3 className="opacity-70 sm:opacity-100 sm:text-2xl">
+                  Contact Us
+                </h3>
+              </div>
+            </NavLink>
           </TransitionLink>
         </div>
         <div className="menu backdrop-blur bg-black absolute left-0 top-[103%] sm:top-[105%] sm:border-[1px] sm:w-full md:w-full w-[16vw] rounded-xl pointer-events-none border-[2px] border-white/30 p-[1.5vw] py-[.5vw] flex flex-col sm:px-[3vw]">
@@ -205,12 +240,12 @@ const Nav = () => {
                   ease: "power1.inOut",
                 });
               }}
-              className="consultancy-h3 sm:h-[8vw] md:h-[3vw] lg:h-[3.5vw] h-[2.5vw] overflow-hidden"
+              className="consultancy-h3 sm:h-[8vw] md:h-[3vw] lg:h-[3.5vw] h-[2.2vw] overflow-hidden"
             >
-              <h3 className="opacity-70 sm:opacity-100 sm:text-2xl">
+              <h3 className="opacity-70 sm:opacity-100 sm:text-2xl leading-none">
                 Consultancy
               </h3>
-              <h3 className="opacity-70 sm:opacity-100 sm:text-2xl">
+              <h3 className="opacity-70 sm:opacity-100 sm:text-2xl leading-none">
                 Consultancy
               </h3>
             </div>
@@ -231,12 +266,12 @@ const Nav = () => {
                     ease: "power1.inOut",
                   });
                 }}
-                className="journal-h3 sm:h-[8vw] md:h-[3vw] lg:h-[3.5vw] h-[2.5vw] overflow-hidden"
+                className="journal-h3 sm:h-[8vw] md:h-[3vw] lg:h-[3.5vw] h-[2.2vw] overflow-hidden"
               >
-                <h3 className="opacity-70 sm:opacity-100 sm:text-2xl">
+                <h3 className="opacity-70 sm:opacity-100 sm:text-2xl leading-none">
                   Journal
                 </h3>
-                <h3 className="opacity-70 sm:opacity-100 sm:text-2xl">
+                <h3 className="opacity-70 sm:opacity-100 sm:text-2xl leading-none">
                   Journal
                 </h3>
               </div>

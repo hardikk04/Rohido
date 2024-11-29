@@ -23,7 +23,7 @@ const SwiperCard = ({ data, index }) => {
           color: "white",
         });
       }}
-      className={`swiper-card-${index} swiper-cards relative z-[1] bg-black w-[24%] shrink-0 text-white rounded-lg shadow-md p-[1vw] border-[2px] border-white/30`}
+      className={`swiper-card-${index} swiper-cards relative z-[1] bg-black w-[24%] sm:w-[50%] shrink-0 text-white rounded-lg shadow-md p-[1vw] border-[2px] border-white/30`}
     >
       <p className="swiper-number">{number}</p>
       <h3 className="bold mt-[1.5vw] mb-[2vw]">{title}</h3>

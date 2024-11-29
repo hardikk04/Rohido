@@ -6,7 +6,7 @@ import { useForm } from "react-hook-form";
 import ScrollerX from "./ScrollerX";
 import WhiteButton from "./utils/WhiteButton";
 import SectionBadge from "./utils/SectionBadge";
-import BlackButton from "./utils/BlackButton";
+
 
 const ContactSection = () => {
   const { register, handleSubmit, reset } = useForm();
@@ -47,6 +47,8 @@ const ContactSection = () => {
                   console.log("please enter a details");
                   return;
                 }
+                console.log(data);
+
                 console.log("entered");
 
                 reset();
@@ -54,7 +56,7 @@ const ContactSection = () => {
               className="relative z-10"
               action=""
             >
-              <div className="flex lg:flex-col sm:flex-col gap-[2vw] my-[2.5vw]">
+              <div className="flex flex-col lg:flex-col sm:flex-col gap-[1vw] my-[2.5vw]">
                 <input
                   {...register("name")}
                   onMouseEnter={() => {
@@ -92,39 +94,23 @@ const ContactSection = () => {
                   type="email"
                   placeholder="YOUR EMAIL ID*"
                 />
-              </div>
-              <div>
-                <div className="pb-[1vw]">
-                  <h3>Project You Are Interested In</h3>
-                </div>
-                <div className="flex mt-[1vw] flex-wrap gap-[1vw]">
-                  <BlackButton text="Web Design"></BlackButton>
-                  <BlackButton text="Web Development"></BlackButton>
-                  <BlackButton text="UI/UX"></BlackButton>
-                  <BlackButton text="App Development"></BlackButton>
-                  <BlackButton text="Landing Page"></BlackButton>
-                  <BlackButton text="E-Commerce Development"></BlackButton>
-                  <BlackButton text="CMS Development"></BlackButton>
-                </div>
-              </div>
-              <div className="flex lg:flex-col sm:flex-col gap-[2vw] my-[2.5vw]">
                 <input
-                  {...register("budget")}
+                  {...register("number")}
                   onMouseEnter={() => {
-                    gsap.to(`.contact-budget`, {
+                    gsap.to(`.contact-number`, {
                       backgroundImage:
                         "linear-gradient(42deg, #000, #fe4a2e24)",
                     });
                   }}
                   onMouseLeave={() => {
-                    gsap.to(`.contact-budget`, {
+                    gsap.to(`.contact-number`, {
                       backgroundImage:
                         "linear-gradient(143deg, #0c0c0d 23%, #222224)",
                     });
                   }}
-                  className="contact-budget sm:placeholder:text-[2.5vw] placeholder-text-black/30 text-white bg-white/10 px-[1.5vw] py-[.6vw] rounded-md outline-none"
+                  className="contact-number sm:placeholder:text-[2.5vw] placeholder-text-black/30 text-white bg-white/10 px-[1.5vw] py-[.6vw] rounded-md outline-none"
                   type="number"
-                  placeholder="YOUR NAME BUDGET*"
+                  placeholder="YOUR NUMBER*"
                 />
                 <input
                   {...register("message")}

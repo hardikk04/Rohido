@@ -294,11 +294,11 @@ const Home = () => {
               delay: 0.1,
             });
           }}
-          className="bg-black sm:h-[75vh] home-start sm:pt-[16vw] pt-[12vw] w-full relative overflow-hidden"
+          className="bg-black sm:h-[70vh] home-start sm:pt-[16vw] pt-[12vw] w-full relative overflow-hidden"
         >
 
           <div className="mouse-follower sm:opacity-0 pointer-events-none fixed top-0 left-0 scale-0 h-[2vh] w-[2vh] bg-white rounded-full"></div>
-          <div className="home-hero sm:py-[12vw] h-full w-full flex flex-col items-center justify-center ">
+          <div className="home-hero sm:gap-[5vw] sm:py-[12vw] h-full w-full flex flex-col items-center justify-center ">
             <SectionBadge
               c="home-badge"
               text="From design to development 🚀"
@@ -357,7 +357,7 @@ const Home = () => {
                     "linear-gradient(to bottom right, #000 , #000)",
                 });
               }}
-              className="w-[70%] sm:w-full md:w-full home-about-left relative p-[2vw] pb-0 text-white flex overflow-hidden rounded-xl flex-col justify-between gap-[8vw]"
+              className="w-[70%] sm:w-full md:w-full home-about-left relative p-[2vw] sm:px-[3vw] pb-0 text-white flex overflow-hidden rounded-xl flex-col justify-between gap-[8vw]"
             >
               <img
                 className="object-cover about-start absolute top-0 left-0 rotate-180 pointer-events-none"
@@ -366,7 +366,7 @@ const Home = () => {
               />
               <div className="flex gap-[1vw] relative z-[1]">
                 <img
-                  className="object-cover h-[3vw]"
+                  className="object-cover h-[3vw] sm:h-[6vw]"
                   src="/images/white-logo.png"
                   alt=""
                 />
@@ -503,7 +503,7 @@ const Home = () => {
             </div>
           </div>
           <div className="flex pt-[6vw] relative sm:overflow-x-scroll">
-            <div className="services-cards flex  gap-[1vw] relative">
+            <div className="services-cards flex gap-[1vw] relative sm:pl-[2vw]">
               {swiperCardData.map((item, index) => (
                 <SwiperCard index={index} key={index} data={item}></SwiperCard>
               ))}

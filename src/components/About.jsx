@@ -146,7 +146,7 @@ const About = () => {
           }}
           className="about-content w-[95%] flex gap-[3vw]"
         >
-          <div className="w-full relative p-[1vw] pb-0 text-white flex overflow-hidden rounded-xl flex-col justify-between">
+          <div className="w-full sm:p-[3vw] md:p-[3vw] relative p-[1vw] pb-0 text-white flex overflow-hidden rounded-xl flex-col justify-between">
             <img
               className="object-cover absolute top-0 left-0 rotate-180 pointer-events-none"
               src="/images/Star.png"
@@ -155,7 +155,7 @@ const About = () => {
 
             <div className="flex gap-[1vw] relative z-[1]">
               <img
-                className="object-cover h-[3vw]"
+                className="object-cover sm:h-[8vw] md:h-[8vw] h-[3vw]"
                 src="/images/white-logo.png"
                 alt=""
               />
@@ -212,9 +212,9 @@ const About = () => {
       <section className="bg-black relative w-full overflow-hidden flex flex-col gap-[8vw] items-center py-[2vw] pb-[14vw] sm:pb-[6vw]">
         <div className="about-content w-[95%] flex gap-[3vw] md:flex-col sm:flex-col">
           <div className="w-full service-elem relative shrink-0 p-[1vw] pb-0 text-white flex overflow-hidden rounded-xl flex-col justify-between gap-[8vw]">
-            <div className="flex gap-[1vw] relative z-[1] p-[2vw]">
+            <div className="flex gap-[1vw] relative z-[1] p-[2vw] sm:p-[3vw] md:p-[3vw]">
               <img
-                className="object-cover h-[3vw]"
+                className="object-cover sm:h-[8vw] h-[3vw] md:h-[8vw]"
                 src="/images/white-logo.png"
                 alt=""
               />
@@ -241,9 +241,9 @@ const About = () => {
             </div>
           </div>
           <div className="w-full service-elem relative shrink-0 p-[1vw] pb-0 text-white flex overflow-hidden rounded-xl flex-col justify-between gap-[8vw]">
-            <div className="flex gap-[1vw] relative z-[1] p-[2vw]">
+            <div className="flex gap-[1vw] relative z-[1] p-[2vw] sm:p-[3vw] md:p-[3vw]">
               <img
-                className="object-cover h-[3vw]"
+                className="object-cover h-[3vw] sm:h-[8vw] md:h-[8vw]"
                 src="/images/white-logo.png"
                 alt=""
               />
