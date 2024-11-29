@@ -283,7 +283,7 @@ const Home = () => {
 
   return (
     <>
-      <div className="main text-white bg-black regular relative z-[1]">
+      <div className="main text-white bg-black regular relative z-[1] overflow-x-hidden">
         <Nav />
         <Loader />
         <section
