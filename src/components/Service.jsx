@@ -234,7 +234,7 @@ const Service = () => {
                 <div className="h-[2.5vh] w-[2.5vh] rounded-full border border-white/30"></div>
                 <span>Make your website accessible</span>
               </div>
-              <div className="flex gap-[1vw] items-center">
+              <div className="flex gap-[1vw] items-center sm:w-full">
                 <div className="h-[2.5vh] w-[2.5vh] rounded-full border border-white/30"></div>
                 <span>Context Sourcing Guidance</span>
               </div>

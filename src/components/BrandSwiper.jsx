@@ -19,16 +19,7 @@ const BrandSwiper = () => {
       <img className="object-contain sm:scale-100 h-[8vw]" src="http://padams.in/images/client/cisco.png" alt="" />
       <img className="object-contain sm:scale-100 h-[8vw]" src="http://padams.in/images/client/google.png" alt="" />
       </div>
-      {/* <div className="flex gap-[1vw] brands-ani sm:gap-0">
-      <img className="object-contain scale-[.6] sm:scale-100" src="/images/Examples.png" alt="" />
-      <img className="object-contain scale-[.6] sm:scale-100" src="/images/Examples-1.png" alt="" />
-      <img className="object-contain scale-[.6] sm:scale-100" src="/images/Examples-0.png" alt="" />
-      <img className="object-contain scale-[.6] sm:scale-100" src="/images/Examples-2.png" alt="" />
-      <img className="object-contain scale-[.6] sm:scale-100" src="/images/Examples.png" alt="" />
-      <img className="object-contain scale-[.6] sm:scale-100" src="/images/Examples-1.png" alt="" />
-      <img className="object-contain scale-[.6] sm:scale-100" src="/images/Examples-0.png" alt="" />
-      <img className="object-contain scale-[.6] sm:scale-100" src="/images/Examples-2.png" alt="" />
-      </div> */}
+      
     </div>
   );
 };

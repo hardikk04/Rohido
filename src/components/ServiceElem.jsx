@@ -5,7 +5,7 @@ const ServiceElem = ({ title, index }) => {
   const [isToggled, setisToggled] = useState(true);
   return (
     <div className="w-full px-[3vw] pt-[1vw] sm:py-[2vw]">
-      <div className={`service-elem-${index} h-[6vw] overflow-hidden`}>
+      <div className={`service-elem-${index} sm:h-[8vw] h-[5vw] overflow-hidden`}>
         <div className="flex justify-between items-center">
           <h3>{title}</h3>
           <i
@@ -14,7 +14,7 @@ const ServiceElem = ({ title, index }) => {
                 for (let i = 0; i < 4; i++) {
                   if (index !== i) {
                     gsap.to(`.service-elem-${i}`, {
-                      height: "6vw",
+                      height: "5vw",
                     });
                   }
                 }
@@ -35,7 +35,7 @@ const ServiceElem = ({ title, index }) => {
                 });
 
                 gsap.to(`.service-elem-${index}`, {
-                  height: "6vw",
+                  height: "5vw",
                 });
                 setisToggled((prev) => !prev);
               }
