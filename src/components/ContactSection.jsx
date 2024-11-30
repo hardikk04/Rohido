@@ -7,7 +7,6 @@ import ScrollerX from "./ScrollerX";
 import WhiteButton from "./utils/WhiteButton";
 import SectionBadge from "./utils/SectionBadge";
 
-
 const ContactSection = () => {
   const { register, handleSubmit, reset } = useForm();
 
@@ -41,9 +40,9 @@ const ContactSection = () => {
             </div>
             <form
               onSubmit={handleSubmit((data) => {
-                const { name, email, budget, message } = data;
+                const { name, phone, email, message } = data;
 
-                if (!(name || email || budget || message)) {
+                if (!(name || email || phone || message)) {
                   console.log("please enter a details");
                   return;
                 }
@@ -95,7 +94,7 @@ const ContactSection = () => {
                   placeholder="YOUR EMAIL ID*"
                 />
                 <input
-                  {...register("number")}
+                  {...register("phone")}
                   onMouseEnter={() => {
                     gsap.to(`.contact-number`, {
                       backgroundImage:
