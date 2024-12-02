@@ -12,7 +12,6 @@ import About from "./components/About";
 import Service from "./components/Service";
 import Contact from "./components/Contact";
 import Work from "./components/Work";
-import Card from "./components/Card";
 
 const App = () => {
   const location = useLocation();
