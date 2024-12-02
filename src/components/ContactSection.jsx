@@ -26,7 +26,7 @@ const ContactSection = () => {
               </p>
             </div>
           </div>
-          <div className="contact-right relative w-[55%] sm:w-full md:w-full rounded-xl border-[2px] b border-white/30 px-[4vw] py-[4vw] overflow-hidden">
+          <div className="contact-right relative w-[55%] sm:w-full md:w-full rounded-xl border-[1px] b border-white/30 px-[4vw] py-[4vw] overflow-hidden">
             <img
               className="absolute scale-150 object-cover"
               src="/images/Star2.png"
