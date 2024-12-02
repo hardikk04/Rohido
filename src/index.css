@@ -525,8 +525,7 @@ input[type="number"] {
   font-size: 1.5rem;
 }
 
-
-.front{
+.front {
   min-height: 320px;
 }
 
@@ -610,8 +609,7 @@ input[type="number"] {
   transform-style: preserve-3d;
 }
 
-.inner{
-
+.inner {
   height: 100%;
 }
 

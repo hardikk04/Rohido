@@ -94,7 +94,7 @@ const Home = () => {
   const tl = gsap.timeline({ paused: true });
   useGSAP(() => {
     tl.from(".nav", {
-      y:"-120%",
+      y: "-120%",
     })
       .from(".home-badge", {
         opacity: 0,
@@ -271,8 +271,8 @@ const Home = () => {
         scrollTrigger: {
           scroller: "body",
           trigger: ".home-services",
-          start: "top 40%",
-          end: "top -20%",
+          start: "top 20%",
+          end: "top -10%",
           // pin: true,
           // markers: true,
           scrub: 1,

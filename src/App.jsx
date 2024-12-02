@@ -14,11 +14,11 @@ import Contact from "./components/Contact";
 import Work from "./components/Work";
 
 const App = () => {
-  const location = useLocation();
+  const { pathname } = useLocation();
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [location]);
+    window.scrollTo({ top: 0 });
+  }, [pathname]);
 
   return (
     <Routes>
