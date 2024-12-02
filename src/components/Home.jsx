@@ -93,15 +93,24 @@ const Home = () => {
 
   const tl = gsap.timeline({ paused: true });
   useGSAP(() => {
-    tl.from(".home-badge", {
-      opacity: 0,
+    tl.from(".nav", {
+      y:"-120%",
     })
+      .from(".home-badge", {
+        opacity: 0,
+        duration: 0.5,
+      })
       .from(".home-heading h1", {
         transform: "translateY(100%)",
         stagger: 0.1,
       })
       .from(".home-hero p", {
         opacity: 0,
+        duration: 0.5,
+      })
+      .from(".home-btn-div", {
+        opacity: 0,
+        duration: 0.5,
       });
 
     gsap.to(".half-circle", {
@@ -296,13 +305,13 @@ const Home = () => {
           }}
           className="bg-black sm:h-[70vh] home-start sm:pt-[16vw] pt-[12vw] w-full relative overflow-hidden"
         >
-
           <div className="mouse-follower sm:opacity-0 pointer-events-none fixed top-0 left-0 scale-0 h-[2vh] w-[2vh] bg-white rounded-full"></div>
           <div className="home-hero sm:gap-[5vw] sm:py-[12vw] h-full w-full flex flex-col items-center justify-center ">
-            <SectionBadge
-              c="home-badge"
-              text="From design to development 🚀"
-            ></SectionBadge>
+            <div
+              className={`home-badge sm:mb-[3vw] whitespace-nowrap flex items-center w-fit space-x-2 px-4 py-2 bg-gradient-to-r from-red-500 to-black rounded-full text-white`}
+            >
+              <span>From design to development 🚀</span>
+            </div>
             <div
               onMouseEnter={() => {
                 gsap.to(".mouse-follower", {
@@ -326,7 +335,7 @@ const Home = () => {
             <p className="opacity-70 light mix-blend-difference text-center sm:w-[95%]">
               Empowering your business through an expertly developed website.
             </p>
-            <div className="mt-[3vw]">
+            <div className="mt-[3vw] home-btn-div">
               <WhiteButton
                 c="home-btn"
                 text="Book a call"

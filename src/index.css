@@ -231,14 +231,14 @@ input[type="number"] {
   left: 0;
   right: 0;
   bottom: 0;
-  border-radius: 6px;
+  border-radius: 0px;
   pointer-events: none;
   opacity: 0;
   background: linear-gradient(90deg, rgb(255, 0, 0) 10%, rgba(0, 0, 0, 0) 50%),
     linear-gradient(10deg, rgb(255, 0, 0) 10%, rgba(0, 0, 0, 0) 50%),
     linear-gradient(170deg, rgb(255, 0, 0) 10%, rgba(0, 0, 0, 0) 50%),
     linear-gradient(260deg, rgb(255, 0, 0) 10%, rgba(0, 0, 0, 0) 50%);
-  background-size: 100% 1px, 1px 100%, 100% 1px, 1px 100%;
+  background-size: 100% 2px, 2px 100%, 100% 2px, 2px 100%;
   background-position: 0% 0%, 0% 0%, 100% 100%, 100% 100%;
   background-repeat: no-repeat;
   transition: all ease 1s;
@@ -417,7 +417,7 @@ input[type="number"] {
   }
 
   p {
-    font-size: 3.5vw;
+    font-size: 4.2vw;
   }
 
   span {
@@ -427,7 +427,7 @@ input[type="number"] {
   }
 
   button {
-    font-size: 4vw;
+    font-size: 3vw;
   }
 
   .project-elem-0 {

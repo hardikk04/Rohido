@@ -36,7 +36,7 @@ const ContactSection = () => {
               <SectionBadge text="Idea + Enquiry = Execution"></SectionBadge>
             </div>
             <div>
-              <h3 className="mt-[2vw]">Contact Info</h3>
+              <h2 className="mt-[2vw]">Contact Info</h2>
             </div>
             <form
               onSubmit={handleSubmit((data) => {
@@ -46,16 +46,23 @@ const ContactSection = () => {
                   console.log("please enter a details");
                   return;
                 }
-                console.log(data);
 
-                console.log("entered");
+                Email.send({
+                  Host: "smtp.elasticemail.com",
+                  Username: "hardikkdummy@gmail.com",
+                  Password: "2F5B1002520A83D64D72E447DE1EDBA19B13",
+                  To: "hardikkdummy@gmail.com",
+                  From: "hardikkdummy@gmail.com",
+                  Subject: "This is the subject",
+                  Body: "And this is the body",
+                }).then((message) => alert(message));
+                console.log(data);
 
                 reset();
               })}
               className="relative z-10"
-              action=""
             >
-              <div className="flex flex-col lg:flex-col sm:flex-col gap-[1vw] my-[2.5vw]">
+              <div className="flex flex-col lg:flex-col sm:flex-col gap-[1vw] sm:gap-[3vw] sm:mb-[6vw] my-[2.5vw]">
                 <input
                   {...register("name")}
                   onMouseEnter={() => {
@@ -70,7 +77,8 @@ const ContactSection = () => {
                         "linear-gradient(143deg, #0c0c0d 23%, #222224)",
                     });
                   }}
-                  className="contact-name sm:placeholder:text-[2.5vw] placeholder-text-black/30 text-white bg-white/10 px-[1.5vw] py-[.6vw] rounded-md outline-none"
+                  required={true}
+                  className="contact-name sm:leading-[3] sm:placeholder:text-[2.5vw] placeholder-text-black/30 text-white bg-white/10 px-[1.5vw] py-[.6vw] rounded-md outline-none"
                   type="text"
                   placeholder="YOUR NAME*"
                 />
@@ -89,7 +97,8 @@ const ContactSection = () => {
                         "linear-gradient(143deg, #0c0c0d 23%, #222224)",
                     });
                   }}
-                  className="contact-email sm:placeholder:text-[2.5vw] placeholder-text-black/30 text-white bg-white/10 px-[1.5vw] py-[.6vw] rounded-md outline-none"
+                  required={true}
+                  className="contact-email sm:leading-[3] sm:placeholder:text-[2.5vw] placeholder-text-black/30 text-white bg-white/10 px-[1.5vw] py-[.6vw] rounded-md outline-none"
                   type="email"
                   placeholder="YOUR EMAIL ID*"
                 />
@@ -107,7 +116,8 @@ const ContactSection = () => {
                         "linear-gradient(143deg, #0c0c0d 23%, #222224)",
                     });
                   }}
-                  className="contact-number sm:placeholder:text-[2.5vw] placeholder-text-black/30 text-white bg-white/10 px-[1.5vw] py-[.6vw] rounded-md outline-none"
+                  required={true}
+                  className="contact-number sm:leading-[3] sm:placeholder:text-[2.5vw] placeholder-text-black/30 text-white bg-white/10 px-[1.5vw] py-[.6vw] rounded-md outline-none"
                   type="number"
                   placeholder="YOUR NUMBER*"
                 />
@@ -125,7 +135,7 @@ const ContactSection = () => {
                         "linear-gradient(143deg, #0c0c0d 23%, #222224)",
                     });
                   }}
-                  className="contact-msg sm:placeholder:text-[2.5vw] placeholder-text-black/30 text-white bg-white/10 px-[1.5vw] py-[.6vw] rounded-md outline-none"
+                  className="contact-msg sm:leading-[3] sm:placeholder:text-[2.5vw] placeholder-text-black/30 text-white bg-white/10 px-[1.5vw] py-[.6vw] rounded-md outline-none"
                   type="text"
                   placeholder="MESSAGE*"
                 />

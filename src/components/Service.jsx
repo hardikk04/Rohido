@@ -207,10 +207,7 @@ const Service = () => {
       <section className="w-full flex justify-center bg-black pb-[6vw]">
         <div className="service-help w-[95%] flex justify-between md:flex-col sm:flex-col">
           <div className="help-left sm:py-[12vw] w-[56%] md:w-full sm:w-full">
-            <SectionBadge
-              c="thin help-badge"
-              text="What we offer : "
-            ></SectionBadge>
+            <SectionBadge c="help-badge" text="What we offer : "></SectionBadge>
             <div className="my-[1vw] help-heading overflow-hidden">
               <h2>How we help you</h2>
             </div>
@@ -222,20 +219,20 @@ const Service = () => {
               functionality, user experience, and revenue generation
             </p>
             <div className="flex flex-wrap pt-[4vw] gap-[1vw]">
-              <div className="flex gap-[1vw] items-center">
-                <div className="h-[2.5vh] w-[2.5vh] rounded-full border border-white/30"></div>
+              <div className="flex gap-[.5vw] sm:gap-[1vw] md:gap-[1vw] items-center">
+                <i className="ri-checkbox-circle-line text-[#fe4a2e] sm:text-[6vw] md:text-[6vw] lg:text-[4vw] text-[1.5vw]"></i>
                 <span>Build With User Experience In Mind</span>
               </div>
-              <div className="flex gap-[1vw] items-center">
-                <div className="h-[2.5vh] w-[2.5vh] rounded-full border border-white/30"></div>
+              <div className="flex gap-[.5vw] sm:gap-[1vw] md:gap-[1vw] items-center">
+              <i className="ri-checkbox-circle-line text-[#fe4a2e] sm:text-[6vw] md:text-[6vw] lg:text-[4vw] text-[1.5vw]"></i>
                 <span>A Collaborative solution for different business</span>
               </div>
-              <div className="flex gap-[1vw] items-center">
-                <div className="h-[2.5vh] w-[2.5vh] rounded-full border border-white/30"></div>
+              <div className="flex gap-[.5vw] sm:gap-[1vw] md:gap-[1vw] items-center">
+              <i className="ri-checkbox-circle-line text-[#fe4a2e] sm:text-[6vw] md:text-[6vw] lg:text-[4vw] text-[1.5vw]"></i>
                 <span>Make your website accessible</span>
               </div>
-              <div className="flex gap-[1vw] items-center sm:w-full">
-                <div className="h-[2.5vh] w-[2.5vh] rounded-full border border-white/30"></div>
+              <div className="flex gap-[.5vw] sm:gap-[1vw] md:gap-[1vw] items-center sm:w-full">
+              <i className="ri-checkbox-circle-line text-[#fe4a2e] sm:text-[6vw] md:text-[6vw] lg:text-[4vw] text-[1.5vw]"></i>
                 <span>Context Sourcing Guidance</span>
               </div>
             </div>

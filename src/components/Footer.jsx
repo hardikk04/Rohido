@@ -9,13 +9,22 @@ const Footer = () => {
         <img className="object-cover w-full" src="/images/footer.png" alt="" />
         <SectionBadge mail={true} text="info@rohido.com"></SectionBadge>
       </div>
-      <footer className="flex justify-between items-center w-full pt-[8vw]">
+      <footer className="flex sm:gap-[1vw] sm:flex-col md:flex-col justify-between items-center w-full pt-[8vw]">
         <div className="footer-left flex gap-4">
-          <i className="sm:text-[5vw] md:text-[5vw] lg:text-[4vw] text-[1.5vw] text-[#696767] ri-instagram-fill"></i>
-          <i className="sm:text-[5vw] md:text-[5vw] lg:text-[4vw] text-[1.5vw] text-[#696767] ri-twitter-x-fill"></i>
-          <i className="sm:text-[5vw] md:text-[5vw] lg:text-[4vw] text-[1.5vw] text-[#696767] ri-linkedin-box-fill"></i>
+          <Link target="_blank" to="https://www.instagram.com/rohidomedia">
+            <i className="sm:text-[6vw] md:text-[6vw] lg:text-[4vw] text-[1.5vw] text-[#696767] ri-instagram-fill"></i>
+          </Link>
+          <Link target="_blank" to="https://x.com/rohidom">
+            <i className="sm:text-[6vw] md:text-[6vw] lg:text-[4vw] text-[1.5vw] text-[#696767] ri-twitter-x-fill"></i>
+          </Link>
+          <Link
+            to="https://www.linkedin.com/company/rohido-media/"
+            target="_blank"
+          >
+            <i className="sm:text-[6vw] md:text-[6vw] lg:text-[4vw] text-[1.5vw] text-[#696767] ri-linkedin-box-fill"></i>
+          </Link>
         </div>
-        <div className="footer-right text-right flex gap-[2vw]">
+        <div className="footer-right text-right flex gap-[2vw] sm:gap-[6vw] md:gap-[6vw]">
           <Link to="/">
             <div
               onMouseEnter={() => {
@@ -58,7 +67,7 @@ const Footer = () => {
           </Link>
         </div>
       </footer>
-      <div className="text-center w-full border-t pt-[1vw] mt-[1vw] border-white/30">
+      <div className="text-center w-full border-t sm:pb-[2vw] pt-[1vw] mt-[1vw] border-white/30">
         <p>Rohido @ 2024. All rights reserved.</p>
       </div>
     </section>
