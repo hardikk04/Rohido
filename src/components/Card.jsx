@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import Card3D from "./card3D";
+import Card3D from "./CardThreeD";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
