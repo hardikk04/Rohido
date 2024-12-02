@@ -13,7 +13,7 @@ const Nav = () => {
       <div className="nav-left relative z-[1]">
         <TransitionLink href="/">
           <img
-            className="h-[1vw] sm:h-[5vw] md:h-[5vw] object-cover"
+            className="h-[1vw] sm:h-[5vw] md:h-[5vw] lg:h-[4vw] object-cover"
             src="/images/main-logo.png"
             alt=""
           />

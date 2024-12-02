@@ -12,6 +12,7 @@ import ClientReviewSection from "./ClientReviewSection";
 import ContactSection from "./ContactSection";
 import Footer from "./Footer";
 import TransparentFooter from "./TransparentFooter";
+import Card from "./Card";
 
 const Service = () => {
   const [aboutCard, setAboutCard] = useState([
@@ -224,15 +225,15 @@ const Service = () => {
                 <span>Build With User Experience In Mind</span>
               </div>
               <div className="flex gap-[.5vw] sm:gap-[1vw] md:gap-[1vw] items-center">
-              <i className="ri-checkbox-circle-line text-[#fe4a2e] sm:text-[6vw] md:text-[6vw] lg:text-[4vw] text-[1.5vw]"></i>
+                <i className="ri-checkbox-circle-line text-[#fe4a2e] sm:text-[6vw] md:text-[6vw] lg:text-[4vw] text-[1.5vw]"></i>
                 <span>A Collaborative solution for different business</span>
               </div>
               <div className="flex gap-[.5vw] sm:gap-[1vw] md:gap-[1vw] items-center">
-              <i className="ri-checkbox-circle-line text-[#fe4a2e] sm:text-[6vw] md:text-[6vw] lg:text-[4vw] text-[1.5vw]"></i>
+                <i className="ri-checkbox-circle-line text-[#fe4a2e] sm:text-[6vw] md:text-[6vw] lg:text-[4vw] text-[1.5vw]"></i>
                 <span>Make your website accessible</span>
               </div>
               <div className="flex gap-[.5vw] sm:gap-[1vw] md:gap-[1vw] items-center sm:w-full">
-              <i className="ri-checkbox-circle-line text-[#fe4a2e] sm:text-[6vw] md:text-[6vw] lg:text-[4vw] text-[1.5vw]"></i>
+                <i className="ri-checkbox-circle-line text-[#fe4a2e] sm:text-[6vw] md:text-[6vw] lg:text-[4vw] text-[1.5vw]"></i>
                 <span>Context Sourcing Guidance</span>
               </div>
             </div>
@@ -246,10 +247,10 @@ const Service = () => {
           </div>
         </div>
       </section>
-      <section className="w-full relative bg-black">
-        <div className="flex justify-center sm:py-[6vw] py-[2vw] border-t border-b border-white/30">
-          <h2>How We Do That?</h2>
-        </div>
+      <div className="flex justify-center sm:py-[6vw] py-[2vw] border-t border-b border-white/30 bg-black">
+        <h2>How We Do That?</h2>
+      </div>
+      <section className="w-full hidden sm:block md:block relative bg-black">
         <div className="w-full flex justify-center py-[12vw]">
           <div className="w-[95%] service-cards-elem flex justify-between md:flex-wrap sm:flex-wrap">
             {aboutCard.map((data, index) => (
@@ -257,6 +258,9 @@ const Service = () => {
             ))}
           </div>
         </div>
+      </section>
+      <section className="w-full sm:hidden md:hidden relative overflow-x-hidden bg-black">
+        <Card></Card>
       </section>
       <ClientReviewSection />
       <ContactSection />
