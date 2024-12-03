@@ -199,7 +199,6 @@ const Work = () => {
           </div>
         </div>
       </section>
-
       <TransparentFooter />
       <Footer />
     </div>

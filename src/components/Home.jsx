@@ -562,6 +562,7 @@ const Home = () => {
         <ClientReviewSection />
         <ContactSection />
         <TransparentFooter />
+        <Footer />
       </div>
     </>
   );
