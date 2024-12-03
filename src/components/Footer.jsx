@@ -4,7 +4,7 @@ import gsap from "gsap";
 
 const Footer = () => {
   return (
-    <section className="fixed top-0 left-0 h-[100vh] w-full bg-black z-[-1] px-[5vw] flex flex-col justify-end pb-[1vw]">
+    <section className="fixed top-0 left-0 h-[100vh] w-full bg-black z-[-1] px-[3.5vw] flex flex-col justify-end pb-[1vw]">
       <div className="w-full flex justify-center flex-col items-center gap-[3vw]">
         <img className="object-cover w-full" src="/images/footer.png" alt="" />
         <SectionBadge mail={true} text="info@rohido.com"></SectionBadge>

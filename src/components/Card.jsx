@@ -32,26 +32,28 @@ const Card = () => {
   useGSAP(
     () => {
       const cards = cardRefs.current;
-      const totalScrollHeight = window.innerHeight;
+      const totalScrollHeight = window.innerHeight * 2;
       const position = [10, 34, 58, 82];
-      const rotations = [-13, -5.5, 5.5, 13];
+      const rotations = [-15, -7.5, 7.5, 15];
 
       ScrollTrigger.create({
         trigger: container.current.querySelector(".cards"),
-        start: "top 20%",
-        end: "top -30%",
+        start: "top top",
+        end: () => `+=${totalScrollHeight}`,
+        pin: true,
+        pinSpacer: true,
       });
 
       cards.forEach((card, index) => {
         gsap.to(card, {
           left: `${position[index]}%`,
-          rotation: `${rotations[index]}`,
-          ease: "none",
+          rotation: `0`,
+          ease: "power1.out",
           scrollTrigger: {
             trigger: container.current.querySelector(".cards"),
-            start: "top 50%",
-            end: "top 0%",
-            scrub: 0.5,
+            start: "top top",
+            end: () => `+=${totalScrollHeight}`,
+            scrub: 1,
             id: `spread-${index}`,
           },
         });
@@ -67,8 +69,8 @@ const Card = () => {
 
         ScrollTrigger.create({
           trigger: container.current.querySelector(".cards"),
-          start: "top 50%",
-          end: "top 0%",
+          start: "top top",
+          end: () => `+=${totalScrollHeight}`,
           scrub: 1,
           id: `rotate-flip-${index}`,
           onUpdate: (self) => {
@@ -81,6 +83,16 @@ const Card = () => {
 
               gsap.to(frontEl, { rotateY: frontRotation, ease: "power1.out" });
               gsap.to(backEl, { rotateY: backRotation, ease: "power1.out" });
+
+              console.log(cardRotation);
+              
+
+              gsap.to(card, {
+                xPercent: -50,
+                yPercent: -50,
+                rotate: cardRotation,
+                ease: "power1.out",
+              });
             }
           },
         });
@@ -89,12 +101,6 @@ const Card = () => {
 
     { scope: container }
   );
-
-  useEffect(() => {
-    return () => {
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-    };
-  });
 
   return (
     <div className="h-full" ref={container}>
