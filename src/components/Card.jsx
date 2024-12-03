@@ -32,7 +32,7 @@ const Card = () => {
   useGSAP(
     () => {
       const cards = cardRefs.current;
-      const totalScrollHeight = window.innerHeight * 2;
+      const totalScrollHeight = window.innerHeight * 3;
       const position = [10, 34, 58, 82];
       const rotations = [-15, -7.5, 7.5, 15];
 
