@@ -32,7 +32,7 @@ const Card = () => {
   useGSAP(
     () => {
       const cards = cardRefs.current;
-      const totalScrollHeight = window.innerHeight * 3;
+      const totalScrollHeight = window.innerHeight;
       const position = [10, 34, 58, 82];
       const rotations = [-15, -7.5, 7.5, 15];
 
@@ -41,7 +41,6 @@ const Card = () => {
         start: "top top",
         end: () => `+=${totalScrollHeight}`,
         pin: true,
-        pinSpacer: true,
       });
 
       cards.forEach((card, index) => {
@@ -83,16 +82,6 @@ const Card = () => {
 
               gsap.to(frontEl, { rotateY: frontRotation, ease: "power1.out" });
               gsap.to(backEl, { rotateY: backRotation, ease: "power1.out" });
-
-              console.log(cardRotation);
-              
-
-              gsap.to(card, {
-                xPercent: -50,
-                yPercent: -50,
-                rotate: cardRotation,
-                ease: "power1.out",
-              });
             }
           },
         });

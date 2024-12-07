@@ -122,6 +122,7 @@ const Home = () => {
         start: "top 80%",
         end: "top -20%",
         scrub: 1,
+        id: "home-scrollTrigger",
         // markers: true,
       },
     });
@@ -134,6 +135,7 @@ const Home = () => {
         start: "top 80%",
         end: "top 0%",
         scrub: 1,
+        id: "home-scrollTrigger",
         // markers: true,
       },
     });
@@ -146,6 +148,7 @@ const Home = () => {
         start: "top 80%",
         end: "top 80%",
         // markers: true,
+        id: "home-scrollTrigger",
       },
     });
 
@@ -157,6 +160,7 @@ const Home = () => {
         start: "top 70%",
         end: "top 70%",
         // markers: true,
+        id: "home-scrollTrigger",
       },
     });
 
@@ -169,6 +173,7 @@ const Home = () => {
         trigger: ".project-container",
         start: "top 80%",
         // markers: true,
+        id: "home-scrollTrigger",
       },
     });
 
@@ -181,6 +186,7 @@ const Home = () => {
         trigger: ".project-container",
         start: "top 80%",
         // markers: true,
+        id: "home-scrollTrigger",
       },
     });
 
@@ -191,6 +197,7 @@ const Home = () => {
         trigger: ".service-title",
         start: "top 80%",
         end: "top 80%",
+        id: "home-scrollTrigger",
         // markers: true,
       },
     });
@@ -202,6 +209,7 @@ const Home = () => {
         trigger: ".service-title",
         start: "top 70%",
         end: "top 70%",
+        id: "home-scrollTrigger",
         // markers: true,
       },
     });
@@ -213,6 +221,7 @@ const Home = () => {
         trigger: ".team-title",
         start: "top 80%",
         end: "top 80%",
+        id: "home-scrollTrigger",
         // markers: true,
       },
     });
@@ -224,6 +233,7 @@ const Home = () => {
         trigger: ".team-title",
         start: "top 70%",
         end: "top 70%",
+        id: "home-scrollTrigger",
         // markers: true,
       },
     });
@@ -235,6 +245,7 @@ const Home = () => {
         trigger: ".clientes-title",
         start: "top 80%",
         end: "top 80%",
+        id: "home-scrollTrigger",
         // markers: true,
       },
     });
@@ -246,6 +257,7 @@ const Home = () => {
         trigger: ".clientes-title",
         start: "top 70%",
         end: "top 70%",
+        id: "home-scrollTrigger",
         // markers: true,
       },
     });
@@ -257,6 +269,7 @@ const Home = () => {
         trigger: ".contact-headings",
         start: "top 80%",
         end: "top 80%",
+        id: "home-scrollTrigger",
         // markers: true,
       },
     });
@@ -276,6 +289,7 @@ const Home = () => {
           // pin: true,
           // markers: true,
           scrub: 1,
+          id: "home-scrollTrigger",
         },
       });
     }
@@ -287,7 +301,17 @@ const Home = () => {
       gsap.to(".loader", {
         opacity: 0,
       });
-    }, 2000); // 2 seconds delay
+    }, 2000);
+    
+    return () => {
+      ScrollTrigger.getAll().forEach((trigger) => {
+        console.log(trigger.vars.id);
+
+        if (trigger.vars.id === "home-scrollTrigger") {
+          console.log(trigger);
+        }
+      });
+    };
   }, []);
 
   return (

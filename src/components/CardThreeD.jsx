@@ -3,7 +3,7 @@ import React, { forwardRef } from "react";
 const Card3D = forwardRef(({ id, frontSrc, frontAlt, backText, data }, ref) => {
   return (
     <div
-      className="card absolute top-[45%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[240px] h-[360px] perspective-[1000px]"
+      className="card absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[240px] h-[360px] perspective-[1000px]"
       id={id}
       ref={ref}
     >

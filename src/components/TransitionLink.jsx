@@ -1,5 +1,9 @@
 import { useNavigate, useLocation } from "react-router-dom";
 import { animationPageOut } from "./utils/Animations";
+import { useEffect } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 const TransitionLink = ({ href, children }) => {
   const navigate = useNavigate();
