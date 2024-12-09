@@ -1,7 +1,6 @@
 import gsap from "gsap";
-import { memo } from "react";
 
-const ClientReviews = memo(({ active, index, fnEnter, fnLeave, refLoop }) => {
+const ClientReviews = ({ active, index, fnEnter, fnLeave, refLoop }) => {
   return (
     <div
       onMouseEnter={() => {
@@ -24,6 +23,6 @@ const ClientReviews = memo(({ active, index, fnEnter, fnLeave, refLoop }) => {
       />
     </div>
   );
-});
+};
 
 export default ClientReviews;
