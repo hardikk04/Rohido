@@ -1,4 +1,6 @@
 const TransformationBadge = ({ text, c = "", mail = false }) => {
+  console.log("render");
+
   return mail ? (
     <div
       className={`${c} flex items-center w-fit space-x-2 px-4 py-2 bg-gradient-to-r from-red-500 to-black rounded-full text-white`}

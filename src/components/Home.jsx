@@ -302,16 +302,6 @@ const Home = () => {
         opacity: 0,
       });
     }, 2000);
-    
-    return () => {
-      ScrollTrigger.getAll().forEach((trigger) => {
-        console.log(trigger.vars.id);
-
-        if (trigger.vars.id === "home-scrollTrigger") {
-          console.log(trigger);
-        }
-      });
-    };
   }, []);
 
   return (

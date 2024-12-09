@@ -1,6 +1,7 @@
 import gsap from "gsap";
+import { memo } from "react";
 
-const ClientReviews = ({ active, index, fnEnter, fnLeave, refLoop }) => {
+const ClientReviews = memo(({ active, index, fnEnter, fnLeave, refLoop }) => {
   return (
     <div
       onMouseEnter={() => {
@@ -16,9 +17,13 @@ const ClientReviews = ({ active, index, fnEnter, fnLeave, refLoop }) => {
         active ? "" : "grayscale border-white/30"
       } w-full h-[33.3%] sm:h-[8vh] md:h-[10vh] border flex justify-center items-center md:w-[33.3%]`}
     >
-      <img className="object-cover sm:scale-[.4] md:scale-[.5] lg:scale-[.6]" src="/images/figma.png" alt="" />
+      <img
+        className="object-cover sm:scale-[.4] md:scale-[.5] lg:scale-[.6]"
+        src="/images/figma.png"
+        alt=""
+      />
     </div>
   );
-};
+});
 
 export default ClientReviews;
