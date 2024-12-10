@@ -103,7 +103,7 @@ const Work = () => {
           <div
             onMouseEnter={() => {
               gsap.to(".mouse-follower", {
-                scale: 10,
+                scale: 5,
               });
             }}
             onMouseLeave={() => {
