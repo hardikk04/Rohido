@@ -5,16 +5,27 @@ const ServiceElem = ({ title, index }) => {
   const [isToggled, setisToggled] = useState(true);
   return (
     <div className="w-full px-[3vw] pt-[1vw] sm:py-[2vw]">
-      <div className={`service-elem-${index} sm:h-[8vw] h-[5vw] overflow-hidden`}>
+      <div
+        className={`service-elem-${index} sm:h-[8vw] md:h-[8vw] h-[5vw] overflow-hidden`}
+      >
         <div className="flex justify-between items-center">
           <h3>{title}</h3>
           <i
             onClick={() => {
+              const mm = gsap.matchMedia();
               if (isToggled) {
-                for (let i = 0; i < 4; i++) {
-                  if (index !== i) {
-                    gsap.to(`.service-elem-${i}`, {
-                      height: "5vw",
+                for (let i = 0; i < 6; i++) {
+                  if (parseInt(index) !== i) {
+                    mm.add("(min-width: 770px)", () => {
+                      gsap.to(`.service-elem-${i}`, {
+                        height: "5vw",
+                      });
+                    });
+
+                    mm.add("(max-width: 639px)", () => {
+                      gsap.to(`.service-elem-${i}`, {
+                        height: "8vw",
+                      });
                     });
                   }
                 }
@@ -24,7 +35,7 @@ const ServiceElem = ({ title, index }) => {
                 });
 
                 gsap.to(`.service-elem-${index}`, {
-                  height: "14vw",
+                  height: "auto",
                 });
 
                 setisToggled((prev) => !prev);
@@ -34,8 +45,16 @@ const ServiceElem = ({ title, index }) => {
                   ease: "power1.inOut",
                 });
 
-                gsap.to(`.service-elem-${index}`, {
-                  height: "5vw",
+                mm.add("(min-width: 770px)", () => {
+                  gsap.to(`.service-elem-${index}`, {
+                    height: "5vw",
+                  });
+                });
+
+                mm.add("(max-width: 769px)", () => {
+                  gsap.to(`.service-elem-${index}`, {
+                    height: "8vw",
+                  });
                 });
                 setisToggled((prev) => !prev);
               }
@@ -43,7 +62,7 @@ const ServiceElem = ({ title, index }) => {
             className={`serive-plus-${index} serive-pluses cursor-pointer ri-close-large-fill text-[2vw] rotate-[45deg] sm:text-xl`}
           ></i>
         </div>
-        <div className="mt-[2vw]">
+        <div className="my-[2vw]">
           <p className="thin">
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cum ea,
             consectetur repellat cumque animi quisquam veniam! Corporis

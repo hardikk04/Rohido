@@ -1,6 +1,6 @@
 // Libraries imports
 import gsap from "gsap";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useGSAP } from "@gsap/react";
 
 // Components imports
@@ -200,6 +200,12 @@ const Service = () => {
               <ServiceElem index="2" title="Web Development" />
               <div className="w-full h-[1px] bg-white opacity-50"></div>
               <ServiceElem index="3" title="E-Commerce site Development" />
+              <div className="w-full h-[1px] bg-white opacity-50"></div>
+              <div className="w-full h-[1px] bg-white opacity-50"></div>
+              <ServiceElem index="4" title="Saas Development" />
+              <div className="w-full h-[1px] bg-white opacity-50"></div>
+              <div className="w-full h-[1px] bg-white opacity-50"></div>
+              <ServiceElem index="5" title="AI Development" />
               <div className="w-full h-[1px] bg-white opacity-50"></div>
             </div>
           </div>

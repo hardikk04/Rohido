@@ -71,7 +71,7 @@ const Nav = () => {
         }}
         className="nav-right relative z-10"
       >
-        <div className="black-btn  flex justify-center items-center border sm:border-[.5px] sm:px-2 sm:py-1 text-white px-6 py-2 rounded-full border-[#868383] hover:border-red-500 transition">
+        <div className="black-btn  flex justify-center items-center border sm:border-[.5px] sm:px-2 sm:py-1 text-white px-6 py-2 rounded-[1vw] border-[#868383] hover:border-red-500 transition">
           <button className="sm:hidden">Menu</button>
           <i className="dots hidden sm:inline-block sm:text-2xl ri-more-2-fill"></i>
         </div>

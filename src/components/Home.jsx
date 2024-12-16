@@ -284,9 +284,9 @@ const Home = () => {
         scrollTrigger: {
           scroller: "body",
           trigger: ".home-services",
-          start: "top 20%",
-          end: "top -10%",
-          // pin: true,
+          start: "top 0%",
+          end: "top -100%",
+          pin: true,
           // markers: true,
           scrub: 1,
           id: "home-scrollTrigger",
@@ -299,7 +299,7 @@ const Home = () => {
     const timer = setTimeout(() => {
       tl.play(0);
       gsap.to(".loader", {
-        opacity: 0,
+        top: "-100%",
       });
     }, 2000);
   }, []);
@@ -515,7 +515,7 @@ const Home = () => {
             </Swiper>
           </div>
         </section>
-        <section className="bg-black home-services w-full flex flex-col justify-center">
+        <section className="bg-black sm:h-fit md:h-fit h-screen home-services w-full flex flex-col justify-center">
           <div className="service-title sm:py-[6vw] sm:pb-[0] text-center flex flex-col items-center">
             <SectionBadge
               c="services-badge"
@@ -525,7 +525,7 @@ const Home = () => {
               <h2>Services we proudly provide</h2>
             </div>
           </div>
-          <div className="flex pt-[6vw] relative sm:overflow-x-scroll">
+          <div className="flex  pt-[6vw] relative sm:overflow-x-scroll">
             <div className="services-cards flex gap-[1vw] relative sm:pl-[2vw]">
               {swiperCardData.map((item, index) => (
                 <SwiperCard index={index} key={index} data={item}></SwiperCard>
