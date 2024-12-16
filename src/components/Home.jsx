@@ -95,6 +95,7 @@ const Home = () => {
   useGSAP(() => {
     tl.from(".nav", {
       y: "-120%",
+      delay: 0.5,
     })
       .from(".home-badge", {
         opacity: 0,
