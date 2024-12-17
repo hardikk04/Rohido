@@ -70,6 +70,18 @@ html {
   width: 100%;
 }
 
+/* Change the text selection color */
+::selection {
+  background-color: #fe492e; /* Tomato color */
+  color: #ffffff; /* White text */
+}
+
+/* For Firefox (optional but recommended) */
+::-moz-selection {
+  background-color: #fe492e;
+  color: #ffffff;
+}
+
 /* Scroll bar css start*/
 
 body::-webkit-scrollbar {

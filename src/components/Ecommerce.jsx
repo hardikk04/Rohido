@@ -1,12 +1,14 @@
 import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 import Tilt from "react-parallax-tilt";
 
 import Nav from "./Nav";
 import SectionBadge from "./utils/SectionBadge";
 import TransparentFooter from "./TransparentFooter";
 import TeamCards from "./TeamCards";
+import ProcessCard from "./ProcessCard";
+import ContactSection from "./ContactSection";
 import Footer from "./Footer";
-import { useGSAP } from "@gsap/react";
 
 const Ecommerce = () => {
   useGSAP(() => {
@@ -19,6 +21,73 @@ const Ecommerce = () => {
         end: "top 0%",
         // markers: true,
         scrub: 1,
+      },
+    });
+
+    gsap.from(".project1", {
+      opacity: 0,
+      scrollTrigger: {
+        scroller: "body",
+        trigger: ".project1",
+        start: "top 80%",
+        end: "top 30%",
+        // markers: true,
+      },
+    });
+
+    gsap.from(".project2", {
+      opacity: 0,
+      rotate: -15,
+      transform: "translateX(-50%)",
+      scrollTrigger: {
+        scroller: "body",
+        trigger: ".project2",
+        start: "top 80%",
+        end: "top 30%",
+        // markers: true,
+        // scrub: 1,
+      },
+    });
+
+    gsap.from(".project3", {
+      opacity: 0,
+      rotate: 15,
+      transform: "translateX(50%)",
+      scrollTrigger: {
+        scroller: "body",
+        trigger: ".project2",
+        start: "top 80%",
+        end: "top 30%",
+        // markers: true,
+        // scrub: 1,
+      },
+    });
+
+    gsap.from(".project4", {
+      opacity: 0,
+      rotate: -15,
+      transform: "translateX(-50%)",
+      scrollTrigger: {
+        scroller: "body",
+        trigger: ".project4",
+        start: "top 80%",
+        end: "top 30%",
+        // markers: true,
+        // scrub: 1,
+      },
+    });
+
+    gsap.from(".project5", {
+      opacity: 0,
+      rotate: 15,
+      transform: "translateX(50%)",
+      scrollTrigger: {
+        scroller: "body",
+        trigger: ".project4",
+        start: "top 80%",
+        end: "top 30%",
+        // markers: true,
+        // scrub: 1,
       },
     });
   });
@@ -106,7 +175,7 @@ const Ecommerce = () => {
             c="platform-badge"
             text="Technology + Innovation = Digital Transformations"
           ></SectionBadge>
-          <div className="platform-head overflow-hidden">
+          <div className="sticky top-0 platform-head overflow-hidden">
             <h2>Platforms We Work On</h2>
           </div>
         </div>
@@ -147,7 +216,58 @@ const Ecommerce = () => {
           </div>
         </div>
       </section>
-      <section className="bg-black home-team pt-[10vw] pb-[10vw] relative">
+      <section className="w-full bg-black relative">
+        <div className="rohido-title sm:py-[6vw] sm:pb-[0] text-center flex flex-col items-center">
+          <SectionBadge
+            c="rohido-badge"
+            text="The top Web Solutions Company in Mumbai"
+          ></SectionBadge>
+          <div className="overflow-hidden team-heading">
+            <h2>Our Process of Developing a Website</h2>
+          </div>
+        </div>
+        <div className="project-card flex flex-col items-center pt-[8vw]">
+          <div className="project1 w-[95%] h-[90vh] border-white/30 border-[1px] rounded-xl overflow-hidden">
+            <div className="project-card-img relative w-full overflow-hidden">
+              <img
+                className="w-full h-full object-cover"
+                src="https://images.unsplash.com/photo-1734249670749-cf73ffd488d9?q=80&w=2081&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt=""
+              />
+              <div className="absolute top-0 left-0 h-full w-full z-10 bg-black/20"></div>
+            </div>
+          </div>
+          <div className="w-full py-[4vw] flex justify-center">
+            <div className="w-[95%] gap-[3vw] flex flex-wrap justify-between">
+              <ProcessCard
+                c="project2"
+                title="Client XYZ"
+                para="Design | Development"
+                img="https://images.unsplash.com/photo-1729637986670-c678a527b4be?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              ></ProcessCard>
+              <ProcessCard
+                c="project3"
+                title="Client XYZ"
+                para="Design | Development"
+                img="https://images.unsplash.com/photo-1734021619978-e544c3607c28?q=80&w=2128&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              ></ProcessCard>
+              <ProcessCard
+                c="project4"
+                title="Client XYZ"
+                para="Design | Development"
+                img="https://images.unsplash.com/photo-1725733618948-990a56f2b3e2?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              ></ProcessCard>
+              <ProcessCard
+                c="project5"
+                title="Client XYZ"
+                para="Design | Development"
+                img="https://images.unsplash.com/photo-1732046827794-ac0d6c915a4a?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              ></ProcessCard>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="bg-black home-team pb-[10vw] relative">
         <div className="rohido-title sm:py-[6vw] sm:pb-[0] text-center flex flex-col items-center">
           <SectionBadge
             c="rohido-badge"
@@ -185,6 +305,7 @@ const Ecommerce = () => {
           <img className="object-cover h-full" src="/images/Star2.png" alt="" />
         </div>
       </section>
+      <ContactSection />
       <TransparentFooter />
       <Footer />
     </div>
