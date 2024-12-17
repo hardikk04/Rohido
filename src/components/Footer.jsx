@@ -2,6 +2,8 @@ import SectionBadge from "../components/utils/SectionBadge";
 import { Link } from "react-router-dom";
 import gsap from "gsap";
 
+import TransitionLink from "./TransitionLink";
+
 const Footer = () => {
   return (
     <section className="fixed top-0 left-0 h-[100vh] w-full bg-black z-[-1] px-[3.5vw] flex flex-col justify-end pb-[1vw]">
@@ -25,7 +27,7 @@ const Footer = () => {
           </Link>
         </div>
         <div className="footer-right text-right flex gap-[2vw] sm:gap-[6vw] md:gap-[6vw]">
-          <Link to="/">
+          <TransitionLink href="/ecommerce-website-development-company">
             <div
               onMouseEnter={() => {
                 gsap.to(".terms-service p", {
@@ -44,7 +46,7 @@ const Footer = () => {
               <p className="opacity-70 thin">Terms of Service</p>
               <p className="opacity-70 thin">Terms of Service</p>
             </div>
-          </Link>
+          </TransitionLink>
           <Link to="/">
             <div
               onMouseEnter={() => {
