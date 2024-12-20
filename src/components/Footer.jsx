@@ -1,8 +1,8 @@
-import SectionBadge from "../components/utils/SectionBadge";
 import { Link } from "react-router-dom";
 import gsap from "gsap";
 
 import TransitionLink from "./TransitionLink";
+import SectionBadge from "../components/utils/SectionBadge";
 
 const Footer = () => {
   return (

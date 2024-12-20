@@ -1,5 +1,3 @@
-import gsap from "gsap";
-
 const AboutCard = ({ index, data }) => {
   const { title, para } = data;
   const handleTouchStart = (event) => {

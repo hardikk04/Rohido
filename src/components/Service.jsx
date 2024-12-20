@@ -1,6 +1,6 @@
 // Libraries imports
 import gsap from "gsap";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useGSAP } from "@gsap/react";
 
 // Components imports

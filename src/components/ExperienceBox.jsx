@@ -1,5 +1,3 @@
-import React from "react";
-
 const ExperienceBox = ({ title, number }) => {
   return (
     <div className="bg-[#131313] w-[30%] p-[1vw] text-center rounded-xl medium">

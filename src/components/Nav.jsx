@@ -1,7 +1,9 @@
 import gsap from "gsap";
 import { useState } from "react";
-import TransitionLink from "./TransitionLink";
 import { useLocation } from "react-router-dom";
+
+
+import TransitionLink from "./TransitionLink";
 
 const Nav = () => {
   const [flag, setFlag] = useState(true);

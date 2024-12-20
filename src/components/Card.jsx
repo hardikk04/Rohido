@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import Card3D from "./CardThreeD";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
