@@ -253,7 +253,7 @@ const Service = () => {
           </div>
         </div>
       </section>
-      <div className="flex justify-center sm:py-[6vw] py-[2vw] border-t border-b border-white/30 bg-black">
+      {/* <div className="flex justify-center sm:py-[6vw] py-[2vw] border-t border-b border-white/30 bg-black">
         <h2>How We Do That?</h2>
       </div>
       <section className="w-full hidden sm:block md:block relative bg-black">
@@ -264,10 +264,10 @@ const Service = () => {
             ))}
           </div>
         </div>
-      </section>
-      <section className="w-full sm:hidden md:hidden relative overflow-x-hidden bg-black">
+      </section> */}
+      {/* <section className="w-full sm:hidden md:hidden relative overflow-x-hidden bg-black">
         <Card></Card>
-      </section>
+      </section> */}
       <ClientReviewSection />
       <ContactSection />
       <TransparentFooter />

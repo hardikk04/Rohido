@@ -115,7 +115,7 @@ body::-webkit-scrollbar-thumb:active {
 /* Home css start */
 
 h1 {
-  font-size: 5.5vw;
+  font-size: 5vw;
 }
 
 h2 {
@@ -439,7 +439,7 @@ input[type="number"] {
   }
 
   button {
-    font-size: 3vw;
+    font-size: 3.4vw;
   }
 
   .project-elem-0 {

@@ -32,7 +32,7 @@ const Home = () => {
   const [swiperCardData, setSwiperCardData] = useState([
     {
       number: "01",
-      title: "UI/UX",
+      title: "UI/UX Design",
       para: "We assist both new ventures and established companies in crafting engaging user experiences from start to finish, offering comprehensive services in UI/UX design",
       img: "/images/swiper1.png",
     },
@@ -50,13 +50,13 @@ const Home = () => {
     },
     {
       number: "04",
-      title: "E-commerce Solutions",
+      title: "E-commerce Development",
       para: "Secure, feature-rich e-commerce platforms are planned and designed to drive sales.",
       img: "/images/swiper1.png",
     },
     {
       number: "05",
-      title: "Saas Development",
+      title: "Data & Analytics",
       para: "Professional website development services utilizing the most recent technologies, innovations, and frameworks.",
       img: "/images/swiper1.png",
     },
@@ -98,19 +98,21 @@ const Home = () => {
       y: "-120%",
       delay: 0.5,
     })
-      .from(".home-badge", {
-        opacity: 0,
-        duration: 0.5,
-      })
+
       .from(".home-heading h1", {
         transform: "translateY(100%)",
         stagger: 0.1,
       })
+
       .from(".home-hero p", {
         opacity: 0,
         duration: 0.5,
       })
       .from(".home-btn-div", {
+        opacity: 0,
+        duration: 0.5,
+      })
+      .from(".home-badge", {
         opacity: 0,
         duration: 0.5,
       });
@@ -303,7 +305,7 @@ const Home = () => {
       gsap.to(".loader", {
         top: "-100%",
       });
-    }, 2000);
+    }, 5000);
   }, []);
 
   return (
@@ -341,14 +343,15 @@ const Home = () => {
             className="home-heading text-white mix-blend-difference leading-[1.2] text-center mb-[2vw]"
           >
             <div className="home-heading1 overflow-hidden pb-[.5vw]">
-              <h1>Transforming ideas into</h1>
+              <h1>Your Website Deserves More</h1>
             </div>
             <div className="home-heading2 overflow-hidden">
-              <h1>Impactful websites</h1>
+              <h1>Than Just a Template.</h1>
             </div>
           </div>
           <p className="opacity-70 light mix-blend-difference text-center sm:w-[95%]">
-            Empowering your business through an expertly developed website.
+            We've spent 5+ years delivering award-winning solutions to over 100+
+            brands across the globe and we're just getting started!
           </p>
           <div className="mt-[3vw] home-btn-div">
             <WhiteButton
@@ -446,10 +449,6 @@ const Home = () => {
       </section>
       <section className="bg-black sm:hidden md:hidden home-projects relative">
         <div className="project-title sm:py-[6vw] text-center flex flex-col items-center">
-          <SectionBadge
-            c="project-badge"
-            text="Technology + Innovation = Digital Transformations"
-          ></SectionBadge>
           <div className="project-head overflow-hidden">
             <h2>Some of Our Latest  Projects</h2>
           </div>
@@ -514,12 +513,8 @@ const Home = () => {
       </section>
       <section className="bg-black sm:h-fit md:h-fit h-screen home-services w-full flex flex-col justify-center">
         <div className="service-title sm:py-[6vw] sm:pb-[0] text-center flex flex-col items-center">
-          <SectionBadge
-            c="services-badge"
-            text="Problem Solving + Creativity = Innovation"
-          ></SectionBadge>
           <div className="services-heading overflow-hidden">
-            <h2>Services we proudly provide</h2>
+            <h2>Services</h2>
           </div>
         </div>
         <div className="flex  pt-[6vw] relative sm:overflow-x-scroll">
@@ -564,7 +559,7 @@ const Home = () => {
           <img className="object-cover h-full" src="/images/Star2.png" alt="" />
         </div>
       </section>
-      <ClientReviewSection />
+      {/* <ClientReviewSection /> */}
       <ContactSection />
       <TransparentFooter />
       <Footer />

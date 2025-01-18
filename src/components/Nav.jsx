@@ -95,11 +95,11 @@ const Nav = () => {
                 });
               }}
               className={`home-h3 ${
-                pathname === "/" ? `text-[#fe492e]` : ``
+                pathname === "/" ? `text-[#fe492e] opacity-100` : `opacity-70`
               } sm:h-[8vw] md:h-[3vw] lg:h-[3.5vw] h-[2.5vw] overflow-hidden`}
             >
-              <h3 className="opacity-70 sm:opacity-100 sm:text-2xl">Home</h3>
-              <h3 className="opacity-70 sm:opacity-100 sm:text-2xl">Home</h3>
+              <h3 className=" sm:opacity-100 sm:text-2xl">Home</h3>
+              <h3 className=" sm:opacity-100 sm:text-2xl">Home</h3>
             </div>
           </TransitionLink>
           <TransitionLink href="/about">
@@ -117,13 +117,13 @@ const Nav = () => {
                 });
               }}
               className={`about-h3 ${
-                pathname === "/about" ? `text-[#fe492e]` : ``
+                pathname === "/about" ? `text-[#fe492e] opacity-100` : `opacity-70`
               } sm:h-[8vw] md:h-[3vw] lg:h-[3.5vw] h-[2.5vw] overflow-hidden`}
             >
-              <h3 className="opacity-70 sm:opacity-100 sm:text-2xl">
+              <h3 className="sm:opacity-100 sm:text-2xl">
                 About Us
               </h3>
-              <h3 className="opacity-70 sm:opacity-100 sm:text-2xl">
+              <h3 className="sm:opacity-100 sm:text-2xl">
                 About Us
               </h3>
             </div>
@@ -143,13 +143,13 @@ const Nav = () => {
                 });
               }}
               className={`services-h3 ${
-                pathname === "/service" ? `text-[#fe492e]` : ``
+                pathname === "/service" ? `text-[#fe492e] opacity-100` : `opacity-70`
               } sm:h-[8vw] md:h-[3vw] lg:h-[3.5vw] h-[2.5vw] overflow-hidden`}
             >
-              <h3 className="opacity-70 sm:opacity-100 sm:text-2xl">
+              <h3 className=" sm:opacity-100 sm:text-2xl">
                 Services
               </h3>
-              <h3 className="opacity-70 sm:opacity-100 sm:text-2xl">
+              <h3 className=" sm:opacity-100 sm:text-2xl">
                 Services
               </h3>
             </div>
@@ -169,11 +169,11 @@ const Nav = () => {
                 });
               }}
               className={`work-h3 ${
-                pathname === "/work" ? `text-[#fe492e]` : ``
+                pathname === "/work" ? `text-[#fe492e] opacity-100` : `opacity-70`
               } sm:h-[8vw] md:h-[3vw] lg:h-[3.5vw] h-[2.5vw] overflow-hidden`}
             >
-              <h3 className="opacity-70 sm:opacity-100 sm:text-2xl">Work</h3>
-              <h3 className="opacity-70 sm:opacity-100 sm:text-2xl">Work</h3>
+              <h3 className="sm:opacity-100 sm:text-2xl">Work</h3>
+              <h3 className="sm:opacity-100 sm:text-2xl">Work</h3>
             </div>
           </TransitionLink>
           <TransitionLink href="/contact">
@@ -191,13 +191,13 @@ const Nav = () => {
                 });
               }}
               className={`contact-h3 ${
-                pathname === "/contact" ? `text-[#fe492e]` : ``
+                pathname === "/contact" ? `text-[#fe492e] opacity-100` : `opacity-70`
               } sm:h-[8vw] md:h-[3vw] lg:h-[3.5vw] h-[2.5vw] overflow-hidden`}
             >
-              <h3 className="opacity-70 sm:opacity-100 sm:text-2xl">
+              <h3 className="sm:opacity-100 sm:text-2xl">
                 Contact Us
               </h3>
-              <h3 className="opacity-70 sm:opacity-100 sm:text-2xl">
+              <h3 className="sm:opacity-100 sm:text-2xl">
                 Contact Us
               </h3>
             </div>
