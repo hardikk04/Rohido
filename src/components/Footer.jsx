@@ -27,7 +27,7 @@ const Footer = () => {
           </Link>
         </div>
         <div className="footer-right text-right flex gap-[2vw] sm:gap-[6vw] md:gap-[6vw]">
-          <TransitionLink href="/ecommerce-website-development-company">
+          <TransitionLink>
             <div
               onMouseEnter={() => {
                 gsap.to(".terms-service p", {

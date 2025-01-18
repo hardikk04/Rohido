@@ -12,7 +12,6 @@ import About from "./components/About";
 import Service from "./components/Service";
 import Contact from "./components/Contact";
 import Work from "./components/Work";
-import Ecommerce from "./components/Ecommerce";
 
 const App = () => {
   const { pathname } = useLocation();
@@ -28,7 +27,6 @@ const App = () => {
       <Route path="/service" element={<Service />}></Route>
       <Route path="/contact" element={<Contact />}></Route>
       <Route path="/work" element={<Work />}></Route>
-      <Route path="/ecommerce-website-development-company" element={<Ecommerce />}></Route>
     </Routes>
   );
 };
