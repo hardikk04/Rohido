@@ -84,18 +84,18 @@ const Service = () => {
       },
     });
 
-    gsap.from(".service-cards", {
-      transform: "translateY(50%)",
-      opacity: 0,
-      stagger: 0.1,
-      scrollTrigger: {
-        scroller: "body",
-        trigger: ".service-cards-elem",
-        start: "top 70%",
-        end: "top 70%",
-        // markers: true,
-      },
-    });
+    // gsap.from(".service-cards", {
+    //   transform: "translateY(50%)",
+    //   opacity: 0,
+    //   stagger: 0.1,
+    //   scrollTrigger: {
+    //     scroller: "body",
+    //     trigger: ".service-cards-elem",
+    //     start: "top 70%",
+    //     end: "top 70%",
+    //     // markers: true,
+    //   },
+    // });
 
     gsap.from(".clientes-badge", {
       opacity: 0,

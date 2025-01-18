@@ -144,17 +144,17 @@ const Home = () => {
       },
     });
 
-    gsap.from(".project-title .project-badge", {
-      opacity: 0,
-      scrollTrigger: {
-        scroller: "body",
-        trigger: ".project-title",
-        start: "top 80%",
-        end: "top 80%",
-        // markers: true,
-        id: "home-scrollTrigger",
-      },
-    });
+    // gsap.from(".project-title .project-badge", {
+    //   opacity: 0,
+    //   scrollTrigger: {
+    //     scroller: "body",
+    //     trigger: ".project-title",
+    //     start: "top 80%",
+    //     end: "top 80%",
+    //     // markers: true,
+    //     id: "home-scrollTrigger",
+    //   },
+    // });
 
     gsap.from(".project-head h2", {
       transform: "translateY(100%)",
@@ -194,17 +194,17 @@ const Home = () => {
       },
     });
 
-    gsap.from(".services-badge", {
-      opacity: 0,
-      scrollTrigger: {
-        scroller: "body",
-        trigger: ".service-title",
-        start: "top 80%",
-        end: "top 80%",
-        id: "home-scrollTrigger",
-        // markers: true,
-      },
-    });
+    // gsap.from(".services-badge", {
+    //   opacity: 0,
+    //   scrollTrigger: {
+    //     scroller: "body",
+    //     trigger: ".service-title",
+    //     start: "top 80%",
+    //     end: "top 80%",
+    //     id: "home-scrollTrigger",
+    //     // markers: true,
+    //   },
+    // });
 
     gsap.from(".services-heading h2", {
       transform: "translateY(100%)",
@@ -242,29 +242,29 @@ const Home = () => {
       },
     });
 
-    gsap.from(".clientes-badge", {
-      opacity: 0,
-      scrollTrigger: {
-        scroller: "body",
-        trigger: ".clientes-title",
-        start: "top 80%",
-        end: "top 80%",
-        id: "home-scrollTrigger",
-        // markers: true,
-      },
-    });
+    // gsap.from(".clientes-badge", {
+    //   opacity: 0,
+    //   scrollTrigger: {
+    //     scroller: "body",
+    //     trigger: ".clientes-title",
+    //     start: "top 80%",
+    //     end: "top 80%",
+    //     id: "home-scrollTrigger",
+    //     // markers: true,
+    //   },
+    // });
 
-    gsap.from(".clientes-heading h2", {
-      transform: "translateY(100%)",
-      scrollTrigger: {
-        scroller: "body",
-        trigger: ".clientes-title",
-        start: "top 70%",
-        end: "top 70%",
-        id: "home-scrollTrigger",
-        // markers: true,
-      },
-    });
+    // gsap.from(".clientes-heading h2", {
+    //   transform: "translateY(100%)",
+    //   scrollTrigger: {
+    //     scroller: "body",
+    //     trigger: ".clientes-title",
+    //     start: "top 70%",
+    //     end: "top 70%",
+    //     id: "home-scrollTrigger",
+    //     // markers: true,
+    //   },
+    // });
 
     gsap.from(".contact-headings h2", {
       transform: "translateY(100%)",
@@ -480,7 +480,7 @@ const Home = () => {
             <ProjectCards data={data} key={index} index={index}></ProjectCards>
           ))}
         </div>
-        <div className="flex justify-center lg:pb-[0] pb-[8vw]">
+        <div className="flex justify-center lg:pb-[0]">
           <WhiteButton
             text="Book a call"
             icon={<i className="ri-arrow-right-s-line font-[600]"></i>}

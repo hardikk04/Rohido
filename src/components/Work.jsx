@@ -18,29 +18,37 @@ const Work = () => {
       stagger: 0.1,
     });
 
-    gsap.to(".project-card-0", {
-      scale: 0.8,
+    const tl = gsap.timeline({
       scrollTrigger: {
         scroller: "body",
         trigger: ".project-card-0",
         start: "top 0%",
-        end: "top -100%",
+        end: "top -200%",
         // markers: true,
+        pin: true,
         scrub: 1,
       },
     });
 
-    gsap.to(".project-card-1", {
+    tl.to(".project-card-0", {
       scale: 0.8,
-      scrollTrigger: {
-        scroller: "body",
-        trigger: ".project-card-1",
-        start: "top 0%",
-        end: "top -100%",
-        // markers: true,
-        scrub: 1,
-      },
     });
+
+    tl.to(".project-card-1", {
+      scale: 0.8,
+    });
+
+    // gsap.to(".project-card-1", {
+    //   scale: 0.8,
+    //   scrollTrigger: {
+    //     scroller: "body",
+    //     trigger: ".project-card-1",
+    //     start: "top 0%",
+    //     end: "top -100%",
+    //     // markers: true,
+    //     scrub: 1,
+    //   },
+    // });
 
     gsap.from(".project-final-img", {
       height: "35%",
