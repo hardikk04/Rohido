@@ -44,8 +44,8 @@ const Nav = () => {
             });
 
             gsap.from(".menu", {
-              rotation: gsap.utils.wrap([-25, 25]),
-              y: 250,
+              // rotation: gsap.utils.wrap([-25, 25]),
+              x: "100%",
               stagger: 0.1,
             });
             setFlag(false);
@@ -204,7 +204,7 @@ const Nav = () => {
           </TransitionLink>
         </div>
         <div className="menu backdrop-blur bg-black absolute left-0 top-[103%] sm:top-[105%] sm:border-[1px] sm:w-full md:w-full w-[16vw] rounded-xl pointer-events-none border-[2px] border-white/30 p-[1.5vw] py-[.5vw] flex flex-col sm:px-[3vw]">
-          <TransitionLink href="/">
+          <TransitionLink href="/consultancy">
             <div
               onMouseEnter={() => {
                 gsap.to(".consultancy-h3 h3", {

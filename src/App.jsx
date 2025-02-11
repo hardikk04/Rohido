@@ -12,6 +12,7 @@ import About from "./components/About";
 import Service from "./components/Service";
 import Contact from "./components/Contact";
 import Work from "./components/Work";
+import Consultancy from "./components/Consultancy";
 
 const App = () => {
   const { pathname } = useLocation();
@@ -27,6 +28,7 @@ const App = () => {
       <Route path="/service" element={<Service />}></Route>
       <Route path="/contact" element={<Contact />}></Route>
       <Route path="/work" element={<Work />}></Route>
+      <Route path="/consultancy" element={<Consultancy />}></Route>
     </Routes>
   );
 };
